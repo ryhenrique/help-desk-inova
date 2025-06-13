@@ -1,6 +1,5 @@
 
-import { Mail, MessageSquare, Phone, MapPin, ExternalLink, Award } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+import { Mail, MessageSquare, Phone, Instagram, ExternalLink } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -20,27 +19,16 @@ const Footer = () => {
             </div>
             
             <p className="text-slate-300 mb-8 max-w-md leading-relaxed text-lg">
-              Central de excelência em suporte técnico e consultoria em TI. 
-              Oferecemos soluções profissionais e especializadas para empresas que 
-              buscam eficiência e segurança tecnológica.
+              A HELP DESK INOVA é especialista em soluções tecnológicas para empresas, 
+              oferecendo suporte HelpDesk, gerenciamento de redes, e segurança cibernética. 
+              Com uma equipe qualificada e valores justos, garantimos eficiência e inovação 
+              para o crescimento seguro do seu negócio.
             </p>
-
-            {/* Certifications */}
-            <div className="flex flex-wrap gap-3 mb-8">
-              <Badge variant="secondary" className="bg-slate-800 text-slate-300 border-slate-700 px-3 py-2">
-                <Award className="w-4 h-4 mr-2" />
-                Certificado ISO 27001
-              </Badge>
-              <Badge variant="secondary" className="bg-slate-800 text-slate-300 border-slate-700 px-3 py-2">
-                <Award className="w-4 h-4 mr-2" />
-                LGPD Compliance
-              </Badge>
-            </div>
             
             {/* Social Links */}
             <div className="flex space-x-6">
               <a 
-                href="mailto:suporte@helpdeskínova.com" 
+                href="mailto:suporte@helpdeskinova.com.br" 
                 className="group flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800 hover:bg-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl"
                 aria-label="Enviar e-mail"
               >
@@ -54,11 +42,11 @@ const Footer = () => {
                 <MessageSquare className="h-5 w-5 text-slate-300 group-hover:text-white transition-colors" />
               </a>
               <a 
-                href="tel:+5511999999999" 
+                href="https://www.instagram.com/helpdeskinova/" 
                 className="group flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800 hover:bg-violet-600 transition-all duration-300 shadow-lg hover:shadow-xl"
-                aria-label="Telefone"
+                aria-label="Instagram"
               >
-                <Phone className="h-5 w-5 text-slate-300 group-hover:text-white transition-colors" />
+                <Instagram className="h-5 w-5 text-slate-300 group-hover:text-white transition-colors" />
               </a>
             </div>
           </div>
@@ -69,31 +57,31 @@ const Footer = () => {
             <ul className="space-y-4 text-slate-300">
               <li>
                 <a href="#services" className="group flex items-center hover:text-blue-400 transition-colors text-base">
-                  <span>Consultoria em TI</span>
+                  <span>Suporte HelpDesk</span>
                   <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               </li>
               <li>
                 <a href="#services" className="group flex items-center hover:text-blue-400 transition-colors text-base">
-                  <span>Sistemas Operacionais</span>
+                  <span>Câmeras de Segurança</span>
                   <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               </li>
               <li>
                 <a href="#services" className="group flex items-center hover:text-blue-400 transition-colors text-base">
-                  <span>Infraestrutura de Rede</span>
+                  <span>Sistema Failover</span>
                   <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               </li>
               <li>
                 <a href="#services" className="group flex items-center hover:text-blue-400 transition-colors text-base">
-                  <span>Segurança Corporativa</span>
+                  <span>Redes de Computadores</span>
                   <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               </li>
               <li>
                 <a href="#services" className="group flex items-center hover:text-blue-400 transition-colors text-base">
-                  <span>Transformação Digital</span>
+                  <span>Segurança Cibernética</span>
                   <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               </li>
@@ -111,17 +99,17 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#services" className="hover:text-blue-400 transition-colors text-base">
-                  Serviços Premium
+                  Nossos Serviços
                 </a>
               </li>
               <li>
                 <a href="#tutorials" className="hover:text-blue-400 transition-colors text-base">
-                  Tutoriais Técnicos
+                  Artigos e Soluções
                 </a>
               </li>
               <li>
                 <a href="#contact" className="hover:text-blue-400 transition-colors text-base">
-                  Contato Corporativo
+                  Contato
                 </a>
               </li>
               <li>
@@ -129,34 +117,19 @@ const Footer = () => {
                   Portal do Cliente
                 </a>
               </li>
-              <li>
-                <a href="#" className="hover:text-blue-400 transition-colors text-base">
-                  Política de Privacidade
-                </a>
-              </li>
             </ul>
           </div>
         </div>
 
-        {/* Location & Contact Info */}
+        {/* Contact Info */}
         <div className="border-t border-slate-800 mt-16 pt-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex items-center space-x-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800">
-                <MapPin className="h-5 w-5 text-blue-400" />
-              </div>
-              <div>
-                <p className="font-semibold text-white">Centro Técnico</p>
-                <p className="text-slate-400">São Paulo - SP, Brasil</p>
-              </div>
-            </div>
-            
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex items-center space-x-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800">
                 <Phone className="h-5 w-5 text-emerald-400" />
               </div>
               <div>
-                <p className="font-semibold text-white">Suporte 24/7</p>
+                <p className="font-semibold text-white">Suporte Especializado</p>
                 <p className="text-slate-400">+55 (11) 99999-9999</p>
               </div>
             </div>
@@ -167,7 +140,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-semibold text-white">E-mail Corporativo</p>
-                <p className="text-slate-400">suporte@helpdeskínova.com</p>
+                <p className="text-slate-400">suporte@helpdeskinova.com.br</p>
               </div>
             </div>
           </div>
@@ -179,12 +152,11 @@ const Footer = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-slate-400 text-center md:text-left">
-              © 2024 Help Desk Inova. Todos os direitos reservados. | CNPJ: 00.000.000/0001-00
+              © 2024 Help Desk Inova. Todos os direitos reservados.
             </p>
             <div className="flex items-center space-x-6 text-slate-400 text-sm">
               <a href="#" className="hover:text-blue-400 transition-colors">Termos de Uso</a>
               <a href="#" className="hover:text-blue-400 transition-colors">Privacidade</a>
-              <a href="#" className="hover:text-blue-400 transition-colors">Cookies</a>
             </div>
           </div>
         </div>

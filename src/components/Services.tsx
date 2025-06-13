@@ -1,5 +1,5 @@
 
-import { Monitor, Smartphone, Wifi, Settings, HardDrive, Shield, ArrowRight } from 'lucide-react';
+import { Monitor, Smartphone, Wifi, Settings, HardDrive, Shield, ArrowRight, Camera, Server, Network } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -8,51 +8,51 @@ const Services = () => {
   const services = [
     {
       icon: <Monitor className="h-7 w-7" />,
-      title: "Suporte a Sistemas Operacionais",
-      description: "Assistência especializada com Windows, Linux e Android. Instalação, configuração e resolução de problemas complexos.",
-      features: ["Instalação profissional", "Configuração otimizada", "Resolução de conflitos", "Migração de dados"],
+      title: "Suporte HelpDesk Especializado",
+      description: "Assistência técnica completa com suporte remoto e presencial. Resolução rápida de problemas tecnológicos para manter sua empresa funcionando.",
+      features: ["Suporte 24/7", "Atendimento remoto", "Manutenção preventiva", "Consultoria técnica"],
       color: "from-blue-500 to-blue-600",
-      badge: "Especializado"
-    },
-    {
-      icon: <HardDrive className="h-7 w-7" />,
-      title: "Suporte Técnico Especializado",
-      description: "Instalação de software corporativo, formatação segura e manutenção preventiva de equipamentos.",
-      features: ["Software empresarial", "Formatação segura", "Manutenção preventiva", "Backup automatizado"],
-      color: "from-emerald-500 to-emerald-600",
       badge: "Premium"
     },
     {
-      icon: <Wifi className="h-7 w-7" />,
-      title: "Configuração de Rede",
-      description: "Configuração profissional de internet, Wi-Fi corporativo e resolução de problemas de conectividade.",
-      features: ["Wi-Fi empresarial", "Otimização de banda", "Segurança de rede", "Monitoramento 24/7"],
+      icon: <Camera className="h-7 w-7" />,
+      title: "Segurança Total com Câmeras",
+      description: "Câmeras de segurança com suporte completo, sem necessidade de compra. Instalação, manutenção e reposição de peças sem custo adicional.",
+      features: ["Sem necessidade de compra", "Instalação profissional", "Manutenção incluída", "Reposição gratuita"],
+      color: "from-emerald-500 to-emerald-600",
+      badge: "Completo"
+    },
+    {
+      icon: <Server className="h-7 w-7" />,
+      title: "Sistema Failover Robusto",
+      description: "Confiabilidade ininterrupta com nosso sistema Failover. Garantimos que sua empresa nunca fique offline, mesmo em caso de falhas.",
+      features: ["Zero downtime", "Backup automático", "Redundância total", "Monitoramento 24/7"],
       color: "from-violet-500 to-violet-600",
-      badge: "Avançado"
+      badge: "Confiável"
     },
     {
-      icon: <Smartphone className="h-7 w-7" />,
-      title: "Orientação Digital Empresarial",
-      description: "Consultoria especializada para transformação digital e capacitação de equipes corporativas.",
-      features: ["Consultoria estratégica", "Treinamento de equipes", "Implementação digital", "Suporte contínuo"],
+      icon: <Network className="h-7 w-7" />,
+      title: "Expertise em Redes de Computadores",
+      description: "Garantindo conectividade e segurança com soluções inovadoras e suporte excepcional para infraestrutura de rede.",
+      features: ["Configuração profissional", "Segurança avançada", "Otimização de performance", "Suporte especializado"],
       color: "from-orange-500 to-orange-600",
-      badge: "Consultoria"
+      badge: "Expert"
     },
     {
-      icon: <Settings className="h-7 w-7" />,
-      title: "Configuração de Software",
-      description: "Instalação e configuração de sistemas empresariais essenciais para otimização de processos.",
-      features: ["Sistemas integrados", "Configuração personalizada", "Automação de processos", "Suporte técnico"],
+      icon: <Wifi className="h-7 w-7" />,
+      title: "Monitoramento de Rede em Tempo Real",
+      description: "Supervisão contínua para máxima eficiência. Monitoramos sua rede 24/7, identificando problemas antes que afetem suas operações.",
+      features: ["Monitoramento 24/7", "Detecção proativa", "Relatórios detalhados", "Performance garantida"],
       color: "from-cyan-500 to-cyan-600",
-      badge: "Corporativo"
+      badge: "24/7"
     },
     {
       icon: <Shield className="h-7 w-7" />,
-      title: "Segurança Digital Avançada",
-      description: "Implementação de protocolos de segurança empresarial e proteção de dados corporativos.",
-      features: ["Segurança corporativa", "Backup em nuvem", "Proteção avançada", "Compliance LGPD"],
+      title: "Segurança de Rede Avançada",
+      description: "Proteção total contra ameaças cibernéticas. Implementamos firewalls e sistemas de detecção de intrusões para proteger sua rede.",
+      features: ["Firewall avançado", "Detecção de intrusões", "Proteção antivírus", "Backup seguro"],
       color: "from-red-500 to-red-600",
-      badge: "Segurança"
+      badge: "Seguro"
     }
   ];
 
@@ -61,15 +61,17 @@ const Services = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <Badge variant="secondary" className="mb-6 bg-blue-50 text-blue-700 border-blue-200 px-4 py-2 font-medium">
-            Serviços Profissionais
+            Excelência em Serviços
           </Badge>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 tracking-tight">
-            Soluções Técnicas
-            <span className="block text-blue-600">de Alto Padrão</span>
+            Conte sempre com a
+            <span className="block text-blue-600">HELP DESK INOVA</span>
           </h2>
           <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-light">
-            Oferecemos suporte técnico especializado e consultoria em TI para resolver suas necessidades 
-            tecnológicas com <span className="font-medium text-slate-800">qualidade empresarial</span> e eficiência profissional.
+            A HELP DESK INOVA é especialista em soluções tecnológicas para empresas, oferecendo suporte HelpDesk, 
+            gerenciamento de redes, e segurança cibernética. Com uma equipe qualificada e valores justos, 
+            <span className="font-medium text-slate-800"> garantimos eficiência e inovação </span>
+            para o crescimento seguro do seu negócio.
           </p>
         </div>
 
@@ -126,13 +128,13 @@ const Services = () => {
         <div className="text-center mt-20">
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-12 shadow-2xl">
             <h3 className="text-3xl font-bold text-white mb-4">
-              Precisa de uma solução personalizada?
+              Excelência em Serviços e Equipamentos para Seu Negócio
             </h3>
             <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-              Nossa equipe de especialistas está pronta para desenvolver a solução ideal para sua empresa.
+              Oferecemos serviços de alta qualidade e equipamentos de ponta, adaptados para atender às necessidades de qualquer tipo de empresa.
             </p>
             <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-slate-50 font-medium px-8 py-3">
-              Falar com Especialista
+              Fale com os nossos especialistas
             </Button>
           </div>
         </div>
