@@ -1,5 +1,6 @@
-import { useState, useCallback } from 'react';
-import { Menu, ChevronDown } from 'lucide-react';
+
+import { useState } from 'react';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   NavigationMenu,
@@ -10,28 +11,21 @@ import {
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  type CarouselApi,
-} from '@/components/ui/carousel';
-import { useAutoCarousel } from '@/hooks/useAutoCarousel';
+import { useRotatingText } from '@/hooks/useRotatingText';
 import NavbarButton from '@/components/ui/navbar-button';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [api, setApi] = useState<CarouselApi>();
 
-  useAutoCarousel(api, 4000);
-
-  const carouselImages = [
-    "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-    "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-    "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-    "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
-    "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+  const phrases = [
+    "Suporte Técnico Especializado",
+    "Soluções Profissionais em TI",
+    "Atendimento Personalizado 24/7",
+    "Resultados Garantidos",
+    "Sua Tecnologia em Boas Mãos"
   ];
+
+  const currentPhrase = useRotatingText(phrases, 3000);
 
   const handleSupportClick = () => {
     window.open('https://api.whatsapp.com/send/?phone=5521991318034&text&type=phone_number&app_absent=0', '_blank');
@@ -165,45 +159,33 @@ const Header = () => {
         </div>
       </header>
 
-      {/* Carousel Section */}
+      {/* Hero Section with Logo and Rotating Text */}
       <section className="relative bg-gradient-to-r from-slate-900 via-blue-900 to-slate-800 overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>
-        <Carousel 
-          setApi={setApi}
-          className="w-full relative"
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-        >
-          <CarouselContent className="-ml-0">
-            {carouselImages.map((image, index) => (
-              <CarouselItem key={index} className="pl-0">
-                <div className="relative h-80 md:h-96 lg:h-[500px]">
-                  <img
-                    src={image}
-                    alt={`Suporte Técnico ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-slate-900/60 to-transparent"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-white max-w-4xl mx-auto px-4">
-                      <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-                        Suporte Técnico Especializado
-                      </h2>
-                      <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                        Soluções profissionais em TI com atendimento personalizado e resultados garantidos
-                      </p>
-                      <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
-                        Fale Conosco Agora
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+        <div className="relative h-80 md:h-96 lg:h-[500px] flex items-center justify-center">
+          <div className="text-center text-white max-w-4xl mx-auto px-4">
+            <div className="mb-8">
+              <img 
+                src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png" 
+                alt="Help Desk Inova" 
+                className="h-20 md:h-32 w-auto mx-auto mb-6"
+              />
+            </div>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight min-h-[1.2em] transition-all duration-500 ease-in-out">
+              {currentPhrase}
+            </h2>
+            <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Transformamos desafios tecnológicos em soluções eficientes para o seu negócio
+            </p>
+            <Button 
+              onClick={handleSupportClick}
+              size="lg" 
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
+            >
+              Fale Conosco Agora
+            </Button>
+          </div>
+        </div>
       </section>
     </>
   );

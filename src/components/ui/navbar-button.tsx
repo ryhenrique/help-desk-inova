@@ -51,8 +51,8 @@ const NavbarButton: React.FC<NavbarButtonProps> = ({ children, onClick, classNam
         onClick={handleClick}
         className={`
           navbar-button relative px-5 py-2.5 rounded-lg border border-blue-500 text-sm uppercase font-semibold tracking-wider
-          bg-transparent text-white overflow-hidden transition-all duration-200 ease-in
-          hover:bg-blue-500 hover:shadow-[0_0_30px_5px_rgba(0,142,236,0.815)]
+          bg-transparent text-blue-500 overflow-hidden transition-all duration-200 ease-in
+          hover:bg-blue-500 hover:text-white hover:shadow-[0_0_30px_5px_rgba(0,142,236,0.815)]
           active:shadow-none active:transition-[box-shadow] active:duration-200 active:ease-in
           ${className}
         `}
