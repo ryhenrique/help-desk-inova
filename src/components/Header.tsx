@@ -1,4 +1,3 @@
-
 import { useState, useCallback } from 'react';
 import { Menu, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -18,6 +17,7 @@ import {
   type CarouselApi,
 } from '@/components/ui/carousel';
 import { useAutoCarousel } from '@/hooks/useAutoCarousel';
+import NavbarButton from '@/components/ui/navbar-button';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,6 +32,10 @@ const Header = () => {
     "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
     "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
   ];
+
+  const handleSupportClick = () => {
+    window.open('https://api.whatsapp.com/send/?phone=5521991318034&text&type=phone_number&app_absent=0', '_blank');
+  };
 
   return (
     <>
@@ -104,9 +108,9 @@ const Header = () => {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <Button className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-xl transition-all duration-200 font-medium">
+              <NavbarButton onClick={handleSupportClick}>
                 Solicitar Suporte
-              </Button>
+              </NavbarButton>
             </div>
 
             {/* Mobile menu */}
@@ -147,7 +151,10 @@ const Header = () => {
                     Contato
                   </a>
                   <div className="pt-4">
-                    <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
+                    <Button 
+                      onClick={handleSupportClick}
+                      className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white"
+                    >
                       Solicitar Suporte
                     </Button>
                   </div>
