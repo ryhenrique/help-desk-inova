@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Menu, X, Shield, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   NavigationMenu,
@@ -20,14 +20,12 @@ const Header = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-600 to-blue-700 shadow-md">
-              <Shield className="h-5 w-5 text-white" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-bold text-slate-900">Help Desk</span>
-              <span className="text-xs font-medium text-blue-600 tracking-wider">INOVA</span>
-            </div>
+          <div className="flex items-center">
+            <img 
+              src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png" 
+              alt="Help Desk Inova" 
+              className="h-10 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -53,7 +51,6 @@ const Header = () => {
                           className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-blue-50 to-blue-100 p-6 no-underline outline-none focus:shadow-md"
                           href="#services"
                         >
-                          <Shield className="h-6 w-6 text-blue-600" />
                           <div className="mb-2 mt-4 text-lg font-medium text-slate-900">
                             Suporte Premium
                           </div>

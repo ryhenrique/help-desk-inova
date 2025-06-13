@@ -1,5 +1,5 @@
 
-import { Shield, Mail, MessageSquare, Phone, MapPin, ExternalLink, Award } from 'lucide-react';
+import { Mail, MessageSquare, Phone, MapPin, ExternalLink, Award } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 const Footer = () => {
@@ -11,14 +11,12 @@ const Footer = () => {
           
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-8">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg">
-                <Shield className="h-6 w-6 text-white" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold text-white">Help Desk</span>
-                <span className="text-sm font-semibold text-blue-400 tracking-wider">INOVA</span>
-              </div>
+            <div className="flex items-center mb-8">
+              <img 
+                src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png" 
+                alt="Help Desk Inova" 
+                className="h-16 w-auto brightness-0 invert"
+              />
             </div>
             
             <p className="text-slate-300 mb-8 max-w-md leading-relaxed text-lg">
@@ -34,7 +32,7 @@ const Footer = () => {
                 Certificado ISO 27001
               </Badge>
               <Badge variant="secondary" className="bg-slate-800 text-slate-300 border-slate-700 px-3 py-2">
-                <Shield className="w-4 h-4 mr-2" />
+                <Award className="w-4 h-4 mr-2" />
                 LGPD Compliance
               </Badge>
             </div>
