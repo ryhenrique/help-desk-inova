@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -13,6 +12,7 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useRotatingText } from '@/hooks/useRotatingText';
 import NavbarButton from '@/components/ui/navbar-button';
+import CustomCtaButton from '@/components/ui/custom-cta-button';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -180,13 +180,9 @@ const Header = () => {
             <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
               Transformamos desafios tecnológicos em soluções eficientes para o seu negócio
             </p>
-            <Button 
-              onClick={handleSupportClick}
-              size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg shadow-lg hover:shadow-xl transition-all duration-200"
-            >
+            <CustomCtaButton onClick={handleSupportClick}>
               Fale Conosco Agora
-            </Button>
+            </CustomCtaButton>
           </div>
         </div>
       </section>
