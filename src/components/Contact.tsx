@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
@@ -32,7 +33,7 @@ const Contact = () => {
     
     toast({
       title: "Mensagem enviada com sucesso!",
-      description: "Entraremos em contato em breve. Obrigado!",
+      description: "Nossa equipe entrará em contato em breve. Obrigado!",
     });
     
     // Resetar formulário
@@ -45,91 +46,92 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
             Entre em Contato
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Precisa de ajuda? Envie sua dúvida e nossa equipe entrará em contato 
-            o mais rápido possível.
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Precisa de suporte técnico? Entre em contato conosco e nossa equipe especializada 
+            oferecerá a solução mais adequada para suas necessidades.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Informações de Contato */}
           <div className="lg:col-span-1">
             <div className="space-y-6">
-              <Card className="border-0 shadow-md">
-                <CardHeader>
-                  <div className="flex items-center space-x-3">
-                    <div className="bg-blue-100 p-2 rounded-lg">
-                      <Mail className="h-5 w-5 text-blue-600" />
+              <Card className="border border-gray-200">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-slate-100 p-3 rounded-lg">
+                      <Mail className="h-6 w-6 text-slate-700" />
                     </div>
                     <div>
-                      <CardTitle className="text-lg">E-mail</CardTitle>
-                      <CardDescription>suporte@helpdeskìnova.com</CardDescription>
+                      <CardTitle className="text-lg text-slate-900">E-mail</CardTitle>
+                      <CardDescription className="text-slate-600">suporte@helpdeskìnova.com</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
               </Card>
 
-              <Card className="border-0 shadow-md">
-                <CardHeader>
-                  <div className="flex items-center space-x-3">
-                    <div className="bg-green-100 p-2 rounded-lg">
-                      <MessageSquare className="h-5 w-5 text-green-600" />
+              <Card className="border border-gray-200">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-green-100 p-3 rounded-lg">
+                      <MessageSquare className="h-6 w-6 text-green-700" />
                     </div>
                     <div>
-                      <CardTitle className="text-lg">WhatsApp</CardTitle>
-                      <CardDescription>+55 (11) 99999-9999</CardDescription>
+                      <CardTitle className="text-lg text-slate-900">WhatsApp</CardTitle>
+                      <CardDescription className="text-slate-600">+55 (11) 99999-9999</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
               </Card>
 
-              <Card className="border-0 shadow-md">
-                <CardHeader>
-                  <div className="flex items-center space-x-3">
-                    <div className="bg-blue-100 p-2 rounded-lg">
-                      <Phone className="h-5 w-5 text-blue-600" />
+              <Card className="border border-gray-200">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-blue-100 p-3 rounded-lg">
+                      <Phone className="h-6 w-6 text-blue-700" />
                     </div>
                     <div>
-                      <CardTitle className="text-lg">Telegram</CardTitle>
-                      <CardDescription>@helpdeskìnova</CardDescription>
+                      <CardTitle className="text-lg text-slate-900">Telegram</CardTitle>
+                      <CardDescription className="text-slate-600">@helpdeskìnova</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
               </Card>
 
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <h3 className="font-semibold text-gray-900 mb-2">Horário de Atendimento</h3>
-                <p className="text-gray-600 text-sm">
-                  Segunda a Sexta: 8h às 18h<br />
-                  Sábado: 9h às 14h<br />
-                  Domingo: Fechado
-                </p>
+              <div className="bg-slate-50 p-6 rounded-lg border border-gray-200">
+                <h3 className="font-semibold text-slate-900 mb-3">Horário de Atendimento</h3>
+                <div className="space-y-1 text-sm text-slate-600">
+                  <p>Segunda a Sexta: 8h às 18h</p>
+                  <p>Sábado: 9h às 14h</p>
+                  <p>Domingo: Fechado</p>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Formulário de Contato */}
           <div className="lg:col-span-2">
-            <Card className="border-0 shadow-md">
+            <Card className="border border-gray-200">
               <CardHeader>
-                <CardTitle className="text-2xl">Envie sua Mensagem</CardTitle>
-                <CardDescription>
-                  Preencha o formulário abaixo e entraremos em contato em breve.
+                <CardTitle className="text-2xl text-slate-900">Envie sua Mensagem</CardTitle>
+                <CardDescription className="text-slate-600">
+                  Preencha o formulário abaixo com detalhes sobre sua necessidade de suporte.
+                  Nossa equipe responderá em breve.
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-6">
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="name" className="text-slate-700 font-medium">
                         Nome Completo
-                      </label>
+                      </Label>
                       <Input
                         id="name"
                         name="name"
@@ -138,12 +140,13 @@ const Contact = () => {
                         onChange={handleInputChange}
                         required
                         placeholder="Seu nome completo"
+                        className="border-gray-300 focus:border-slate-500"
                       />
                     </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    <div className="space-y-2">
+                      <Label htmlFor="email" className="text-slate-700 font-medium">
                         E-mail
-                      </label>
+                      </Label>
                       <Input
                         id="email"
                         name="email"
@@ -152,14 +155,15 @@ const Contact = () => {
                         onChange={handleInputChange}
                         required
                         placeholder="seu@email.com"
+                        className="border-gray-300 focus:border-slate-500"
                       />
                     </div>
                   </div>
                   
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="subject" className="text-slate-700 font-medium">
                       Assunto
-                    </label>
+                    </Label>
                     <Input
                       id="subject"
                       name="subject"
@@ -167,14 +171,15 @@ const Contact = () => {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      placeholder="Descreva brevemente o problema"
+                      placeholder="Descreva brevemente o problema ou dúvida"
+                      className="border-gray-300 focus:border-slate-500"
                     />
                   </div>
                   
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="message" className="text-slate-700 font-medium">
                       Mensagem
-                    </label>
+                    </Label>
                     <Textarea
                       id="message"
                       name="message"
@@ -182,11 +187,12 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       rows={6}
-                      placeholder="Descreva detalhadamente sua dúvida ou problema..."
+                      placeholder="Descreva detalhadamente sua dúvida ou problema técnico..."
+                      className="border-gray-300 focus:border-slate-500 resize-none"
                     />
                   </div>
                   
-                  <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-lg py-3">
+                  <Button type="submit" className="w-full bg-slate-700 hover:bg-slate-800 text-white py-3 text-lg">
                     <Send className="w-5 h-5 mr-2" />
                     Enviar Mensagem
                   </Button>

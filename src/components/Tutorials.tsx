@@ -2,6 +2,7 @@
 import { Play, BookOpen, Download, Clock } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 const Tutorials = () => {
   const tutorials = [
@@ -61,31 +62,31 @@ const Tutorials = () => {
     }
   ];
 
-  const getDifficultyColor = (difficulty: string) => {
+  const getDifficultyVariant = (difficulty: string) => {
     switch (difficulty) {
-      case "Iniciante": return "bg-green-100 text-green-800";
-      case "Intermediário": return "bg-yellow-100 text-yellow-800";
-      case "Avançado": return "bg-red-100 text-red-800";
-      default: return "bg-gray-100 text-gray-800";
+      case "Iniciante": return "default";
+      case "Intermediário": return "secondary";
+      case "Avançado": return "destructive";
+      default: return "outline";
     }
   };
 
   return (
-    <section id="tutorials" className="py-20 bg-gray-50">
+    <section id="tutorials" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
             Tutoriais e Guias
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Aprenda no seu próprio ritmo com nossos tutoriais em texto e vídeo,
-            cobrindo desde o básico até temas mais avançados.
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            Aprenda no seu próprio ritmo com nossos tutoriais profissionais em texto e vídeo,
+            cobrindo desde conceitos básicos até temas avançados.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {tutorials.map((tutorial, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
+            <Card key={index} className="overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-200 bg-white">
               <div className="relative">
                 <img 
                   src={tutorial.thumbnail} 
@@ -93,7 +94,7 @@ const Tutorials = () => {
                   className="w-full h-48 object-cover"
                 />
                 <div className="absolute top-4 left-4">
-                  <Badge variant="secondary" className="bg-white/90 text-gray-900">
+                  <Badge variant="secondary" className="bg-white/95 text-slate-700 border-0">
                     {tutorial.type === "video" ? (
                       <Play className="w-3 h-3 mr-1" />
                     ) : (
@@ -103,37 +104,37 @@ const Tutorials = () => {
                   </Badge>
                 </div>
                 <div className="absolute top-4 right-4">
-                  <Badge variant="secondary" className="bg-white/90 text-gray-900">
+                  <Badge variant="secondary" className="bg-white/95 text-slate-700 border-0">
                     <Clock className="w-3 h-3 mr-1" />
                     {tutorial.duration}
                   </Badge>
                 </div>
               </div>
               
-              <CardHeader>
-                <div className="flex justify-between items-start mb-2">
-                  <Badge variant="outline" className="text-xs">
+              <CardHeader className="pb-4">
+                <div className="flex justify-between items-start mb-3">
+                  <Badge variant="outline" className="text-xs border-slate-200 text-slate-600">
                     {tutorial.category}
                   </Badge>
-                  <Badge className={`text-xs ${getDifficultyColor(tutorial.difficulty)}`}>
+                  <Badge variant={getDifficultyVariant(tutorial.difficulty)} className="text-xs">
                     {tutorial.difficulty}
                   </Badge>
                 </div>
-                <CardTitle className="text-lg">{tutorial.title}</CardTitle>
-                <CardDescription>
+                <CardTitle className="text-lg text-slate-900">{tutorial.title}</CardTitle>
+                <CardDescription className="text-slate-600 leading-relaxed">
                   {tutorial.description}
                 </CardDescription>
               </CardHeader>
               
               <CardContent>
-                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition-colors duration-200 flex items-center justify-center">
+                <Button className="w-full bg-slate-700 hover:bg-slate-800 text-white">
                   {tutorial.type === "video" ? (
                     <Play className="w-4 h-4 mr-2" />
                   ) : (
                     <Download className="w-4 h-4 mr-2" />
                   )}
-                  {tutorial.type === "video" ? "Assistir" : "Ler Tutorial"}
-                </button>
+                  {tutorial.type === "video" ? "Assistir Tutorial" : "Ler Tutorial"}
+                </Button>
               </CardContent>
             </Card>
           ))}
