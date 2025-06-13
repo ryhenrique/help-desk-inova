@@ -115,6 +115,7 @@ const Services = () => {
                 <Button 
                   variant="ghost" 
                   className="w-full group/button hover:bg-slate-50 text-slate-700 hover:text-blue-600 font-medium"
+                  onClick={() => window.open('https://api.whatsapp.com/send/?phone=5521991318034&text&type=phone_number&app_absent=0', '_blank')}
                 >
                   Saiba Mais
                   <ArrowRight className="ml-2 h-4 w-4 group-hover/button:translate-x-1 transition-transform" />
@@ -133,7 +134,12 @@ const Services = () => {
             <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
               Oferecemos serviços de alta qualidade e equipamentos de ponta, adaptados para atender às necessidades de qualquer tipo de empresa.
             </p>
-            <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-slate-50 font-medium px-8 py-3">
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="bg-white text-blue-600 hover:bg-slate-50 font-medium px-8 py-3"
+              onClick={() => window.open('https://api.whatsapp.com/send/?phone=5521991318034&text&type=phone_number&app_absent=0', '_blank')}
+            >
               Fale com os nossos especialistas
             </Button>
           </div>

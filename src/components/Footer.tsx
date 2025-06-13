@@ -35,7 +35,7 @@ const Footer = () => {
                 <Mail className="h-5 w-5 text-slate-300 group-hover:text-white transition-colors" />
               </a>
               <a 
-                href="https://wa.me/5511999999999" 
+                href="https://api.whatsapp.com/send/?phone=5521991318034&text&type=phone_number&app_absent=0" 
                 className="group flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800 hover:bg-emerald-600 transition-all duration-300 shadow-lg hover:shadow-xl"
                 aria-label="WhatsApp"
               >
@@ -130,7 +130,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-semibold text-white">Suporte Especializado</p>
-                <p className="text-slate-400">+55 (11) 99999-9999</p>
+                <p className="text-slate-400">+55 (21) 99131-8034</p>
               </div>
             </div>
             

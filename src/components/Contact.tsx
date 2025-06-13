@@ -92,7 +92,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <CardTitle className="text-lg text-slate-900 font-bold">WhatsApp Business</CardTitle>
-                      <CardDescription className="text-slate-600 font-medium">+55 (11) 99999-9999</CardDescription>
+                      <CardDescription className="text-slate-600 font-medium">+55 (21) 99131-8034</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
