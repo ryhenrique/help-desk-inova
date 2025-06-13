@@ -59,20 +59,41 @@ const Services = () => {
   return (
     <>
       <style>{`
-        .container {
+        .service-card-container {
           position: relative;
-          width: 300px;
+          width: 100%;
+          max-width: 350px;
           height: 400px;
-          transition: 200ms;
           margin: 0 auto;
+          transition: all 200ms ease;
         }
 
-        .container:active {
-          width: 290px;
-          height: 385px;
+        @media (max-width: 1024px) {
+          .service-card-container {
+            max-width: 320px;
+            height: 380px;
+          }
         }
 
-        #card {
+        @media (max-width: 768px) {
+          .service-card-container {
+            max-width: 300px;
+            height: 360px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .service-card-container {
+            max-width: 280px;
+            height: 340px;
+          }
+        }
+
+        .service-card-container:active {
+          transform: scale(0.98);
+        }
+
+        .service-card {
           position: absolute;
           inset: 0;
           z-index: 0;
@@ -90,123 +111,116 @@ const Services = () => {
             inset 0 0 20px rgba(0, 0, 0, 0.2);
         }
 
-        .card-content {
+        .service-card-content {
           position: relative;
           width: 100%;
           height: 100%;
-          padding: 20px;
+          padding: 1.5rem;
           display: flex;
           flex-direction: column;
           z-index: 10;
         }
 
-        #prompt {
-          bottom: 30px;
+        @media (max-width: 768px) {
+          .service-card-content {
+            padding: 1.25rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .service-card-content {
+            padding: 1rem;
+          }
+        }
+
+        .service-card-prompt {
+          position: absolute;
+          bottom: 2rem;
           left: 50%;
           transform: translateX(-50%);
           z-index: 20;
-          font-size: 12px;
+          font-size: 0.75rem;
           font-weight: 600;
           letter-spacing: 1px;
           transition: 300ms ease-in-out;
-          position: absolute;
           text-align: center;
           color: rgba(255, 255, 255, 0.7);
           text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+          opacity: 1;
         }
 
-        .title {
+        @media (max-width: 480px) {
+          .service-card-prompt {
+            font-size: 0.7rem;
+            bottom: 1.5rem;
+          }
+        }
+
+        .service-card-title {
           opacity: 0;
           transition: 300ms ease-in-out;
           position: absolute;
-          font-size: 18px;
+          font-size: 1.25rem;
           font-weight: 800;
-          letter-spacing: 2px;
+          letter-spacing: 1px;
           text-align: center;
           width: 100%;
-          padding-top: 20px;
+          padding-top: 1.5rem;
           background: linear-gradient(45deg, #00ffaa, #00a2ff);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           filter: drop-shadow(0 0 15px rgba(0, 255, 170, 0.3));
-          text-shadow:
-            0 0 10px rgba(92, 103, 255, 0.5),
-            0 0 20px rgba(92, 103, 255, 0.3);
           line-height: 1.2;
           z-index: 15;
         }
 
-        .subtitle {
+        @media (max-width: 768px) {
+          .service-card-title {
+            font-size: 1.1rem;
+            padding-top: 1.25rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .service-card-title {
+            font-size: 1rem;
+            padding-top: 1rem;
+          }
+        }
+
+        .service-card-description {
           position: absolute;
-          bottom: 120px;
+          bottom: 8rem;
           width: 100%;
           text-align: center;
-          font-size: 11px;
-          letter-spacing: 1px;
+          font-size: 0.8rem;
+          letter-spacing: 0.5px;
           transform: translateY(30px);
           color: rgba(255, 255, 255, 0.6);
-          padding: 0 10px;
+          padding: 0 1rem;
           line-height: 1.4;
           z-index: 15;
-        }
-
-        .highlight {
-          color: #00ffaa;
-          margin-left: 5px;
-          background: linear-gradient(90deg, #5c67ff, #ad51ff);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          font-weight: bold;
-        }
-
-        .glowing-elements {
-          position: absolute;
-          inset: 0;
-          pointer-events: none;
-        }
-
-        .glow-1,
-        .glow-2,
-        .glow-3 {
-          position: absolute;
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
-          background: radial-gradient(
-            circle at center,
-            rgba(0, 255, 170, 0.3) 0%,
-            rgba(0, 255, 170, 0) 70%
-          );
-          filter: blur(15px);
           opacity: 0;
-          transition: opacity 0.3s ease;
+          transition: all 300ms ease-in-out;
         }
 
-        .glow-1 {
-          top: -20px;
-          left: -20px;
-        }
-        .glow-2 {
-          top: 50%;
-          right: -30px;
-          transform: translateY(-50%);
-        }
-        .glow-3 {
-          bottom: -20px;
-          left: 30%;
+        @media (max-width: 768px) {
+          .service-card-description {
+            font-size: 0.75rem;
+            bottom: 7rem;
+            padding: 0 0.75rem;
+          }
         }
 
-        .card-particles span {
-          position: absolute;
-          width: 3px;
-          height: 3px;
-          background: #00ffaa;
-          border-radius: 50%;
-          opacity: 0;
-          transition: opacity 0.3s ease;
+        @media (max-width: 480px) {
+          .service-card-description {
+            font-size: 0.7rem;
+            bottom: 6rem;
+            padding: 0 0.5rem;
+          }
         }
 
-        .card-icon {
+        .service-card-icon {
           display: inline-flex;
           align-items: center;
           justify-content: center;
@@ -220,10 +234,17 @@ const Services = () => {
           position: relative;
         }
 
-        .card-badge {
+        @media (max-width: 480px) {
+          .service-card-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+          }
+        }
+
+        .service-card-badge {
           position: absolute;
-          top: 15px;
-          right: 15px;
+          top: 1rem;
+          right: 1rem;
           background: rgba(0, 255, 170, 0.1);
           color: #00ffaa;
           padding: 0.25rem 0.75rem;
@@ -234,22 +255,37 @@ const Services = () => {
           border: 1px solid rgba(0, 255, 170, 0.2);
         }
 
-        .card-features {
+        @media (max-width: 480px) {
+          .service-card-badge {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+          }
+        }
+
+        .service-card-features {
           margin-top: auto;
           margin-bottom: 1rem;
           z-index: 10;
           position: relative;
+          opacity: 0;
+          transition: all 300ms ease-in-out;
         }
 
-        .card-feature {
+        .service-card-feature {
           display: flex;
           align-items: center;
           color: rgba(255, 255, 255, 0.7);
-          font-size: 0.85rem;
+          font-size: 0.8rem;
           margin-bottom: 0.5rem;
         }
 
-        .card-feature-dot {
+        @media (max-width: 480px) {
+          .service-card-feature {
+            font-size: 0.75rem;
+          }
+        }
+
+        .service-card-feature-dot {
           width: 0.5rem;
           height: 0.5rem;
           border-radius: 50%;
@@ -258,7 +294,7 @@ const Services = () => {
           flex-shrink: 0;
         }
 
-        .card-button {
+        .service-card-button {
           background: rgba(0, 255, 170, 0.1);
           color: #00ffaa;
           border: 1px solid rgba(0, 255, 170, 0.2);
@@ -274,81 +310,78 @@ const Services = () => {
           gap: 0.5rem;
           z-index: 10;
           position: relative;
+          opacity: 0;
         }
 
-        .card-button:hover {
+        @media (max-width: 480px) {
+          .service-card-button {
+            font-size: 0.8rem;
+            padding: 0.6rem 0.8rem;
+          }
+        }
+
+        .service-card-button:hover {
           background: rgba(0, 255, 170, 0.2);
           border-color: rgba(0, 255, 170, 0.4);
           transform: translateY(-1px);
         }
 
-        /* Hover effects */
-        .canvas:hover ~ #card .title {
-          opacity: 1;
-          transform: translateY(-10px);
+        .service-card-glowing-elements {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
         }
 
-        .canvas:hover ~ #card .glowing-elements div {
-          opacity: 1;
+        .service-card-glow-1,
+        .service-card-glow-2,
+        .service-card-glow-3 {
+          position: absolute;
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          background: radial-gradient(
+            circle at center,
+            rgba(0, 255, 170, 0.3) 0%,
+            rgba(0, 255, 170, 0) 70%
+          );
+          filter: blur(15px);
+          opacity: 0;
+          transition: opacity 0.3s ease;
         }
 
-        .canvas:hover ~ #card .card-particles span {
-          animation: particleFloat 2s infinite;
+        .service-card-glow-1 {
+          top: -20px;
+          left: -20px;
+        }
+        .service-card-glow-2 {
+          top: 50%;
+          right: -30px;
+          transform: translateY(-50%);
+        }
+        .service-card-glow-3 {
+          bottom: -20px;
+          left: 30%;
         }
 
-        @keyframes particleFloat {
-          0% {
-            transform: translate(0, 0);
-            opacity: 0;
-          }
-          50% {
-            opacity: 1;
-          }
-          100% {
-            transform: translate(calc(var(--x, 0) * 30px), calc(var(--y, 0) * 30px));
-            opacity: 0;
-          }
+        .service-card-particles span {
+          position: absolute;
+          width: 3px;
+          height: 3px;
+          background: #00ffaa;
+          border-radius: 50%;
+          opacity: 0;
+          transition: opacity 0.3s ease;
         }
 
-        /* Particle positions */
-        .card-particles span:nth-child(1) {
-          --x: 1;
-          --y: -1;
-          top: 40%;
-          left: 20%;
-        }
-        .card-particles span:nth-child(2) {
-          --x: -1;
-          --y: -1;
-          top: 60%;
-          right: 20%;
-        }
-        .card-particles span:nth-child(3) {
-          --x: 0.5;
-          --y: 1;
-          top: 20%;
-          left: 40%;
-        }
-        .card-particles span:nth-child(4) {
-          --x: -0.5;
-          --y: 1;
-          top: 80%;
-          right: 40%;
-        }
-        .card-particles span:nth-child(5) {
-          --x: 1;
-          --y: 0.5;
-          top: 30%;
-          left: 60%;
-        }
-        .card-particles span:nth-child(6) {
-          --x: -1;
-          --y: 0.5;
-          top: 70%;
-          right: 60%;
+        .service-card-tracker {
+          position: absolute;
+          z-index: 200;
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
         }
 
-        #card::before {
+        .service-card::before {
           content: "";
           background: radial-gradient(
             circle at center,
@@ -367,93 +400,96 @@ const Services = () => {
           transition: opacity 0.3s ease;
         }
 
-        .canvas:hover ~ #card::before {
+        /* Hover effects */
+        .service-card-container:hover .service-card-title {
+          opacity: 1;
+          transform: translateY(-10px);
+        }
+
+        .service-card-container:hover .service-card-description {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .service-card-container:hover .service-card-features {
           opacity: 1;
         }
 
-        .canvas:hover ~ #card #prompt {
+        .service-card-container:hover .service-card-button {
+          opacity: 1;
+        }
+
+        .service-card-container:hover .service-card-prompt {
           opacity: 0;
         }
 
-        .canvas:hover ~ #card {
-          transition: 300ms;
+        .service-card-container:hover .service-card::before {
+          opacity: 1;
+        }
+
+        .service-card-container:hover .service-card {
           filter: brightness(1.1);
         }
 
-        .container:hover #card::before {
-          transition: 200ms;
-          content: "";
-          opacity: 80%;
+        .service-card-container:hover .service-card-glowing-elements div {
+          opacity: 1;
         }
 
-        .canvas {
-          perspective: 800px;
-          inset: 0;
-          z-index: 200;
-          position: absolute;
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-          grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-          gap: 0px 0px;
-          grid-template-areas:
-            "tr-1 tr-2 tr-3 tr-4 tr-5"
-            "tr-6 tr-7 tr-8 tr-9 tr-10"
-            "tr-11 tr-12 tr-13 tr-14 tr-15"
-            "tr-16 tr-17 tr-18 tr-19 tr-20"
-            "tr-21 tr-22 tr-23 tr-24 tr-25";
+        .service-card-container:hover .service-card-particles span {
+          animation: particleFloat 2s infinite;
         }
 
-        .tr-1 { grid-area: tr-1; }
-        .tr-2 { grid-area: tr-2; }
-        .tr-3 { grid-area: tr-3; }
-        .tr-4 { grid-area: tr-4; }
-        .tr-5 { grid-area: tr-5; }
-        .tr-6 { grid-area: tr-6; }
-        .tr-7 { grid-area: tr-7; }
-        .tr-8 { grid-area: tr-8; }
-        .tr-9 { grid-area: tr-9; }
-        .tr-10 { grid-area: tr-10; }
-        .tr-11 { grid-area: tr-11; }
-        .tr-12 { grid-area: tr-12; }
-        .tr-13 { grid-area: tr-13; }
-        .tr-14 { grid-area: tr-14; }
-        .tr-15 { grid-area: tr-15; }
-        .tr-16 { grid-area: tr-16; }
-        .tr-17 { grid-area: tr-17; }
-        .tr-18 { grid-area: tr-18; }
-        .tr-19 { grid-area: tr-19; }
-        .tr-20 { grid-area: tr-20; }
-        .tr-21 { grid-area: tr-21; }
-        .tr-22 { grid-area: tr-22; }
-        .tr-23 { grid-area: tr-23; }
-        .tr-24 { grid-area: tr-24; }
-        .tr-25 { grid-area: tr-25; }
+        @keyframes particleFloat {
+          0% {
+            transform: translate(0, 0);
+            opacity: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            transform: translate(calc(var(--x, 0) * 30px), calc(var(--y, 0) * 30px));
+            opacity: 0;
+          }
+        }
 
-        .tr-1:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(20deg) rotateY(-10deg) rotateZ(0deg); }
-        .tr-2:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(20deg) rotateY(-5deg) rotateZ(0deg); }
-        .tr-3:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(20deg) rotateY(0deg) rotateZ(0deg); }
-        .tr-4:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(20deg) rotateY(5deg) rotateZ(0deg); }
-        .tr-5:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(20deg) rotateY(10deg) rotateZ(0deg); }
-        .tr-6:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(10deg) rotateY(-10deg) rotateZ(0deg); }
-        .tr-7:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(10deg) rotateY(-5deg) rotateZ(0deg); }
-        .tr-8:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg); }
-        .tr-9:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(10deg) rotateY(5deg) rotateZ(0deg); }
-        .tr-10:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(10deg) rotateY(10deg) rotateZ(0deg); }
-        .tr-11:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(0deg) rotateY(-10deg) rotateZ(0deg); }
-        .tr-12:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(0deg) rotateY(-5deg) rotateZ(0deg); }
-        .tr-13:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-        .tr-14:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(0deg) rotateY(5deg) rotateZ(0deg); }
-        .tr-15:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(0deg) rotateY(10deg) rotateZ(0deg); }
-        .tr-16:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(-10deg) rotateY(-10deg) rotateZ(0deg); }
-        .tr-17:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(-10deg) rotateY(-5deg) rotateZ(0deg); }
-        .tr-18:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(-10deg) rotateY(0deg) rotateZ(0deg); }
-        .tr-19:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(-10deg) rotateY(5deg) rotateZ(0deg); }
-        .tr-20:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(-10deg) rotateY(10deg) rotateZ(0deg); }
-        .tr-21:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(-20deg) rotateY(-10deg) rotateZ(0deg); }
-        .tr-22:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(-20deg) rotateY(-5deg) rotateZ(0deg); }
-        .tr-23:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg); }
-        .tr-24:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(-20deg) rotateY(5deg) rotateZ(0deg); }
-        .tr-25:hover ~ #card { transition: 125ms ease-in-out; transform: rotateX(-20deg) rotateY(10deg) rotateZ(0deg); }
+        /* Particle positions */
+        .service-card-particles span:nth-child(1) {
+          --x: 1;
+          --y: -1;
+          top: 40%;
+          left: 20%;
+        }
+        .service-card-particles span:nth-child(2) {
+          --x: -1;
+          --y: -1;
+          top: 60%;
+          right: 20%;
+        }
+        .service-card-particles span:nth-child(3) {
+          --x: 0.5;
+          --y: 1;
+          top: 20%;
+          left: 40%;
+        }
+        .service-card-particles span:nth-child(4) {
+          --x: -0.5;
+          --y: 1;
+          top: 80%;
+          right: 40%;
+        }
+        .service-card-particles span:nth-child(5) {
+          --x: 1;
+          --y: 0.5;
+          top: 30%;
+          left: 60%;
+        }
+        .service-card-particles span:nth-child(6) {
+          --x: -1;
+          --y: 0.5;
+          top: 70%;
+          right: 60%;
+        }
 
         .noselect {
           -webkit-touch-callout: none;
@@ -461,165 +497,6 @@ const Services = () => {
           -moz-user-select: none;
           -ms-user-select: none;
           user-select: none;
-        }
-
-        .card-glare {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(
-            125deg,
-            rgba(255, 255, 255, 0) 0%,
-            rgba(255, 255, 255, 0.05) 45%,
-            rgba(255, 255, 255, 0.1) 50%,
-            rgba(255, 255, 255, 0.05) 55%,
-            rgba(255, 255, 255, 0) 100%
-          );
-          opacity: 0;
-          transition: opacity 300ms;
-        }
-
-        .cyber-lines span {
-          position: absolute;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(0, 255, 170, 0.2),
-            transparent
-          );
-        }
-
-        .cyber-lines span:nth-child(1) {
-          top: 20%;
-          left: 0;
-          width: 100%;
-          height: 1px;
-          transform: scaleX(0);
-          transform-origin: left;
-          animation: lineGrow 3s linear infinite;
-        }
-
-        .cyber-lines span:nth-child(2) {
-          top: 40%;
-          right: 0;
-          width: 100%;
-          height: 1px;
-          transform: scaleX(0);
-          transform-origin: right;
-          animation: lineGrow 3s linear infinite 1s;
-        }
-
-        .cyber-lines span:nth-child(3) {
-          top: 60%;
-          left: 0;
-          width: 100%;
-          height: 1px;
-          transform: scaleX(0);
-          transform-origin: left;
-          animation: lineGrow 3s linear infinite 2s;
-        }
-
-        .cyber-lines span:nth-child(4) {
-          top: 80%;
-          right: 0;
-          width: 100%;
-          height: 1px;
-          transform: scaleX(0);
-          transform-origin: right;
-          animation: lineGrow 3s linear infinite 1.5s;
-        }
-
-        .corner-elements span {
-          position: absolute;
-          width: 15px;
-          height: 15px;
-          border: 2px solid rgba(0, 255, 170, 0.3);
-          transition: all 0.3s ease;
-        }
-
-        .corner-elements span:nth-child(1) {
-          top: 10px;
-          left: 10px;
-          border-right: 0;
-          border-bottom: 0;
-        }
-
-        .corner-elements span:nth-child(2) {
-          top: 10px;
-          right: 10px;
-          border-left: 0;
-          border-bottom: 0;
-        }
-
-        .corner-elements span:nth-child(3) {
-          bottom: 10px;
-          left: 10px;
-          border-right: 0;
-          border-top: 0;
-        }
-
-        .corner-elements span:nth-child(4) {
-          bottom: 10px;
-          right: 10px;
-          border-left: 0;
-          border-top: 0;
-        }
-
-        .scan-line {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(
-            to bottom,
-            transparent,
-            rgba(0, 255, 170, 0.1),
-            transparent
-          );
-          transform: translateY(-100%);
-          animation: scanMove 2s linear infinite;
-        }
-
-        @keyframes lineGrow {
-          0% {
-            transform: scaleX(0);
-            opacity: 0;
-          }
-          50% {
-            transform: scaleX(1);
-            opacity: 1;
-          }
-          100% {
-            transform: scaleX(0);
-            opacity: 0;
-          }
-        }
-
-        @keyframes scanMove {
-          0% {
-            transform: translateY(-100%);
-          }
-          100% {
-            transform: translateY(100%);
-          }
-        }
-
-        #card:hover .card-glare {
-          opacity: 1;
-        }
-
-        #card:hover .corner-elements span {
-          border-color: rgba(0, 255, 170, 0.8);
-          box-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
-        }
-
-        @media (max-width: 768px) {
-          .container {
-            width: 280px;
-            height: 380px;
-          }
-          
-          .container:active {
-            width: 270px;
-            height: 365px;
-          }
         }
       `}</style>
 
@@ -643,61 +520,17 @@ const Services = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="container noselect">
-                <div className="canvas">
-                  <div className="tr-1"></div>
-                  <div className="tr-2"></div>
-                  <div className="tr-3"></div>
-                  <div className="tr-4"></div>
-                  <div className="tr-5"></div>
-                  <div className="tr-6"></div>
-                  <div className="tr-7"></div>
-                  <div className="tr-8"></div>
-                  <div className="tr-9"></div>
-                  <div className="tr-10"></div>
-                  <div className="tr-11"></div>
-                  <div className="tr-12"></div>
-                  <div className="tr-13"></div>
-                  <div className="tr-14"></div>
-                  <div className="tr-15"></div>
-                  <div className="tr-16"></div>
-                  <div className="tr-17"></div>
-                  <div className="tr-18"></div>
-                  <div className="tr-19"></div>
-                  <div className="tr-20"></div>
-                  <div className="tr-21"></div>
-                  <div className="tr-22"></div>
-                  <div className="tr-23"></div>
-                  <div className="tr-24"></div>
-                  <div className="tr-25"></div>
-                </div>
+              <div key={index} className="service-card-container noselect">
+                <div className="service-card-tracker"></div>
                 
-                <div id="card">
-                  <div className="card-glare"></div>
-                  
-                  <div className="cyber-lines">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div className="service-card">
+                  <div className="service-card-glowing-elements">
+                    <div className="service-card-glow-1"></div>
+                    <div className="service-card-glow-2"></div>
+                    <div className="service-card-glow-3"></div>
                   </div>
                   
-                  <div className="corner-elements">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  
-                  <div className="scan-line"></div>
-                  
-                  <div className="glowing-elements">
-                    <div className="glow-1"></div>
-                    <div className="glow-2"></div>
-                    <div className="glow-3"></div>
-                  </div>
-                  
-                  <div className="card-particles">
+                  <div className="service-card-particles">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -706,34 +539,34 @@ const Services = () => {
                     <span></span>
                   </div>
                   
-                  <div className="card-badge">
+                  <div className="service-card-badge">
                     {service.badge}
                   </div>
                   
-                  <div className="card-content">
-                    <div className="card-icon">
+                  <div className="service-card-content">
+                    <div className="service-card-icon">
                       {service.icon}
                     </div>
                     
-                    <h3 className="title">
+                    <h3 className="service-card-title">
                       {service.title}
                     </h3>
                     
-                    <p className="subtitle">
+                    <p className="service-card-description">
                       {service.description}
                     </p>
                     
-                    <div className="card-features">
+                    <div className="service-card-features">
                       {service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="card-feature">
-                          <div className="card-feature-dot"></div>
+                        <div key={featureIndex} className="service-card-feature">
+                          <div className="service-card-feature-dot"></div>
                           <span>{feature}</span>
                         </div>
                       ))}
                     </div>
                     
                     <button 
-                      className="card-button"
+                      className="service-card-button"
                       onClick={() => window.open('https://api.whatsapp.com/send/?phone=5521991318034&text&type=phone_number&app_absent=0', '_blank')}
                     >
                       Saiba Mais
@@ -741,7 +574,7 @@ const Services = () => {
                     </button>
                   </div>
                   
-                  <div id="prompt">Explore nossos serviços</div>
+                  <div className="service-card-prompt">Explore nossos serviços</div>
                 </div>
               </div>
             ))}
