@@ -160,27 +160,30 @@ const Header = () => {
       </header>
 
       {/* Hero Section with Logo and Rotating Text */}
-      <section className="relative bg-gradient-to-r from-slate-900 via-blue-900 to-slate-800 overflow-hidden">
-        <div className="absolute inset-0 bg-black/30"></div>
+      <section className="relative bg-gradient-to-br from-slate-50 to-blue-50 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-slate-600/5"></div>
+        <div className="absolute inset-0 opacity-30">
+          <div className="h-full w-full bg-[radial-gradient(circle_at_50%_120%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+        </div>
         <div className="relative h-80 md:h-96 lg:h-[500px] flex items-center justify-center">
-          <div className="text-center text-white max-w-4xl mx-auto px-4">
+          <div className="text-center max-w-4xl mx-auto px-4">
             <div className="mb-8">
               <img 
                 src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png" 
                 alt="Help Desk Inova" 
-                className="h-20 md:h-32 w-auto mx-auto mb-6"
+                className="h-20 md:h-32 w-auto mx-auto mb-6 drop-shadow-lg"
               />
             </div>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight min-h-[1.2em] transition-all duration-500 ease-in-out">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight min-h-[1.2em] transition-all duration-500 ease-in-out text-slate-800">
               {currentPhrase}
             </h2>
-            <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto">
               Transformamos desafios tecnológicos em soluções eficientes para o seu negócio
             </p>
             <Button 
               onClick={handleSupportClick}
               size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg shadow-lg hover:shadow-xl transition-all duration-200"
             >
               Fale Conosco Agora
             </Button>
