@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Mail, Phone, MessageSquare, Send, Instagram, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import AnimatedButton from '@/components/ui/animated-button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -44,6 +45,10 @@ const Contact = () => {
       subject: '',
       message: ''
     });
+  };
+
+  const handleWhatsAppClick = () => {
+    window.open('https://api.whatsapp.com/send/?phone=5521991318034&text&type=phone_number&app_absent=0', '_blank');
   };
 
   return (
@@ -206,14 +211,20 @@ const Contact = () => {
                     />
                   </div>
                   
-                  <Button 
-                    type="submit" 
-                    size="lg"
-                    className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group"
-                  >
-                    <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
-                    Enviar Solicitação
-                  </Button>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button 
+                      type="submit" 
+                      size="lg"
+                      className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 group"
+                    >
+                      <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform" />
+                      Enviar Solicitação
+                    </Button>
+                    
+                    <AnimatedButton onClick={handleWhatsAppClick} className="flex-1">
+                      Solicitar Suporte
+                    </AnimatedButton>
+                  </div>
                 </form>
               </CardContent>
             </Card>
