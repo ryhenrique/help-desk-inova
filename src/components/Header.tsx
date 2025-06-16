@@ -118,18 +118,18 @@ const Header = () => {
             
             {/* Left Content */}
             <div className="space-y-8">
-              {/* Main Heading with Typewriter */}
+              {/* Main Heading with Typewriter - Fixed Height Container */}
               <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-slate-900">
-                  <span className="text-blue-600">
+                <div className="min-h-[200px] md:min-h-[240px] lg:min-h-[280px] flex items-center">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-blue-600">
                     <TypewriterText 
                       words={phrases}
                       speed={80}
                       deleteSpeed={40}
                       delayBetweenWords={2500}
                     />
-                  </span>
-                </h1>
+                  </h1>
+                </div>
                 
                 <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-xl">
                   Transformamos desafios tecnológicos em soluções eficientes. 
