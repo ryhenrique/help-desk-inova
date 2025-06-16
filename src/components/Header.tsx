@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Card, CardContent } from '@/components/ui/card';
 import TypewriterText from '@/components/ui/typewriter-text';
 import AnimatedBackground from '@/components/ui/animated-background';
 import SupportButton from '@/components/ui/support-button';
@@ -34,7 +35,7 @@ const Header = () => {
       <AnimatedBackground />
       
       {/* Navigation Header */}
-      <header className="sticky top-0 z-50 w-full bg-white/85 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-600/60">
+      <header className="sticky top-0 z-50 w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-600/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-14 items-center justify-between">
             {/* Logo */}
@@ -127,51 +128,57 @@ const Header = () => {
             
             {/* Left Content */}
             <div className="space-y-8">
-              {/* Main Heading with Typewriter - Fixed Height Container */}
-              <div className="space-y-4">
-                <div className="min-h-[200px] md:min-h-[240px] lg:min-h-[280px] flex items-center">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-blue-600 dark:text-blue-400">
-                    <TypewriterText 
-                      words={phrases}
-                      speed={80}
-                      deleteSpeed={40}
-                      delayBetweenWords={2500}
-                    />
-                  </h1>
-                </div>
-                
-                <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl">
-                  Transformamos desafios tecnológicos em soluções eficientes. 
-                  Nossa equipe especializada oferece suporte completo para sua empresa.
-                </p>
-              </div>
+              <Card className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200/60 dark:border-slate-600/60 shadow-xl">
+                <CardContent className="p-8">
+                  {/* Main Heading with Typewriter - Fixed Height Container */}
+                  <div className="space-y-4">
+                    <div className="min-h-[200px] md:min-h-[240px] lg:min-h-[280px] flex items-center">
+                      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-blue-600 dark:text-blue-400">
+                        <TypewriterText 
+                          words={phrases}
+                          speed={80}
+                          deleteSpeed={40}
+                          delayBetweenWords={2500}
+                        />
+                      </h1>
+                    </div>
+                    
+                    <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl">
+                      Transformamos desafios tecnológicos em soluções eficientes. 
+                      Nossa equipe especializada oferece suporte completo para sua empresa.
+                    </p>
+                  </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <SupportButton onClick={handleSupportClick}>
-                  Fale Conosco
-                </SupportButton>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-2 border-slate-300 dark:border-slate-500 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 px-6 py-3 font-medium rounded-lg transition-all duration-200"
-                >
-                  Explorar Serviços
-                </Button>
-              </div>
+                  {/* CTA Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                    <SupportButton onClick={handleSupportClick}>
+                      Fale Conosco
+                    </SupportButton>
+                    <Button 
+                      size="lg" 
+                      variant="outline" 
+                      className="border-2 border-slate-300 dark:border-slate-500 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 px-6 py-3 font-medium rounded-lg transition-all duration-200"
+                    >
+                      Explorar Serviços
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
             {/* Right Content - Logo and Visual Elements */}
             <div className="flex items-center justify-center lg:justify-end">
               <div className="relative">
-                {/* Main Logo */}
-                <div className="relative z-10 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-slate-200/50 dark:border-slate-600/50">
-                  <img 
-                    src={logoSrc}
-                    alt="Help Desk Inova" 
-                    className={`h-24 md:h-32 w-auto mx-auto ${isDarkMode ? 'brightness-0 invert' : ''}`}
-                  />
-                </div>
+                {/* Main Logo Card */}
+                <Card className="relative z-10 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md border border-slate-200/60 dark:border-slate-600/60 shadow-xl">
+                  <CardContent className="p-8">
+                    <img 
+                      src={logoSrc}
+                      alt="Help Desk Inova" 
+                      className={`h-24 md:h-32 w-auto mx-auto ${isDarkMode ? 'brightness-0 invert' : ''}`}
+                    />
+                  </CardContent>
+                </Card>
                 
                 {/* Floating Elements */}
                 <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-100 dark:bg-blue-900/60 rounded-lg animate-float opacity-60"></div>
