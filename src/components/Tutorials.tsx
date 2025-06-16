@@ -11,192 +11,209 @@ const Tutorials = () => {
   const articles = [
     {
       icon: <Monitor className="h-6 w-6" />,
-      title: "As Vantagens do Aluguel de Equipamentos para Empresas",
-      category: "Equipamentos",
-      color: "from-slate-500 to-slate-600",
-      thumbnail: "/lovable-uploads/06e2e841-562c-4ce5-9c2a-5268cc6a702c.png",
-      content: `
-        <h3 class="text-2xl font-bold mb-4 text-slate-900">Por que alugar equipamentos é mais vantajoso?</h3>
-        <p class="text-slate-700 mb-6 leading-relaxed">O aluguel de equipamentos tecnológicos tem se tornado uma estratégia cada vez mais adotada pelas empresas modernas. Esta modalidade oferece flexibilidade, economia e acesso às tecnologias mais recentes sem grandes investimentos iniciais.</p>
-        
-        <h4 class="text-xl font-semibold mb-3 text-slate-900">Principais Vantagens:</h4>
-        <ul class="list-disc list-inside mb-6 text-slate-700 space-y-2">
-          <li><strong>Redução de Custos:</strong> Não há necessidade de grandes investimentos iniciais</li>
-          <li><strong>Flexibilidade:</strong> Possibilidade de upgrade constante dos equipamentos</li>
-          <li><strong>Manutenção Incluída:</strong> Suporte técnico e manutenção sem custos adicionais</li>
-          <li><strong>Gestão Simplificada:</strong> Foco no core business da empresa</li>
-        </ul>
-        
-        <p class="text-slate-700 mb-4 leading-relaxed">Na Help Desk Inova, oferecemos soluções completas de aluguel com suporte técnico especializado, garantindo que sua empresa tenha sempre os melhores equipamentos funcionando perfeitamente.</p>
-        
-        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-          <p class="text-slate-800 font-medium">💡 Dica: O aluguel permite que sua empresa se adapte rapidamente às mudanças tecnológicas sem ficar presa a equipamentos obsoletos.</p>
-        </div>
-      `
-    },
-    {
-      icon: <Shield className="h-6 w-6" />,
-      title: "Os Tipos de Suporte que a Help Desk Inova Oferece",
+      title: "Suporte Técnico de 1º e 2º Nível: Diferenças e Aplicações",
       category: "Suporte",
-      color: "from-blue-500 to-blue-600",
-      thumbnail: "/lovable-uploads/3344a290-6d48-4939-b8d9-ca5eb781eafe.png",
+      color: "from-slate-500 to-slate-600",
+      thumbnail: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=400&fit=crop",
       content: `
-        <h3 class="text-2xl font-bold mb-4 text-slate-900">Suporte Técnico Completo e Especializado</h3>
-        <p class="text-slate-700 mb-6 leading-relaxed">A Help Desk Inova oferece uma gama completa de serviços de suporte técnico, desde atendimento remoto até manutenção presencial, garantindo que sua empresa tenha sempre o apoio necessário.</p>
+        <h3 className="text-2xl font-bold mb-4 text-slate-900">Entendendo os Níveis de Suporte Técnico</h3>
+        <p className="text-slate-700 mb-6 leading-relaxed">O suporte técnico é estruturado em níveis para garantir eficiência e especialização no atendimento. Cada nível tem responsabilidades específicas e complementares.</p>
         
-        <h4 class="text-xl font-semibold mb-3 text-slate-900">Modalidades de Suporte:</h4>
-        
-        <div class="space-y-4 mb-6">
-          <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-            <h5 class="font-semibold text-slate-900 mb-2">🔧 Suporte Remoto</h5>
-            <p class="text-slate-700">Resolução rápida de problemas através de acesso remoto seguro, permitindo diagnóstico e correção instantânea.</p>
-          </div>
-          
-          <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-            <h5 class="font-semibold text-slate-900 mb-2">👨‍💻 Suporte Presencial</h5>
-            <p class="text-slate-700">Técnicos especializados no local para problemas que requerem intervenção física ou instalações complexas.</p>
-          </div>
-          
-          <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-            <h5 class="font-semibold text-slate-900 mb-2">📞 Suporte 24/7</h5>
-            <p class="text-slate-700">Atendimento ininterrupto para emergências, garantindo que sua empresa nunca fique desassistida.</p>
-          </div>
-        </div>
-        
-        <p class="text-slate-700 mb-4 leading-relaxed">Nossa equipe é composta por profissionais certificados e constantemente atualizados com as últimas tecnologias do mercado.</p>
-        
-        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
-          <p class="text-blue-800 font-medium">✅ Resultado: Tempo de resposta médio de 15 minutos e resolução de 95% dos problemas em primeira chamada.</p>
-        </div>
-      `
-    },
-    {
-      icon: <Camera className="h-6 w-6" />,
-      title: "A Importância de Renovar Equipamentos de Câmeras de Segurança",
-      category: "Segurança",
-      color: "from-slate-600 to-slate-700",
-      thumbnail: "/lovable-uploads/06e2e841-562c-4ce5-9c2a-5268cc6a702c.png",
-      content: `
-        <h3 class="text-2xl font-bold mb-4 text-slate-900">Segurança Atualizada: Por que Renovar é Essencial</h3>
-        <p class="text-slate-700 mb-6 leading-relaxed">Manter sistemas de câmeras de segurança atualizados é fundamental para garantir a proteção efetiva do seu negócio. Tecnologias obsoletas podem comprometer toda a segurança da empresa.</p>
-        
-        <h4 class="text-xl font-semibold mb-3 text-slate-900">Riscos de Equipamentos Desatualizados:</h4>
-        <ul class="list-disc list-inside mb-6 text-slate-700 space-y-2">
-          <li><strong>Vulnerabilidades de Segurança:</strong> Firmwares antigos são alvos fáceis para hackers</li>
-          <li><strong>Qualidade de Imagem Inferior:</strong> Resolução baixa pode comprometer identificações</li>
-          <li><strong>Falta de Recursos Modernos:</strong> Sem IA, detecção de movimento avançada, etc.</li>
-          <li><strong>Incompatibilidade:</strong> Dificuldade de integração com sistemas modernos</li>
+        <h4 className="text-xl font-semibold mb-3 text-slate-900">Suporte de 1º Nível:</h4>
+        <ul className="list-disc list-inside mb-6 text-slate-700 space-y-2">
+          <li><strong>Primeiro Contato:</strong> Atendimento inicial aos usuários</li>
+          <li><strong>Problemas Básicos:</strong> Resolução de questões simples e recorrentes</li>
+          <li><strong>Diagnóstico Inicial:</strong> Identificação e triagem de problemas</li>
+          <li><strong>Documentação:</strong> Registro detalhado de todas as ocorrências</li>
         </ul>
         
-        <h4 class="text-xl font-semibold mb-3 text-slate-900">Benefícios da Renovação:</h4>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-            <h5 class="font-semibold text-slate-900 mb-2">📹 Qualidade 4K/8K</h5>
-            <p class="text-slate-700 text-sm">Imagens ultra nítidas para identificação precisa</p>
-          </div>
-          <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-            <h5 class="font-semibold text-slate-900 mb-2">🤖 Inteligência Artificial</h5>
-            <p class="text-slate-700 text-sm">Detecção automática de comportamentos suspeitos</p>
-          </div>
-          <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-            <h5 class="font-semibold text-slate-900 mb-2">☁️ Armazenamento em Nuvem</h5>
-            <p class="text-slate-700 text-sm">Backup seguro e acesso remoto às gravações</p>
-          </div>
-          <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-            <h5 class="font-semibold text-slate-900 mb-2">📱 Monitoramento Mobile</h5>
-            <p class="text-slate-700 text-sm">Visualização em tempo real pelo smartphone</p>
-          </div>
-        </div>
-        
-        <p class="text-slate-700 mb-4 leading-relaxed">A Help Desk Inova oferece soluções completas de atualização, com instalação, configuração e treinamento inclusos.</p>
-      `
-    },
-    {
-      icon: <Server className="h-6 w-6" />,
-      title: "Sistema Failover: Garantindo Continuidade do Negócio",
-      category: "Infraestrutura",
-      color: "from-blue-600 to-blue-700",
-      thumbnail: "/lovable-uploads/3344a290-6d48-4939-b8d9-ca5eb781eafe.png",
-      content: `
-        <h3 class="text-2xl font-bold mb-4 text-slate-900">O que é um Sistema Failover?</h3>
-        <p class="text-slate-700 mb-6 leading-relaxed">Um sistema failover é uma solução de backup automática que garante a continuidade dos serviços de TI mesmo quando o sistema principal falha. É essencial para empresas que não podem se dar ao luxo de ficar offline.</p>
-        
-        <h4 class="text-xl font-semibold mb-3 text-slate-900">Como Funciona:</h4>
-        <div class="bg-slate-50 p-6 rounded-lg border border-slate-200 mb-6">
-          <div class="flex items-center space-x-4 mb-4">
-            <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">1</div>
-            <p class="text-slate-700"><strong>Monitoramento Constante:</strong> Sistema principal é monitorado 24/7</p>
-          </div>
-          <div class="flex items-center space-x-4 mb-4">
-            <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">2</div>
-            <p class="text-slate-700"><strong>Detecção de Falha:</strong> Identificação automática de problemas</p>
-          </div>
-          <div class="flex items-center space-x-4 mb-4">
-            <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">3</div>
-            <p class="text-slate-700"><strong>Ativação Automática:</strong> Sistema backup assume instantaneamente</p>
-          </div>
-          <div class="flex items-center space-x-4">
-            <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">4</div>
-            <p class="text-slate-700"><strong>Operação Normal:</strong> Serviços continuam sem interrupção</p>
-          </div>
-        </div>
-        
-        <h4 class="text-xl font-semibold mb-3 text-slate-900">Benefícios Empresariais:</h4>
-        <ul class="list-disc list-inside mb-6 text-slate-700 space-y-2">
-          <li><strong>Zero Downtime:</strong> Sua empresa nunca fica offline</li>
-          <li><strong>Proteção de Dados:</strong> Informações sempre seguras e acessíveis</li>
-          <li><strong>Credibilidade:</strong> Clientes confiam em serviços sempre disponíveis</li>
-          <li><strong>Economia:</strong> Evita perdas financeiras por indisponibilidade</li>
+        <h4 className="text-xl font-semibold mb-3 text-slate-900">Suporte de 2º Nível:</h4>
+        <ul className="list-disc list-inside mb-6 text-slate-700 space-y-2">
+          <li><strong>Problemas Complexos:</strong> Questões que exigem conhecimento técnico avançado</li>
+          <li><strong>Análise Profunda:</strong> Investigação detalhada de falhas de sistema</li>
+          <li><strong>Configurações Avançadas:</strong> Ajustes em servidores e infraestrutura</li>
+          <li><strong>Escalamento:</strong> Encaminhamento para especialistas quando necessário</li>
         </ul>
         
-        <div class="bg-red-50 p-4 rounded-lg border border-red-200">
-          <p class="text-red-800 font-medium">⚠️ Importante: Empresas sem failover podem perder até R$ 50.000 por hora de indisponibilidade.</p>
+        <p className="text-slate-700 mb-4 leading-relaxed">Na Help Desk Inova, nossos técnicos são capacitados para atuar em ambos os níveis, garantindo resolução rápida e eficiente para qualquer tipo de problema.</p>
+        
+        <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+          <p className="text-slate-800 font-medium">💡 Resultado: 90% dos problemas resolvidos no 1º nível e tempo médio de resolução de 15 minutos.</p>
         </div>
       `
     },
     {
       icon: <Network className="h-6 w-6" />,
-      title: "Redes de Computadores: Fundamentos e Melhores Práticas",
+      title: "Gerenciamento de Redes Corporativas: Estratégias e Boas Práticas",
       category: "Redes",
-      color: "from-slate-700 to-slate-800",
-      thumbnail: "/lovable-uploads/e239b180-ebea-489a-b2a9-d0fd86f97834.png",
+      color: "from-blue-500 to-blue-600",
+      thumbnail: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop",
       content: `
-        <h3 class="text-2xl font-bold mb-4 text-slate-900">Redes Corporativas: A Base da Conectividade</h3>
-        <p class="text-slate-700 mb-6 leading-relaxed">Uma rede de computadores bem estruturada é fundamental para o sucesso de qualquer empresa moderna. Ela conecta pessoas, dispositivos e sistemas, permitindo comunicação eficiente e compartilhamento de recursos.</p>
+        <h3 className="text-2xl font-bold mb-4 text-slate-900">Gerenciamento Profissional de Redes</h3>
+        <p className="text-slate-700 mb-6 leading-relaxed">O gerenciamento eficaz de redes corporativas é fundamental para garantir conectividade, segurança e performance ideais em ambientes empresariais.</p>
         
-        <h4 class="text-xl font-semibold mb-3 text-slate-900">Componentes Essenciais:</h4>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-            <h5 class="font-semibold text-slate-900 mb-2">🌐 Roteadores</h5>
-            <p class="text-slate-700 text-sm">Direcionam o tráfego entre diferentes redes</p>
+        <h4 className="text-xl font-semibold mb-3 text-slate-900">Componentes Essenciais:</h4>
+        
+        <div className="space-y-4 mb-6">
+          <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+            <h5 className="font-semibold text-slate-900 mb-2">🌐 Topologia de Rede</h5>
+            <p className="text-slate-700">Design e estruturação da arquitetura de rede para máxima eficiência e escalabilidade.</p>
           </div>
-          <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-            <h5 class="font-semibold text-slate-900 mb-2">🔌 Switches</h5>
-            <p class="text-slate-700 text-sm">Conectam dispositivos na mesma rede local</p>
+          
+          <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+            <h5 className="font-semibold text-slate-900 mb-2">📊 Monitoramento 24/7</h5>
+            <p className="text-slate-700">Supervisão contínua de tráfego, performance e disponibilidade da rede.</p>
           </div>
-          <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-            <h5 class="font-semibold text-slate-900 mb-2">🔥 Firewalls</h5>
-            <p class="text-slate-700 text-sm">Protegem contra acessos não autorizados</p>
-          </div>
-          <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
-            <h5 class="font-semibold text-slate-900 mb-2">📡 Access Points</h5>
-            <p class="text-slate-700 text-sm">Fornecem conectividade Wi-Fi corporativa</p>
+          
+          <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+            <h5 className="font-semibold text-slate-900 mb-2">⚡ Otimização de Performance</h5>
+            <p className="text-slate-700">Análise e melhoria contínua da velocidade e qualidade da conexão.</p>
           </div>
         </div>
         
-        <h4 class="text-xl font-semibold mb-3 text-slate-900">Melhores Práticas:</h4>
-        <ul class="list-disc list-inside mb-6 text-slate-700 space-y-2">
-          <li><strong>Segmentação de Rede:</strong> Separar diferentes tipos de tráfego</li>
-          <li><strong>Monitoramento Contínuo:</strong> Acompanhar performance e uso</li>
-          <li><strong>Backup de Configurações:</strong> Manter cópias de todas as configurações</li>
-          <li><strong>Atualizações Regulares:</strong> Manter firmwares sempre atualizados</li>
-          <li><strong>Documentação Completa:</strong> Mapear toda a infraestrutura</li>
+        <h4 className="text-xl font-semibold mb-3 text-slate-900">Benefícios do Gerenciamento Profissional:</h4>
+        <ul className="list-disc list-inside mb-6 text-slate-700 space-y-2">
+          <li><strong>Disponibilidade:</strong> 99.9% de uptime garantido</li>
+          <li><strong>Segurança:</strong> Proteção contra ameaças e vulnerabilidades</li>
+          <li><strong>Escalabilidade:</strong> Crescimento conforme necessidades da empresa</li>
+          <li><strong>Economia:</strong> Redução de custos operacionais</li>
         </ul>
         
-        <p class="text-slate-700 mb-4 leading-relaxed">A Help Desk Inova projeta, implementa e mantém redes corporativas robustas e seguras, garantindo conectividade confiável para seu negócio.</p>
+        <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+          <p className="text-blue-800 font-medium">🚀 Performance: Nossas redes gerenciadas apresentam 40% melhor performance que a média do mercado.</p>
+        </div>
+      `
+    },
+    {
+      icon: <Shield className="h-6 w-6" />,
+      title: "Firewall e Cibersegurança: Proteção Completa para sua Empresa",
+      category: "Segurança",
+      color: "from-slate-600 to-slate-700",
+      thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop",
+      content: `
+        <h3 className="text-2xl font-bold mb-4 text-slate-900">Segurança Digital Avançada</h3>
+        <p className="text-slate-700 mb-6 leading-relaxed">A cibersegurança moderna exige uma abordagem multicamadas, onde firewalls são apenas o primeiro nível de proteção contra ameaças digitais.</p>
         
-        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
-          <p class="text-blue-800 font-medium">🚀 Performance: Nossas redes são otimizadas para oferecer velocidade até 40% superior à média do mercado.</p>
+        <h4 className="text-xl font-semibold mb-3 text-slate-900">Componentes de Segurança:</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+            <h5 className="font-semibold text-slate-900 mb-2">🛡️ Firewall Next-Gen</h5>
+            <p className="text-slate-700 text-sm">Proteção avançada com inspeção profunda de pacotes</p>
+          </div>
+          <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+            <h5 className="font-semibold text-slate-900 mb-2">🔍 Detecção de Intrusão</h5>
+            <p className="text-slate-700 text-sm">Monitoramento em tempo real de atividades suspeitas</p>
+          </div>
+          <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+            <h5 className="font-semibold text-slate-900 mb-2">🦠 Antivírus Corporativo</h5>
+            <p className="text-slate-700 text-sm">Proteção contra malware e ransomware</p>
+          </div>
+          <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+            <h5 className="font-semibold text-slate-900 mb-2">🔐 Criptografia de Dados</h5>
+            <p className="text-slate-700 text-sm">Proteção de informações sensíveis</p>
+          </div>
+        </div>
+        
+        <h4 className="text-xl font-semibold mb-3 text-slate-900">Ameaças Bloqueadas:</h4>
+        <ul className="list-disc list-inside mb-6 text-slate-700 space-y-2">
+          <li><strong>Ataques DDoS:</strong> Proteção contra sobrecarga de tráfego</li>
+          <li><strong>Phishing:</strong> Bloqueio de tentativas de roubo de dados</li>
+          <li><strong>Ransomware:</strong> Prevenção de sequestro de arquivos</li>
+          <li><strong>Acesso Não Autorizado:</strong> Controle rigoroso de permissões</li>
+        </ul>
+        
+        <p className="text-slate-700 mb-4 leading-relaxed">Nossa equipe especializada mantém sua empresa protegida contra as ameaças mais recentes e sofisticadas do cenário digital.</p>
+        
+        <div className="bg-red-50 p-4 rounded-lg border border-red-200">
+          <p className="text-red-800 font-medium">⚠️ Estatística: 95% dos ataques cibernéticos são bloqueados por nossos sistemas de segurança.</p>
+        </div>
+      `
+    },
+    {
+      icon: <Server className="h-6 w-6" />,
+      title: "Infraestrutura de TI: Servidores e Backup Corporativo",
+      category: "Infraestrutura",
+      color: "from-blue-600 to-blue-700",
+      thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=800&h=400&fit=crop",
+      content: `
+        <h3 className="text-2xl font-bold mb-4 text-slate-900">Infraestrutura Sólida e Confiável</h3>
+        <p className="text-slate-700 mb-6 leading-relaxed">Uma infraestrutura de TI robusta é a base para o sucesso de qualquer negócio moderno. Servidores bem configurados e backups seguros garantem continuidade operacional.</p>
+        
+        <h4 className="text-xl font-semibold mb-3 text-slate-900">Soluções em Servidores:</h4>
+        <div className="bg-slate-50 p-6 rounded-lg border border-slate-200 mb-6">
+          <div className="flex items-center space-x-4 mb-4">
+            <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">1</div>
+            <p className="text-slate-700"><strong>Dimensionamento:</strong> Servidores adequados ao seu negócio</p>
+          </div>
+          <div className="flex items-center space-x-4 mb-4">
+            <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">2</div>
+            <p className="text-slate-700"><strong>Configuração:</strong> Setup otimizado para máxima performance</p>
+          </div>
+          <div className="flex items-center space-x-4 mb-4">
+            <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">3</div>
+            <p className="text-slate-700"><strong>Monitoramento:</strong> Supervisão 24/7 da infraestrutura</p>
+          </div>
+          <div className="flex items-center space-x-4">
+            <div className="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">4</div>
+            <p className="text-slate-700"><strong>Manutenção:</strong> Updates e patches de segurança</p>
+          </div>
+        </div>
+        
+        <h4 className="text-xl font-semibold mb-3 text-slate-900">Backup e Recuperação:</h4>
+        <ul className="list-disc list-inside mb-6 text-slate-700 space-y-2">
+          <li><strong>Backup Automatizado:</strong> Cópias automáticas de todos os dados</li>
+          <li><strong>Múltiplas Localizações:</strong> Armazenamento local e em nuvem</li>
+          <li><strong>Teste de Recuperação:</strong> Validação regular dos backups</li>
+          <li><strong>RTO Mínimo:</strong> Recuperação rápida em caso de falhas</li>
+        </ul>
+        
+        <div className="bg-green-50 p-4 rounded-lg border border-green-200">
+          <p className="text-green-800 font-medium">✅ Garantia: 99.99% de disponibilidade dos dados com tempo de recuperação inferior a 1 hora.</p>
+        </div>
+      `
+    },
+    {
+      icon: <Camera className="h-6 w-6" />,
+      title: "Monitoramento e Análise: Ferramentas de Observabilidade",
+      category: "Monitoramento",
+      color: "from-slate-700 to-slate-800",
+      thumbnail: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=400&fit=crop",
+      content: `
+        <h3 className="text-2xl font-bold mb-4 text-slate-900">Observabilidade Completa da Sua TI</h3>
+        <p className="text-slate-700 mb-6 leading-relaxed">O monitoramento proativo é essencial para identificar problemas antes que afetem os usuários. Utilizamos ferramentas avançadas de observabilidade para garantir performance ideal.</p>
+        
+        <h4 className="text-xl font-semibold mb-3 text-slate-900">Métricas Monitoradas:</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+            <h5 className="font-semibold text-slate-900 mb-2">📊 Performance de Sistema</h5>
+            <p className="text-slate-700 text-sm">CPU, memória, disco e rede em tempo real</p>
+          </div>
+          <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+            <h5 className="font-semibold text-slate-900 mb-2">🔍 Logs de Aplicação</h5>
+            <p className="text-slate-700 text-sm">Análise detalhada de eventos e erros</p>
+          </div>
+          <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+            <h5 className="font-semibold text-slate-900 mb-2">⚡ Disponibilidade</h5>
+            <p className="text-slate-700 text-sm">Uptime de serviços e aplicações</p>
+          </div>
+          <div className="bg-slate-50 p-4 rounded-lg border border-slate-200">
+            <h5 className="font-semibold text-slate-900 mb-2">🛡️ Segurança</h5>
+            <p className="text-slate-700 text-sm">Detecção de anomalias e ameaças</p>
+          </div>
+        </div>
+        
+        <h4 className="text-xl font-semibold mb-3 text-slate-900">Alertas Inteligentes:</h4>
+        <ul className="list-disc list-inside mb-6 text-slate-700 space-y-2">
+          <li><strong>Notificações Proativas:</strong> Avisos antes que problemas se tornem críticos</li>
+          <li><strong>Escalamento Automático:</strong> Notificação hierárquica baseada na severidade</li>
+          <li><strong>Dashboards Executivos:</strong> Visão estratégica para tomada de decisões</li>
+          <li><strong>Relatórios Automáticos:</strong> Análises periódicas de performance</li>
+        </ul>
+        
+        <p className="text-slate-700 mb-4 leading-relaxed">Nossa plataforma de monitoramento oferece visibilidade completa da sua infraestrutura, permitindo ação preventiva e otimização contínua.</p>
+        
+        <div className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+          <p className="text-blue-800 font-medium">📈 Resultado: Redução de 70% em incidentes críticos através do monitoramento proativo.</p>
         </div>
       `
     }
@@ -222,9 +239,9 @@ const Tutorials = () => {
             Descubra Nossas
             <span className="block text-blue-600">Soluções em Tecnologia</span>
           </h2>
-          <p class="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-light">
             Explore os artigos da HELP DESK INOVA e fique por dentro das 
-            <span class="font-medium text-slate-800"> melhores práticas e inovações </span>
+            <span className="font-medium text-slate-800"> melhores práticas e inovações </span>
             em TI para manter sua empresa sempre à frente.
           </p>
         </div>

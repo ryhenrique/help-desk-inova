@@ -48,7 +48,7 @@ const Header = () => {
                 Serviços
               </a>
               <a href="#tutorials" className="text-slate-600 hover:text-blue-600 transition-colors text-sm font-medium">
-                Tutoriais
+                Artigos
               </a>
               <a href="#contact" className="text-slate-600 hover:text-blue-600 transition-colors text-sm font-medium">
                 Contato
@@ -90,7 +90,7 @@ const Header = () => {
                     className="text-slate-700 hover:text-blue-600 transition-colors font-medium text-lg"
                     onClick={() => setIsOpen(false)}
                   >
-                    Tutoriais
+                    Artigos
                   </a>
                   <a
                     href="#contact"
