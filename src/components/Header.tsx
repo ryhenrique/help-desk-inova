@@ -1,14 +1,13 @@
-
 import { useState, useEffect } from 'react';
-import { Menu } from 'lucide-react';
+import { Home, User, Briefcase, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Card, CardContent } from '@/components/ui/card';
 import TypewriterText from '@/components/ui/typewriter-text';
 import SupportButton from '@/components/ui/support-button';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { useTheme } from '@/components/ui/theme-provider';
 import { motion } from 'framer-motion';
+import { NavBar } from '@/components/ui/tubelight-navbar';
 
 // Simplified Background Pattern - Using only one optimized pattern
 function OptimizedPaths() {
@@ -54,8 +53,14 @@ function OptimizedPaths() {
 }
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const { theme } = useTheme();
+
+  const navItems = [
+    { name: 'Início', url: '#home', icon: Home },
+    { name: 'Serviços', url: '#services', icon: Briefcase },
+    { name: 'Artigos', url: '#tutorials', icon: FileText },
+    { name: 'Contato', url: '#contact', icon: User }
+  ];
 
   const phrases = [
     "Suporte Técnico Especializado",
@@ -74,92 +79,25 @@ const Header = () => {
 
   return (
     <>
-      {/* Navigation Header */}
-      <header className="sticky top-0 z-50 w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-200/60 dark:border-slate-600/60">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex h-14 items-center justify-between">
-            {/* Logo */}
-            <div className="flex items-center">
-              <img 
-                src={logoSrc}
-                alt="Help Desk Inova" 
-                className={`h-8 w-auto ${isDarkMode ? 'brightness-0 invert' : ''}`}
-              />
-            </div>
+      {/* Logo fixo no canto esquerdo */}
+      <div className="fixed top-4 left-4 z-50">
+        <img 
+          src={logoSrc}
+          alt="Help Desk Inova" 
+          className={`h-8 w-auto ${isDarkMode ? 'brightness-0 invert' : ''}`}
+        />
+      </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-6">
-              <a href="#home" className="text-slate-600 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
-                Início
-              </a>
-              <a href="#services" className="text-slate-600 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
-                Serviços
-              </a>
-              <a href="#tutorials" className="text-slate-600 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
-                Artigos
-              </a>
-              <a href="#contact" className="text-slate-600 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
-                Contato
-              </a>
-            </nav>
+      {/* Theme Toggle no canto direito */}
+      <div className="fixed top-4 right-4 z-50 flex items-center space-x-3">
+        <ThemeToggle />
+        <SupportButton onClick={handleSupportClick}>
+          Suporte
+        </SupportButton>
+      </div>
 
-            {/* Right side - Theme Toggle and CTA Button */}
-            <div className="hidden md:flex items-center space-x-3">
-              <ThemeToggle />
-              <SupportButton onClick={handleSupportClick}>
-                Suporte
-              </SupportButton>
-            </div>
-
-            {/* Mobile menu */}
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild className="md:hidden">
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-5 w-5" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-80 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md">
-                <div className="flex flex-col space-y-6 pt-6">
-                  <a
-                    href="#home"
-                    className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-lg"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Início
-                  </a>
-                  <a
-                    href="#services"
-                    className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-lg"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Serviços
-                  </a>
-                  <a
-                    href="#tutorials"
-                    className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-lg"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Artigos
-                  </a>
-                  <a
-                    href="#contact"
-                    className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-lg"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Contato
-                  </a>
-                  <div className="flex items-center justify-between pt-4">
-                    <ThemeToggle />
-                    <SupportButton onClick={handleSupportClick}>
-                      Suporte
-                    </SupportButton>
-                  </div>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </div>
-        </div>
-      </header>
+      {/* TubeLight NavBar */}
+      <NavBar items={navItems} />
 
       {/* Hero Section with Optimized Background */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
