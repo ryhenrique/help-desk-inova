@@ -24,12 +24,12 @@ const Header = () => {
       <HeaderControls onSupportClick={handleSupportClick} />
       <NavBar items={navItems} />
 
-      {/* Hero Section with Clean Background */}
+      {/* Hero Section with Animated Background */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <OptimizedBackground />
 
-        {/* Clean Gradient Overlay - sem blur no modo claro */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50/95 via-white/90 to-slate-100/95 dark:from-slate-900/90 dark:via-slate-800/70 dark:to-slate-900/90" />
+        {/* Clean Gradient Overlay - com background animado */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50/80 via-white/70 to-slate-100/80 dark:from-slate-900/90 dark:via-slate-800/70 dark:to-slate-900/90" />
 
         <HeroContent onSupportClick={handleSupportClick} />
       </section>

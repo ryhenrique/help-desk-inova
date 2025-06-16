@@ -66,7 +66,7 @@ export function NavBar({ items, className }: NavBarProps) {
   return (
     <motion.div
       className={cn(
-        "fixed top-6 left-1/2 -translate-x-1/2 z-40 transition-all duration-300",
+        "fixed top-6 left-1/2 transform -translate-x-1/2 z-40 transition-all duration-300",
         className,
       )}
       initial={{ y: 0, opacity: 1 }}

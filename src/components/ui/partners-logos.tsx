@@ -1,4 +1,3 @@
-
 'use client';
 
 import AutoScroll from 'embla-carousel-auto-scroll';
@@ -58,8 +57,8 @@ export function PartnersLogos() {
             Parceiros em Inovação Tecnológica
           </h3>
           <p className="text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-            Desenvolvemos soluções personalizadas de software, sistemas de gestão e automação para nossos parceiros, 
-            proporcionando crescimento e eficiência em seus negócios através da tecnologia.
+            Confiança construída através de suporte técnico excepcional. Nossos parceiros escolheram nossa expertise 
+            em TI para manter seus sistemas funcionando perfeitamente, garantindo operações seguras e eficientes 24/7.
           </p>
         </div>
 
