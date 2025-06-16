@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -27,9 +26,8 @@ const Header = () => {
       <AnimatedBackground />
       
       {/* Navigation Header */}
-      <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-slate-200/50 pattern-vaporwave">
-        <div className="absolute inset-0 bg-white/90"></div>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-slate-200/50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-14 items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
