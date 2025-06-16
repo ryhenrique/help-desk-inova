@@ -21,6 +21,8 @@ interface NavBarProps {
 export function NavBar({ items, className }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
   const [isMobile, setIsMobile] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
 
   useEffect(() => {
     const handleResize = () => {
@@ -31,6 +33,25 @@ export function NavBar({ items, className }: NavBarProps) {
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      
+      // Se estiver no topo da página, sempre mostra a navbar
+      if (currentScrollY < 10) {
+        setIsVisible(true)
+      } else {
+        // Se rolando para baixo, esconde; se para cima, mostra
+        setIsVisible(currentScrollY < lastScrollY)
+      }
+      
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [lastScrollY])
 
   const handleClick = (itemName: string, url: string) => {
     setActiveTab(itemName)
@@ -43,13 +64,19 @@ export function NavBar({ items, className }: NavBarProps) {
   }
 
   return (
-    <div
+    <motion.div
       className={cn(
-        "fixed top-6 left-1/2 -translate-x-1/2 z-40",
+        "fixed top-6 left-1/2 -translate-x-1/2 z-40 transition-all duration-300",
         className,
       )}
+      initial={{ y: 0, opacity: 1 }}
+      animate={{ 
+        y: isVisible ? 0 : -100, 
+        opacity: isVisible ? 1 : 0 
+      }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
     >
-      <div className="flex items-center gap-3 bg-white/80 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-600/60 py-1 px-1 rounded-full shadow-lg">
+      <div className="flex items-center gap-3 bg-white/80 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-600/60 py-1 px-1 rounded-full shadow-lg backdrop-blur-sm">
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
@@ -89,6 +116,6 @@ export function NavBar({ items, className }: NavBarProps) {
           <ThemeToggle />
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
