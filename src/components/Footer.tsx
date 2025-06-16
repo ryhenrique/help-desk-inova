@@ -1,5 +1,5 @@
 
-import { Mail, MessageSquare, Phone, Instagram, ExternalLink } from 'lucide-react';
+import { Mail, MessageSquare, Phone, Instagram, ExternalLink, Linkedin, Facebook } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -32,7 +32,7 @@ const Footer = () => {
                 className="group flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800 hover:bg-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl"
                 aria-label="Enviar e-mail"
               >
-                <Mail className="h-5 w-5 text-slate-300 group-hover:text-white transition-colors" />
+                <Mail className="h-5 w-5 text-blue-400 group-hover:text-white transition-colors" />
               </a>
               <a 
                 href="https://api.whatsapp.com/send/?phone=5521991318034&text&type=phone_number&app_absent=0" 
@@ -47,6 +47,20 @@ const Footer = () => {
                 aria-label="Instagram"
               >
                 <Instagram className="h-5 w-5 text-slate-300 group-hover:text-white transition-colors" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/helpdeskinova/" 
+                className="group flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800 hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5 text-slate-300 group-hover:text-white transition-colors" />
+              </a>
+              <a 
+                href="https://www.facebook.com/helpdeskinova" 
+                className="group flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800 hover:bg-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-5 w-5 text-slate-300 group-hover:text-white transition-colors" />
               </a>
             </div>
           </div>
@@ -136,7 +150,7 @@ const Footer = () => {
             
             <div className="flex items-center space-x-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800">
-                <Mail className="h-5 w-5 text-violet-400" />
+                <Mail className="h-5 w-5 text-blue-400" />
               </div>
               <div>
                 <p className="font-semibold text-white">E-mail Corporativo</p>
@@ -152,7 +166,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-slate-400 text-center md:text-left">
-              © 2024 Help Desk Inova. Todos os direitos reservados.
+              © 2025 Help Desk Inova. Todos os direitos reservados.
             </p>
             <div className="flex items-center space-x-6 text-slate-400 text-sm">
               <a href="#" className="hover:text-blue-400 transition-colors">Termos de Uso</a>
