@@ -116,25 +116,26 @@ const Header = () => {
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[600px]">
             
-            {/* Left Content */}
+            {/* Left Content - Text with Typewriter */}
             <div className="space-y-8 max-w-2xl">
               <div className="space-y-6">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-                  Entenda o fluxo do usuário
+                  Suporte Técnico
                   <span className="block">
-                    e
+                    Especializado em
                   </span>
                   <span className="block">
                     <TypewriterText 
-                      words={["aumente conversões", "melhore resultados", "otimize processos", "garanta eficiência"]}
+                      words={["Redes de Computadores", "Desenvolvimento de Software", "Infraestrutura de TI", "Segurança Cibernética", "Suporte HelpDesk"]}
                       className="text-gradient bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
                     />
                   </span>
                 </h1>
                 
                 <p className="text-xl text-slate-600 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nisi. 
-                  Natus, provident accusamus impedit minima harum corporis iusto.
+                  Transformamos desafios tecnológicos em soluções eficientes. 
+                  Nossa equipe especializada oferece suporte completo para empresas 
+                  que buscam excelência em tecnologia da informação.
                 </p>
               </div>
 
@@ -142,10 +143,11 @@ const Header = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-200 rounded-lg"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-200 rounded-lg group"
                   onClick={handleContactClick}
                 >
-                  Get Started
+                  <Headphones className="mr-2 h-5 w-5" />
+                  Solicitar Suporte
                 </Button>
                 <Button 
                   size="lg" 
@@ -153,20 +155,38 @@ const Header = () => {
                   className="border-2 border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400 px-8 py-4 text-lg font-medium transition-all duration-200 rounded-lg"
                   onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Learn More
+                  Explorar Serviços
                 </Button>
+              </div>
+
+              {/* Tech Stats */}
+              <div className="grid grid-cols-3 gap-6 pt-8">
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-blue-600">500+</div>
+                  <div className="text-sm text-slate-600">Problemas Resolvidos</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-emerald-600">24h</div>
+                  <div className="text-sm text-slate-600">Tempo de Resposta</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-violet-600">98%</div>
+                  <div className="text-sm text-slate-600">Satisfação</div>
+                </div>
               </div>
             </div>
 
-            {/* Right Content - Logo/Illustration */}
+            {/* Right Content - Logo Positioned */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-200/20 to-indigo-200/20 rounded-full blur-2xl transform scale-110"></div>
-                <img 
-                  src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png" 
-                  alt="Help Desk Inova" 
-                  className="relative h-64 w-auto lg:h-80 xl:h-96 animate-float drop-shadow-2xl"
-                />
+                <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-2xl">
+                  <img 
+                    src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png" 
+                    alt="Help Desk Inova - Suporte Técnico Especializado" 
+                    className="h-64 w-auto lg:h-80 xl:h-96 animate-float drop-shadow-2xl"
+                  />
+                </div>
               </div>
             </div>
           </div>
