@@ -114,24 +114,27 @@ const Header = () => {
         </div>
 
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-32">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[600px]">
             
             {/* Left Content */}
-            <div className="space-y-8">
+            <div className="space-y-8 max-w-2xl">
               <div className="space-y-6">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
                   Entenda o fluxo do usuário
                   <span className="block">
                     e
                   </span>
-                  <span className="block text-gradient">
-                    Resultados Garantidos
+                  <span className="block">
+                    <TypewriterText 
+                      words={["aumente conversões", "melhore resultados", "otimize processos", "garanta eficiência"]}
+                      className="text-gradient bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+                    />
                   </span>
                 </h1>
                 
-                <p className="text-xl text-slate-600 leading-relaxed max-w-xl">
-                  Transformamos desafios tecnológicos em soluções eficientes. 
-                  Nossa equipe especializada oferece suporte completo para sua empresa.
+                <p className="text-xl text-slate-600 leading-relaxed">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, nisi. 
+                  Natus, provident accusamus impedit minima harum corporis iusto.
                 </p>
               </div>
 
@@ -139,24 +142,23 @@ const Header = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-200 group"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-200 rounded-lg"
                   onClick={handleContactClick}
                 >
-                  <Headphones className="mr-2 h-5 w-5" />
-                  Fale Conosco
+                  Get Started
                 </Button>
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-2 border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400 px-8 py-4 text-lg font-medium transition-all duration-200"
+                  className="border-2 border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400 px-8 py-4 text-lg font-medium transition-all duration-200 rounded-lg"
                   onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Explorar Serviços
+                  Learn More
                 </Button>
               </div>
             </div>
 
-            {/* Right Content - Logo */}
+            {/* Right Content - Logo/Illustration */}
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-200/20 to-indigo-200/20 rounded-full blur-2xl transform scale-110"></div>
