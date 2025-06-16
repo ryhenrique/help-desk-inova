@@ -51,17 +51,8 @@ const partnersData = [
 
 export function PartnersLogos() {
   return (
-    <section className="py-16 bg-transparent">
+    <section className="py-16 bg-white dark:bg-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-white mb-4">
-            Nossos Parceiros
-          </h2>
-          <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-            Trabalhamos com empresas que confiam em nossa expertise tecnológica
-          </p>
-        </div>
-
         <div className="relative mx-auto flex items-center justify-center max-w-4xl">
           <Carousel
             opts={{ 
