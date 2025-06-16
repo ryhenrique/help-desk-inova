@@ -7,9 +7,11 @@ import TypewriterText from '@/components/ui/typewriter-text';
 import AnimatedBackground from '@/components/ui/animated-background';
 import SupportButton from '@/components/ui/support-button';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
+import { useTheme } from '@/components/ui/theme-provider';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme } = useTheme();
 
   const phrases = [
     "Suporte Técnico Especializado",
@@ -23,6 +25,12 @@ const Header = () => {
     window.open('https://api.whatsapp.com/send/?phone=5521991318034&text&type=phone_number&app_absent=0', '_blank');
   };
 
+  // Determina se deve usar logo branca baseado no tema
+  const isDarkMode = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  const logoSrc = isDarkMode 
+    ? "/lovable-uploads/e239b180-ebea-489a-b2a9-d0fd86f97834.png" 
+    : "/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png";
+
   return (
     <>
       <AnimatedBackground />
@@ -34,7 +42,7 @@ const Header = () => {
             {/* Logo */}
             <div className="flex items-center">
               <img 
-                src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png" 
+                src={logoSrc}
                 alt="Help Desk Inova" 
                 className="h-8 w-auto"
               />
@@ -161,7 +169,7 @@ const Header = () => {
                 {/* Main Logo */}
                 <div className="relative z-10 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-slate-200/50 dark:border-slate-600/50">
                   <img 
-                    src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png" 
+                    src={logoSrc}
                     alt="Help Desk Inova" 
                     className="h-24 md:h-32 w-auto mx-auto"
                   />
