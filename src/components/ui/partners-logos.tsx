@@ -53,6 +53,16 @@ export function PartnersLogos() {
   return (
     <section className="py-16 bg-white dark:bg-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h3 className="text-xl md:text-2xl font-semibold text-slate-800 dark:text-white mb-4">
+            Parceiros em Inovação Tecnológica
+          </h3>
+          <p className="text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+            Desenvolvemos soluções personalizadas de software, sistemas de gestão e automação para nossos parceiros, 
+            proporcionando crescimento e eficiência em seus negócios através da tecnologia.
+          </p>
+        </div>
+
         <div className="relative mx-auto flex items-center justify-center max-w-4xl">
           <Carousel
             opts={{ 
