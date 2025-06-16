@@ -66,9 +66,13 @@ export function NavBar({ items, className }: NavBarProps) {
   return (
     <motion.div
       className={cn(
-        "fixed top-6 left-1/2 -translate-x-1/2 z-40 transition-all duration-300",
+        "fixed top-6 z-40 transition-all duration-300",
         className,
       )}
+      style={{
+        left: '50%',
+        transform: 'translateX(-50%)'
+      }}
       initial={{ y: 0, opacity: 1 }}
       animate={{ 
         y: isVisible ? 0 : -100, 
