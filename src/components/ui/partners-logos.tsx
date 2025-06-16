@@ -51,21 +51,28 @@ export function PartnersLogos() {
 
         <div className="relative mx-auto flex items-center justify-center max-w-4xl">
           <Carousel
-            opts={{ loop: true }}
+            opts={{ 
+              loop: true,
+              align: 'start',
+              skipSnaps: false,
+              dragFree: true
+            }}
             plugins={[
               AutoScroll({ 
-                playOnInit: true, 
-                speed: 1,
+                playOnInit: true,
+                speed: 0.5,
                 stopOnInteraction: false,
-                stopOnMouseEnter: true
+                stopOnMouseEnter: false,
+                stopOnFocusIn: false
               })
             ]}
+            className="w-full"
           >
-            <CarouselContent className="ml-0">
+            <CarouselContent className="ml-0 -pl-1">
               {partnersData.map((partner) => (
                 <CarouselItem
                   key={partner.id}
-                  className="flex basis-1/2 justify-center pl-0 sm:basis-1/3 md:basis-1/4"
+                  className="flex basis-1/2 justify-center pl-1 sm:basis-1/3 md:basis-1/4"
                 >
                   <div className="mx-8 flex shrink-0 items-center justify-center">
                     <img
@@ -81,8 +88,8 @@ export function PartnersLogos() {
           </Carousel>
           
           {/* Gradient fade nas bordas */}
-          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-50 dark:from-slate-900/50 to-transparent pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-50 dark:from-slate-900/50 to-transparent pointer-events-none"></div>
+          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-50 dark:from-slate-900/50 to-transparent pointer-events-none z-10"></div>
+          <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-50 dark:from-slate-900/50 to-transparent pointer-events-none z-10"></div>
         </div>
       </div>
     </section>
