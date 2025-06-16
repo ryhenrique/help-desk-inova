@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { ThemeToggle } from '@/components/ui/theme-toggle'
 
 interface NavItem {
   name: string
@@ -48,7 +49,7 @@ export function NavBar({ items, className }: NavBarProps) {
         className,
       )}
     >
-      <div className="flex items-center gap-3 bg-white/80 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-600/60 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+      <div className="flex items-center gap-3 bg-white/80 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-600/60 py-1 px-1 rounded-full shadow-lg">
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
@@ -77,17 +78,16 @@ export function NavBar({ items, className }: NavBarProps) {
                     stiffness: 300,
                     damping: 30,
                   }}
-                >
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-blue-500 dark:bg-blue-400 rounded-t-full">
-                    <div className="absolute w-12 h-6 bg-blue-500/20 dark:bg-blue-400/20 rounded-full blur-md -top-2 -left-2" />
-                    <div className="absolute w-8 h-6 bg-blue-500/20 dark:bg-blue-400/20 rounded-full blur-md -top-1" />
-                    <div className="absolute w-4 h-4 bg-blue-500/20 dark:bg-blue-400/20 rounded-full blur-sm top-0 left-2" />
-                  </div>
-                </motion.div>
+                />
               )}
             </button>
           )
         })}
+        
+        {/* Theme Toggle */}
+        <div className="ml-2 pl-2 border-l border-slate-200 dark:border-slate-600">
+          <ThemeToggle />
+        </div>
       </div>
     </div>
   )

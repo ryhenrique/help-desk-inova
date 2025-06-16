@@ -28,8 +28,8 @@ const Header = () => {
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <OptimizedBackground />
 
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50/80 via-white/60 to-slate-100/80 dark:from-slate-900/80 dark:via-slate-800/60 dark:to-slate-900/80" />
+        {/* Simple Gradient Overlay - sem blur */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50/90 via-white/70 to-slate-100/90 dark:from-slate-900/90 dark:via-slate-800/70 dark:to-slate-900/90" />
 
         <HeroContent onSupportClick={handleSupportClick} />
       </section>
