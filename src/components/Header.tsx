@@ -27,9 +27,7 @@ const Header = () => {
 
   // Determina se deve usar logo branca baseado no tema
   const isDarkMode = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-  const logoSrc = isDarkMode 
-    ? "/lovable-uploads/15d3f837-3640-47ed-9092-6a1682cb0b86.png"
-    : "/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png";
+  const logoSrc = "/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png";
 
   return (
     <>
@@ -41,13 +39,11 @@ const Header = () => {
           <div className="flex h-14 items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
-              <div className={`p-2 rounded ${isDarkMode ? 'bg-white' : ''}`}>
-                <img 
-                  src={logoSrc}
-                  alt="Help Desk Inova" 
-                  className="h-8 w-auto"
-                />
-              </div>
+              <img 
+                src={logoSrc}
+                alt="Help Desk Inova" 
+                className={`h-8 w-auto ${isDarkMode ? 'brightness-0 invert' : ''}`}
+              />
             </div>
 
             {/* Desktop Navigation */}
@@ -170,13 +166,11 @@ const Header = () => {
               <div className="relative">
                 {/* Main Logo */}
                 <div className="relative z-10 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-slate-200/50 dark:border-slate-600/50">
-                  <div className={`p-4 rounded ${isDarkMode ? 'bg-white' : ''}`}>
-                    <img 
-                      src={logoSrc}
-                      alt="Help Desk Inova" 
-                      className="h-24 md:h-32 w-auto mx-auto"
-                    />
-                  </div>
+                  <img 
+                    src={logoSrc}
+                    alt="Help Desk Inova" 
+                    className={`h-24 md:h-32 w-auto mx-auto ${isDarkMode ? 'brightness-0 invert' : ''}`}
+                  />
                 </div>
                 
                 {/* Floating Elements */}
