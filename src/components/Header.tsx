@@ -1,10 +1,10 @@
-
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import TypewriterText from '@/components/ui/typewriter-text';
 import AnimatedBackground from '@/components/ui/animated-background';
+import SupportButton from '@/components/ui/support-button';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,12 +56,9 @@ const Header = () => {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <Button 
-                onClick={handleSupportClick}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium shadow-sm transition-all duration-200"
-              >
-                Solicitar Suporte
-              </Button>
+              <SupportButton onClick={handleSupportClick}>
+                Suporte
+              </SupportButton>
             </div>
 
             {/* Mobile menu */}
@@ -102,12 +99,9 @@ const Header = () => {
                     Contato
                   </a>
                   <div className="pt-4">
-                    <Button 
-                      onClick={handleSupportClick}
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium"
-                    >
-                      Solicitar Suporte
-                    </Button>
+                    <SupportButton onClick={handleSupportClick}>
+                      Suporte
+                    </SupportButton>
                   </div>
                 </div>
               </SheetContent>
@@ -147,14 +141,10 @@ const Header = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                onClick={handleSupportClick}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-200"
-              >
-                Fale Conosco Agora
-              </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <SupportButton onClick={handleSupportClick}>
+                Fale Conosco
+              </SupportButton>
               <Button 
                 size="lg" 
                 variant="outline" 
