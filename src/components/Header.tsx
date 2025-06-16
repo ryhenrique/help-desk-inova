@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -34,7 +35,7 @@ const Header = () => {
       <AnimatedBackground />
       
       {/* Navigation Header */}
-      <header className="sticky top-0 z-50 w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl backdrop-brightness-125 border-b border-slate-200/60 dark:border-slate-600/60">
+      <header className="sticky top-0 z-50 w-full bg-white/10 dark:bg-black/10 backdrop-blur-xl backdrop-saturate-150 backdrop-brightness-110 border-b border-white/20 dark:border-white/10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-14 items-center justify-between">
             {/* Logo */}
@@ -48,16 +49,16 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-6">
-              <a href="#home" className="text-slate-600 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
+              <a href="#home" className="text-slate-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
                 Início
               </a>
-              <a href="#services" className="text-slate-600 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
+              <a href="#services" className="text-slate-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
                 Serviços
               </a>
-              <a href="#tutorials" className="text-slate-600 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
+              <a href="#tutorials" className="text-slate-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
                 Artigos
               </a>
-              <a href="#contact" className="text-slate-600 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
+              <a href="#contact" className="text-slate-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
                 Contato
               </a>
             </nav>
