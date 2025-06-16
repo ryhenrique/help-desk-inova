@@ -121,8 +121,6 @@ const Header = () => {
               {/* Main Heading with Typewriter */}
               <div className="space-y-4">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-slate-900">
-                  <span className="block mb-2">Entenda o fluxo do usuário</span>
-                  <span className="block">e </span>
                   <span className="text-blue-600">
                     <TypewriterText 
                       words={phrases}
