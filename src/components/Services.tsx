@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 const Services = () => {
   const services = [
     {
-      icon: <Monitor className="h-7 w-7" />,
+      icon: <Monitor className="h-8 w-8" />,
       title: "Suporte HelpDesk Especializado",
       description: "Assistência técnica completa com suporte remoto e presencial. Resolução rápida de problemas tecnológicos para manter sua empresa funcionando.",
       features: ["Suporte 24/7", "Atendimento remoto", "Manutenção preventiva", "Consultoria técnica"],
@@ -15,7 +15,7 @@ const Services = () => {
       badge: "Premium"
     },
     {
-      icon: <Camera className="h-7 w-7" />,
+      icon: <Camera className="h-8 w-8" />,
       title: "Segurança Total com Câmeras",
       description: "Câmeras de segurança com suporte completo, sem necessidade de compra. Instalação, manutenção e reposição de peças sem custo adicional.",
       features: ["Sem necessidade de compra", "Instalação profissional", "Manutenção incluída", "Reposição gratuita"],
@@ -23,7 +23,7 @@ const Services = () => {
       badge: "Completo"
     },
     {
-      icon: <Server className="h-7 w-7" />,
+      icon: <Server className="h-8 w-8" />,
       title: "Sistema Failover Robusto",
       description: "Confiabilidade ininterrupta com nosso sistema Failover. Garantimos que sua empresa nunca fique offline, mesmo em caso de falhas.",
       features: ["Zero downtime", "Backup automático", "Redundância total", "Monitoramento 24/7"],
@@ -31,7 +31,7 @@ const Services = () => {
       badge: "Confiável"
     },
     {
-      icon: <Network className="h-7 w-7" />,
+      icon: <Network className="h-8 w-8" />,
       title: "Expertise em Redes de Computadores",
       description: "Garantindo conectividade e segurança com soluções inovadoras e suporte excepcional para infraestrutura de rede.",
       features: ["Configuração profissional", "Segurança avançada", "Otimização de performance", "Suporte especializado"],
@@ -39,7 +39,7 @@ const Services = () => {
       badge: "Expert"
     },
     {
-      icon: <Wifi className="h-7 w-7" />,
+      icon: <Wifi className="h-8 w-8" />,
       title: "Monitoramento de Rede em Tempo Real",
       description: "Supervisão contínua para máxima eficiência. Monitoramos sua rede 24/7, identificando problemas antes que afetem suas operações.",
       features: ["Monitoramento 24/7", "Detecção proativa", "Relatórios detalhados", "Performance garantida"],
@@ -47,7 +47,7 @@ const Services = () => {
       badge: "24/7"
     },
     {
-      icon: <Shield className="h-7 w-7" />,
+      icon: <Shield className="h-8 w-8" />,
       title: "Segurança de Rede Avançada",
       description: "Proteção total contra ameaças cibernéticas. Implementamos firewalls e sistemas de detecção de intrusões para proteger sua rede.",
       features: ["Firewall avançado", "Detecção de intrusões", "Proteção antivírus", "Backup seguro"],
@@ -57,553 +57,91 @@ const Services = () => {
   ];
 
   return (
-    <>
-      <style>{`
-        .service-card-container {
-          position: relative;
-          width: 100%;
-          max-width: 350px;
-          height: 400px;
-          margin: 0 auto;
-          transition: all 200ms ease;
-        }
+    <section id="services" className="py-24 lg:py-32 bg-gradient-to-b from-slate-900 to-black">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <Badge variant="secondary" className="mb-6 bg-blue-500/10 text-blue-400 border-blue-500/20 px-4 py-2 font-medium">
+            Excelência em Serviços
+          </Badge>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 tracking-tight">
+            Conte sempre com a
+            <span className="block text-blue-400">HELP DESK INOVA</span>
+          </h2>
+          <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-light">
+            A HELP DESK INOVA é especialista em soluções tecnológicas para empresas, oferecendo suporte HelpDesk, 
+            gerenciamento de redes, e segurança cibernética. Com uma equipe qualificada e valores justos, 
+            <span className="font-medium text-slate-300"> garantimos eficiência e inovação </span>
+            para o crescimento seguro do seu negócio.
+          </p>
+        </div>
 
-        @media (max-width: 1024px) {
-          .service-card-container {
-            max-width: 320px;
-            height: 380px;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .service-card-container {
-            max-width: 300px;
-            height: 360px;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .service-card-container {
-            max-width: 280px;
-            height: 340px;
-          }
-        }
-
-        .service-card-container:active {
-          transform: scale(0.98);
-        }
-
-        .service-card {
-          position: absolute;
-          inset: 0;
-          z-index: 0;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          align-items: center;
-          border-radius: 20px;
-          transition: 700ms;
-          background: linear-gradient(45deg, #1a1a1a, #262626);
-          border: 2px solid rgba(255, 255, 255, 0.1);
-          overflow: hidden;
-          box-shadow:
-            0 0 20px rgba(0, 0, 0, 0.3),
-            inset 0 0 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .service-card-content {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          padding: 1.5rem;
-          display: flex;
-          flex-direction: column;
-          z-index: 10;
-        }
-
-        @media (max-width: 768px) {
-          .service-card-content {
-            padding: 1.25rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .service-card-content {
-            padding: 1rem;
-          }
-        }
-
-        .service-card-prompt {
-          position: absolute;
-          bottom: 2rem;
-          left: 50%;
-          transform: translateX(-50%);
-          z-index: 20;
-          font-size: 0.75rem;
-          font-weight: 600;
-          letter-spacing: 1px;
-          transition: 300ms ease-in-out;
-          text-align: center;
-          color: rgba(255, 255, 255, 0.7);
-          text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-          opacity: 1;
-        }
-
-        @media (max-width: 480px) {
-          .service-card-prompt {
-            font-size: 0.7rem;
-            bottom: 1.5rem;
-          }
-        }
-
-        .service-card-title {
-          opacity: 0;
-          transition: 300ms ease-in-out;
-          position: absolute;
-          font-size: 1.25rem;
-          font-weight: 800;
-          letter-spacing: 1px;
-          text-align: center;
-          width: 100%;
-          padding-top: 1.5rem;
-          background: linear-gradient(45deg, #00ffaa, #00a2ff);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          filter: drop-shadow(0 0 15px rgba(0, 255, 170, 0.3));
-          line-height: 1.2;
-          z-index: 15;
-        }
-
-        @media (max-width: 768px) {
-          .service-card-title {
-            font-size: 1.1rem;
-            padding-top: 1.25rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .service-card-title {
-            font-size: 1rem;
-            padding-top: 1rem;
-          }
-        }
-
-        .service-card-description {
-          position: absolute;
-          bottom: 8rem;
-          width: 100%;
-          text-align: center;
-          font-size: 0.8rem;
-          letter-spacing: 0.5px;
-          transform: translateY(30px);
-          color: rgba(255, 255, 255, 0.6);
-          padding: 0 1rem;
-          line-height: 1.4;
-          z-index: 15;
-          opacity: 0;
-          transition: all 300ms ease-in-out;
-        }
-
-        @media (max-width: 768px) {
-          .service-card-description {
-            font-size: 0.75rem;
-            bottom: 7rem;
-            padding: 0 0.75rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .service-card-description {
-            font-size: 0.7rem;
-            bottom: 6rem;
-            padding: 0 0.5rem;
-          }
-        }
-
-        .service-card-icon {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 3rem;
-          height: 3rem;
-          border-radius: 0.75rem;
-          background: linear-gradient(45deg, #00ffaa, #00a2ff);
-          color: white;
-          margin-bottom: 1rem;
-          z-index: 10;
-          position: relative;
-        }
-
-        @media (max-width: 480px) {
-          .service-card-icon {
-            width: 2.5rem;
-            height: 2.5rem;
-          }
-        }
-
-        .service-card-badge {
-          position: absolute;
-          top: 1rem;
-          right: 1rem;
-          background: rgba(0, 255, 170, 0.1);
-          color: #00ffaa;
-          padding: 0.25rem 0.75rem;
-          border-radius: 1rem;
-          font-size: 0.75rem;
-          font-weight: 500;
-          z-index: 10;
-          border: 1px solid rgba(0, 255, 170, 0.2);
-        }
-
-        @media (max-width: 480px) {
-          .service-card-badge {
-            font-size: 0.7rem;
-            padding: 0.2rem 0.6rem;
-          }
-        }
-
-        .service-card-features {
-          margin-top: auto;
-          margin-bottom: 1rem;
-          z-index: 10;
-          position: relative;
-          opacity: 0;
-          transition: all 300ms ease-in-out;
-        }
-
-        .service-card-feature {
-          display: flex;
-          align-items: center;
-          color: rgba(255, 255, 255, 0.7);
-          font-size: 0.8rem;
-          margin-bottom: 0.5rem;
-        }
-
-        @media (max-width: 480px) {
-          .service-card-feature {
-            font-size: 0.75rem;
-          }
-        }
-
-        .service-card-feature-dot {
-          width: 0.5rem;
-          height: 0.5rem;
-          border-radius: 50%;
-          background: linear-gradient(45deg, #00ffaa, #00a2ff);
-          margin-right: 0.75rem;
-          flex-shrink: 0;
-        }
-
-        .service-card-button {
-          background: rgba(0, 255, 170, 0.1);
-          color: #00ffaa;
-          border: 1px solid rgba(0, 255, 170, 0.2);
-          padding: 0.75rem 1rem;
-          border-radius: 0.5rem;
-          font-size: 0.875rem;
-          font-weight: 500;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.5rem;
-          z-index: 10;
-          position: relative;
-          opacity: 0;
-        }
-
-        @media (max-width: 480px) {
-          .service-card-button {
-            font-size: 0.8rem;
-            padding: 0.6rem 0.8rem;
-          }
-        }
-
-        .service-card-button:hover {
-          background: rgba(0, 255, 170, 0.2);
-          border-color: rgba(0, 255, 170, 0.4);
-          transform: translateY(-1px);
-        }
-
-        .service-card-glowing-elements {
-          position: absolute;
-          inset: 0;
-          pointer-events: none;
-        }
-
-        .service-card-glow-1,
-        .service-card-glow-2,
-        .service-card-glow-3 {
-          position: absolute;
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
-          background: radial-gradient(
-            circle at center,
-            rgba(0, 255, 170, 0.3) 0%,
-            rgba(0, 255, 170, 0) 70%
-          );
-          filter: blur(15px);
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-
-        .service-card-glow-1 {
-          top: -20px;
-          left: -20px;
-        }
-        .service-card-glow-2 {
-          top: 50%;
-          right: -30px;
-          transform: translateY(-50%);
-        }
-        .service-card-glow-3 {
-          bottom: -20px;
-          left: 30%;
-        }
-
-        .service-card-particles span {
-          position: absolute;
-          width: 3px;
-          height: 3px;
-          background: #00ffaa;
-          border-radius: 50%;
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-
-        .service-card-tracker {
-          position: absolute;
-          z-index: 200;
-          width: 100%;
-          height: 100%;
-          cursor: pointer;
-        }
-
-        .service-card::before {
-          content: "";
-          background: radial-gradient(
-            circle at center,
-            rgba(0, 255, 170, 0.1) 0%,
-            rgba(0, 162, 255, 0.05) 50%,
-            transparent 100%
-          );
-          filter: blur(20px);
-          opacity: 0;
-          width: 150%;
-          height: 150%;
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          transition: opacity 0.3s ease;
-        }
-
-        /* Hover effects */
-        .service-card-container:hover .service-card-title {
-          opacity: 1;
-          transform: translateY(-10px);
-        }
-
-        .service-card-container:hover .service-card-description {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .service-card-container:hover .service-card-features {
-          opacity: 1;
-        }
-
-        .service-card-container:hover .service-card-button {
-          opacity: 1;
-        }
-
-        .service-card-container:hover .service-card-prompt {
-          opacity: 0;
-        }
-
-        .service-card-container:hover .service-card::before {
-          opacity: 1;
-        }
-
-        .service-card-container:hover .service-card {
-          filter: brightness(1.1);
-        }
-
-        .service-card-container:hover .service-card-glowing-elements div {
-          opacity: 1;
-        }
-
-        .service-card-container:hover .service-card-particles span {
-          animation: particleFloat 2s infinite;
-        }
-
-        @keyframes particleFloat {
-          0% {
-            transform: translate(0, 0);
-            opacity: 0;
-          }
-          50% {
-            opacity: 1;
-          }
-          100% {
-            transform: translate(calc(var(--x, 0) * 30px), calc(var(--y, 0) * 30px));
-            opacity: 0;
-          }
-        }
-
-        /* Particle positions */
-        .service-card-particles span:nth-child(1) {
-          --x: 1;
-          --y: -1;
-          top: 40%;
-          left: 20%;
-        }
-        .service-card-particles span:nth-child(2) {
-          --x: -1;
-          --y: -1;
-          top: 60%;
-          right: 20%;
-        }
-        .service-card-particles span:nth-child(3) {
-          --x: 0.5;
-          --y: 1;
-          top: 20%;
-          left: 40%;
-        }
-        .service-card-particles span:nth-child(4) {
-          --x: -0.5;
-          --y: 1;
-          top: 80%;
-          right: 40%;
-        }
-        .service-card-particles span:nth-child(5) {
-          --x: 1;
-          --y: 0.5;
-          top: 30%;
-          left: 60%;
-        }
-        .service-card-particles span:nth-child(6) {
-          --x: -1;
-          --y: 0.5;
-          top: 70%;
-          right: 60%;
-        }
-
-        .noselect {
-          -webkit-touch-callout: none;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
-        }
-      `}</style>
-
-      <section id="services" className="py-24 lg:py-32 bg-gradient-to-b from-slate-900 to-black">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <Badge variant="secondary" className="mb-6 bg-blue-500/10 text-blue-400 border-blue-500/20 px-4 py-2 font-medium">
-              Excelência em Serviços
-            </Badge>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 tracking-tight">
-              Conte sempre com a
-              <span className="block text-blue-400">HELP DESK INOVA</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-slate-400 max-w-4xl mx-auto leading-relaxed font-light">
-              A HELP DESK INOVA é especialista em soluções tecnológicas para empresas, oferecendo suporte HelpDesk, 
-              gerenciamento de redes, e segurança cibernética. Com uma equipe qualificada e valores justos, 
-              <span className="font-medium text-slate-300"> garantimos eficiência e inovação </span>
-              para o crescimento seguro do seu negócio.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="service-card-container noselect">
-                <div className="service-card-tracker"></div>
-                
-                <div className="service-card">
-                  <div className="service-card-glowing-elements">
-                    <div className="service-card-glow-1"></div>
-                    <div className="service-card-glow-2"></div>
-                    <div className="service-card-glow-3"></div>
-                  </div>
-                  
-                  <div className="service-card-particles">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  
-                  <div className="service-card-badge">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <Card 
+              key={index} 
+              className="group relative bg-slate-800/50 border-slate-700 hover:border-slate-600 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 backdrop-blur-sm"
+            >
+              <CardHeader className="relative pb-4">
+                <div className="absolute top-4 right-4">
+                  <Badge variant="secondary" className="bg-blue-500/10 text-blue-400 border-blue-500/20">
                     {service.badge}
-                  </div>
-                  
-                  <div className="service-card-content">
-                    <div className="service-card-icon">
-                      {service.icon}
-                    </div>
-                    
-                    <h3 className="service-card-title">
-                      {service.title}
-                    </h3>
-                    
-                    <p className="service-card-description">
-                      {service.description}
-                    </p>
-                    
-                    <div className="service-card-features">
-                      {service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="service-card-feature">
-                          <div className="service-card-feature-dot"></div>
-                          <span>{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                    
-                    <button 
-                      className="service-card-button"
-                      onClick={() => window.open('https://api.whatsapp.com/send/?phone=5521991318034&text&type=phone_number&app_absent=0', '_blank')}
-                    >
-                      Saiba Mais
-                      <ArrowRight className="h-4 w-4" />
-                    </button>
-                  </div>
-                  
-                  <div className="service-card-prompt">Explore nossos serviços</div>
+                  </Badge>
                 </div>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA Section */}
-          <div className="text-center mt-20">
-            <div className="bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 rounded-2xl p-12 shadow-2xl relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5"></div>
-              <div className="relative z-10">
-                <h3 className="text-3xl font-bold text-white mb-4">
-                  Excelência em Serviços e Equipamentos para Seu Negócio
-                </h3>
-                <p className="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
-                  Oferecemos serviços de alta qualidade e equipamentos de ponta, adaptados para atender às necessidades de qualquer tipo de empresa.
-                </p>
+                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${service.color} mb-4`}>
+                  {service.icon}
+                </div>
+                <CardTitle className="text-xl text-white group-hover:text-blue-400 transition-colors">
+                  {service.title}
+                </CardTitle>
+                <CardDescription className="text-slate-400 leading-relaxed">
+                  {service.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-3">
+                  {service.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center gap-3">
+                      <div className="w-2 h-2 rounded-full bg-blue-400 flex-shrink-0"></div>
+                      <span className="text-slate-300 text-sm">{feature}</span>
+                    </div>
+                  ))}
+                </div>
                 <Button 
-                  size="lg" 
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium px-8 py-3 border-0"
+                  variant="outline" 
+                  className="w-full border-slate-600 text-slate-300 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300 group/btn"
                   onClick={() => window.open('https://api.whatsapp.com/send/?phone=5521991318034&text&type=phone_number&app_absent=0', '_blank')}
                 >
-                  Fale com os nossos especialistas
+                  Saiba Mais
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
                 </Button>
-              </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center mt-20">
+          <div className="bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700 rounded-2xl p-12 shadow-2xl relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5"></div>
+            <div className="relative z-10">
+              <h3 className="text-3xl font-bold text-white mb-4">
+                Excelência em Serviços e Equipamentos para Seu Negócio
+              </h3>
+              <p className="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
+                Oferecemos serviços de alta qualidade e equipamentos de ponta, adaptados para atender às necessidades de qualquer tipo de empresa.
+              </p>
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium px-8 py-3 border-0"
+                onClick={() => window.open('https://api.whatsapp.com/send/?phone=5521991318034&text&type=phone_number&app_absent=0', '_blank')}
+              >
+                Fale com os nossos especialistas
+              </Button>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
