@@ -1,4 +1,3 @@
-
 'use client';
 
 import AutoScroll from 'embla-carousel-auto-scroll';
@@ -77,8 +76,7 @@ export function PartnersLogos() {
                 speed: 1,
                 stopOnInteraction: false,
                 stopOnMouseEnter: false,
-                stopOnFocusIn: false,
-                restartDelay: 0
+                stopOnFocusIn: false
               })
             ]}
             className="w-full pointer-events-none"
