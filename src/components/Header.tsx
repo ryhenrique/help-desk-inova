@@ -28,7 +28,7 @@ const Header = () => {
       <AnimatedBackground />
       
       {/* Navigation Header */}
-      <header className="sticky top-0 z-50 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-700/60">
+      <header className="sticky top-0 z-50 w-full bg-white/85 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-600/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-14 items-center justify-between">
             {/* Logo */}
@@ -42,16 +42,16 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-6">
-              <a href="#home" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
+              <a href="#home" className="text-slate-600 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
                 Início
               </a>
-              <a href="#services" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
+              <a href="#services" className="text-slate-600 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
                 Serviços
               </a>
-              <a href="#tutorials" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
+              <a href="#tutorials" className="text-slate-600 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
                 Artigos
               </a>
-              <a href="#contact" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
+              <a href="#contact" className="text-slate-600 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
                 Contato
               </a>
             </nav>
@@ -75,28 +75,28 @@ const Header = () => {
                 <div className="flex flex-col space-y-6 pt-6">
                   <a
                     href="#home"
-                    className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-lg"
+                    className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-lg"
                     onClick={() => setIsOpen(false)}
                   >
                     Início
                   </a>
                   <a
                     href="#services"
-                    className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-lg"
+                    className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-lg"
                     onClick={() => setIsOpen(false)}
                   >
                     Serviços
                   </a>
                   <a
                     href="#tutorials"
-                    className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-lg"
+                    className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-lg"
                     onClick={() => setIsOpen(false)}
                   >
                     Artigos
                   </a>
                   <a
                     href="#contact"
-                    className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-lg"
+                    className="text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-lg"
                     onClick={() => setIsOpen(false)}
                   >
                     Contato
@@ -148,7 +148,7 @@ const Header = () => {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 px-6 py-3 font-medium rounded-lg transition-all duration-200"
+                  className="border-2 border-slate-300 dark:border-slate-500 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 px-6 py-3 font-medium rounded-lg transition-all duration-200"
                 >
                   Explorar Serviços
                 </Button>
@@ -159,7 +159,7 @@ const Header = () => {
             <div className="flex items-center justify-center lg:justify-end">
               <div className="relative">
                 {/* Main Logo */}
-                <div className="relative z-10 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-slate-200/50 dark:border-slate-700/50">
+                <div className="relative z-10 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-slate-200/50 dark:border-slate-600/50">
                   <img 
                     src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png" 
                     alt="Help Desk Inova" 
@@ -168,10 +168,10 @@ const Header = () => {
                 </div>
                 
                 {/* Floating Elements */}
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-100 dark:bg-blue-900/50 rounded-lg animate-float opacity-60"></div>
-                <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-full animate-pulse opacity-40"></div>
-                <div className="absolute top-1/2 -left-8 w-6 h-6 bg-blue-200 dark:bg-blue-800/50 rounded-md animate-bounce opacity-50" style={{ animationDelay: '1s' }}></div>
-                <div className="absolute -top-2 left-1/3 w-4 h-4 bg-indigo-100 dark:bg-indigo-900/50 rounded-full animate-ping opacity-30"></div>
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-100 dark:bg-blue-900/60 rounded-lg animate-float opacity-60"></div>
+                <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-blue-50 dark:bg-blue-900/40 rounded-full animate-pulse opacity-40"></div>
+                <div className="absolute top-1/2 -left-8 w-6 h-6 bg-blue-200 dark:bg-blue-800/60 rounded-md animate-bounce opacity-50" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute -top-2 left-1/3 w-4 h-4 bg-indigo-100 dark:bg-indigo-900/60 rounded-full animate-ping opacity-30"></div>
               </div>
             </div>
           </div>

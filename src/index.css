@@ -92,8 +92,9 @@
   }
 
   .dark body {
-    /* Dark mode gradient background - Deep blue/slate tones */
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
+    /* Dark mode gradient background - Deep navy/slate tones ideal for tech support branding */
+    background: linear-gradient(135deg, #0c1222 0%, #1e293b 20%, #0f172a 40%, #1e293b 60%, #334155 80%, #1e293b 100%);
+    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -170,7 +171,7 @@ html {
 }
 
 .dark ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: #0f172a;
 }
 
 ::-webkit-scrollbar-thumb {
