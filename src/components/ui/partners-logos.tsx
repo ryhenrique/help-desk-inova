@@ -34,6 +34,19 @@ const partnersData = [
     image: '/lovable-uploads/b9e78abe-4857-4d89-9ea0-f425732f7134.png',
     className: 'h-12 w-auto',
   },
+  // Adicionar mais duplicatas para movimento mais suave
+  {
+    id: 'casa-do-biscoito-3',
+    name: 'Casa do Biscoito',
+    image: '/lovable-uploads/dddd64f6-09e8-4b1f-9442-b082cc73bb94.png',
+    className: 'h-16 w-auto',
+  },
+  {
+    id: 'uniao-dos-cegos-3',
+    name: 'União dos Cegos no Brasil',
+    image: '/lovable-uploads/b9e78abe-4857-4d89-9ea0-f425732f7134.png',
+    className: 'h-12 w-auto',
+  },
 ];
 
 export function PartnersLogos() {
@@ -55,18 +68,20 @@ export function PartnersLogos() {
               loop: true,
               align: 'start',
               skipSnaps: false,
-              dragFree: true
+              dragFree: false,
+              containScroll: false
             }}
             plugins={[
               AutoScroll({ 
                 playOnInit: true,
-                speed: 0.5,
+                speed: 1,
                 stopOnInteraction: false,
                 stopOnMouseEnter: false,
-                stopOnFocusIn: false
+                stopOnFocusIn: false,
+                restartDelay: 0
               })
             ]}
-            className="w-full"
+            className="w-full pointer-events-none"
           >
             <CarouselContent className="ml-0 -pl-1">
               {partnersData.map((partner) => (
@@ -80,6 +95,7 @@ export function PartnersLogos() {
                       alt={partner.name}
                       className={`${partner.className} filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100`}
                       loading="lazy"
+                      draggable={false}
                     />
                   </div>
                 </CarouselItem>
