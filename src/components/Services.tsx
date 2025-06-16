@@ -50,50 +50,56 @@ const Services = () => {
     }
   ];
 
+  const handleContactClick = () => {
+    window.open('https://api.whatsapp.com/send/?phone=5521991318034&text&type=phone_number&app_absent=0', '_blank');
+  };
+
   return (
-    <section id="services" className="py-20 lg:py-28 bg-white relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4 bg-blue-50 text-blue-600 border-blue-200 px-4 py-2">
+    <section id="services" className="py-16 lg:py-24 bg-white relative">
+      <div className="container">
+        {/* Section Header */}
+        <div className="text-center mb-16 space-y-4">
+          <Badge variant="secondary" className="mb-4 bg-blue-50 text-blue-600 border-blue-200 px-4 py-2 text-sm font-medium">
             Nossos Serviços
           </Badge>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900">
             Soluções Completas em
-            <span className="block text-blue-600">Tecnologia</span>
+            <span className="block text-gradient mt-2">Tecnologia</span>
           </h2>
-          <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
             Oferecemos serviços especializados em TI para garantir que sua empresa tenha 
             <span className="font-semibold text-slate-800"> a melhor infraestrutura tecnológica </span>
             disponível no mercado.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="group relative bg-white border border-slate-200 hover:border-blue-200 transition-all duration-300 hover:shadow-lg"
+              className="group relative bg-white border border-slate-200 hover:border-blue-200 card-hover"
             >
               <CardHeader className="pb-4">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="inline-flex p-3 rounded-lg bg-blue-50 text-blue-600 group-hover:bg-blue-100 transition-colors">
+                  <div className="inline-flex p-3 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-100 transition-colors">
                     {service.icon}
                   </div>
-                  <Badge variant="secondary" className="bg-slate-50 text-slate-600 border-slate-200">
+                  <Badge variant="secondary" className="bg-slate-50 text-slate-600 border-slate-200 text-xs">
                     {service.badge}
                   </Badge>
                 </div>
-                <CardTitle className="text-xl text-slate-900 group-hover:text-blue-600 transition-colors">
+                <CardTitle className="text-xl text-slate-900 group-hover:text-blue-600 transition-colors leading-tight">
                   {service.title}
                 </CardTitle>
                 <CardDescription className="text-slate-600 leading-relaxed">
                   {service.description}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
+              <CardContent className="space-y-6">
+                <div className="space-y-3">
                   {service.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center gap-2">
+                    <div key={featureIndex} className="flex items-center gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0"></div>
                       <span className="text-slate-600 text-sm">{feature}</span>
                     </div>
@@ -102,8 +108,8 @@ const Services = () => {
                 <Button 
                   variant="outline" 
                   size="sm"
-                  className="w-full border-slate-200 text-slate-700 hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 transition-all duration-200"
-                  onClick={() => window.open('https://api.whatsapp.com/send/?phone=5521991318034&text&type=phone_number&app_absent=0', '_blank')}
+                  className="w-full btn-secondary text-sm"
+                  onClick={handleContactClick}
                 >
                   Saiba Mais
                 </Button>
@@ -113,8 +119,8 @@ const Services = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-16">
-          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-12 max-w-4xl mx-auto">
+        <div className="text-center">
+          <div className="bg-gradient-to-br from-slate-50 to-blue-50/50 border border-slate-200 rounded-2xl p-8 lg:p-12 max-w-4xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
               Pronto para Transformar sua Infraestrutura de TI?
             </h3>
@@ -123,8 +129,8 @@ const Services = () => {
             </p>
             <Button 
               size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-3 rounded-lg shadow-sm"
-              onClick={() => window.open('https://api.whatsapp.com/send/?phone=5521991318034&text&type=phone_number&app_absent=0', '_blank')}
+              className="btn-primary"
+              onClick={handleContactClick}
             >
               Fale com Nossos Especialistas
             </Button>

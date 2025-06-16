@@ -27,30 +27,30 @@ const Header = () => {
       <AnimatedBackground />
       
       {/* Navigation Header */}
-      <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-slate-200/50">
+      <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-slate-200/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
+          <div className="flex h-14 items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
               <img 
                 src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png" 
                 alt="Help Desk Inova" 
-                className="h-10 w-auto"
+                className="h-8 w-auto"
               />
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-slate-700 hover:text-blue-600 transition-colors font-medium">
+            <nav className="hidden md:flex items-center space-x-6">
+              <a href="#home" className="text-slate-600 hover:text-blue-600 transition-colors text-sm font-medium">
                 Início
               </a>
-              <a href="#services" className="text-slate-700 hover:text-blue-600 transition-colors font-medium">
+              <a href="#services" className="text-slate-600 hover:text-blue-600 transition-colors text-sm font-medium">
                 Serviços
               </a>
-              <a href="#tutorials" className="text-slate-700 hover:text-blue-600 transition-colors font-medium">
+              <a href="#tutorials" className="text-slate-600 hover:text-blue-600 transition-colors text-sm font-medium">
                 Tutoriais
               </a>
-              <a href="#contact" className="text-slate-700 hover:text-blue-600 transition-colors font-medium">
+              <a href="#contact" className="text-slate-600 hover:text-blue-600 transition-colors text-sm font-medium">
                 Contato
               </a>
             </nav>
@@ -112,47 +112,66 @@ const Header = () => {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center max-w-4xl mx-auto">
-            {/* Logo */}
-            <div className="mb-12">
-              <img 
-                src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png" 
-                alt="Help Desk Inova" 
-                className="h-24 md:h-32 w-auto mx-auto drop-shadow-lg"
-              />
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+            
+            {/* Left Content */}
+            <div className="space-y-8">
+              {/* Main Heading with Typewriter */}
+              <div className="space-y-4">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-slate-900">
+                  <span className="block mb-2">Entenda o fluxo do usuário</span>
+                  <span className="block">e </span>
+                  <span className="text-blue-600">
+                    <TypewriterText 
+                      words={phrases}
+                      speed={80}
+                      deleteSpeed={40}
+                      delayBetweenWords={2500}
+                    />
+                  </span>
+                </h1>
+                
+                <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-xl">
+                  Transformamos desafios tecnológicos em soluções eficientes. 
+                  Nossa equipe especializada oferece suporte completo para sua empresa.
+                </p>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <SupportButton onClick={handleSupportClick}>
+                  Fale Conosco
+                </SupportButton>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-2 border-slate-300 text-slate-700 hover:bg-slate-50 px-6 py-3 font-medium rounded-lg transition-all duration-200"
+                >
+                  Explorar Serviços
+                </Button>
+              </div>
             </div>
 
-            {/* Typewriter Text */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-slate-900">
-              <TypewriterText 
-                words={phrases}
-                speed={80}
-                deleteSpeed={40}
-                delayBetweenWords={2500}
-              />
-            </h1>
-
-            {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Transformamos desafios tecnológicos em 
-              <span className="font-semibold text-blue-600"> soluções eficientes </span>
-              para o seu negócio
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <SupportButton onClick={handleSupportClick}>
-                Fale Conosco
-              </SupportButton>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-slate-300 text-slate-700 hover:bg-slate-50 px-8 py-4 text-lg font-medium rounded-lg transition-all duration-200"
-              >
-                Explorar Serviços
-              </Button>
+            {/* Right Content - Logo and Visual Elements */}
+            <div className="flex items-center justify-center lg:justify-end">
+              <div className="relative">
+                {/* Main Logo */}
+                <div className="relative z-10 bg-white rounded-2xl p-8 shadow-lg border border-slate-200/50">
+                  <img 
+                    src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png" 
+                    alt="Help Desk Inova" 
+                    className="h-24 md:h-32 w-auto mx-auto"
+                  />
+                </div>
+                
+                {/* Floating Elements */}
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-100 rounded-lg animate-float opacity-60"></div>
+                <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-blue-50 rounded-full animate-pulse opacity-40"></div>
+                <div className="absolute top-1/2 -left-8 w-6 h-6 bg-blue-200 rounded-md animate-bounce opacity-50" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute -top-2 left-1/3 w-4 h-4 bg-indigo-100 rounded-full animate-ping opacity-30"></div>
+              </div>
             </div>
           </div>
         </div>
