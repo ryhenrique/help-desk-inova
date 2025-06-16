@@ -27,8 +27,9 @@ const Header = () => {
       <AnimatedBackground />
       
       {/* Navigation Header */}
-      <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-slate-200/50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-slate-200/50 pattern-vaporwave">
+        <div className="absolute inset-0 bg-white/90"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex h-14 items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
@@ -112,8 +113,9 @@ const Header = () => {
       </header>
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 pattern-vaporwave opacity-10"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
             
             {/* Left Content */}
