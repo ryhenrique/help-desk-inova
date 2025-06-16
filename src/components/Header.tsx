@@ -18,10 +18,9 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Sobre', href: '#about' },
+    { name: 'Início', href: '#home' },
     { name: 'Serviços', href: '#services' },
-    { name: 'Suporte', href: '#tutorials' },
+    { name: 'Tutoriais', href: '#tutorials' },
     { name: 'Contato', href: '#contact' }
   ];
 
@@ -30,7 +29,7 @@ const Header = () => {
   };
 
   return (
-    <>
+    <div className="relative">
       {/* Navigation Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
@@ -50,35 +49,20 @@ const Header = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1">
+            <nav className="hidden lg:flex items-center space-x-8">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="px-4 py-2 text-sm font-medium text-slate-700 hover:text-blue-600 hover:bg-blue-50/50 rounded-lg transition-all duration-200 relative group"
+                  className="text-slate-700 hover:text-blue-600 font-medium transition-colors"
                 >
                   {item.name}
-                  <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-blue-600 group-hover:w-full group-hover:left-0 transition-all duration-300"></span>
                 </a>
               ))}
             </nav>
 
-            {/* Contact Actions */}
-            <div className="hidden lg:flex items-center space-x-3">
-              <a
-                href="tel:+5521991318034"
-                className="flex items-center space-x-2 px-3 py-2 text-sm text-slate-600 hover:text-blue-600 transition-colors"
-              >
-                <Phone className="w-4 h-4" />
-                <span className="hidden xl:inline">(21) 99131-8034</span>
-              </a>
-              <a
-                href="mailto:suporte@helpdeskinova.com.br"
-                className="flex items-center space-x-2 px-3 py-2 text-sm text-slate-600 hover:text-blue-600 transition-colors"
-              >
-                <Mail className="w-4 h-4" />
-                <span className="hidden xl:inline">suporte@helpdeskinova.com.br</span>
-              </a>
+            {/* Right side with Support button */}
+            <div className="flex items-center space-x-4">
               <SupportButton onClick={handleContactClick}>
                 Suporte
               </SupportButton>
@@ -87,7 +71,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
+              className="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors ml-4"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -107,21 +91,7 @@ const Header = () => {
                     {item.name}
                   </a>
                 ))}
-                <div className="pt-4 space-y-3 border-t border-slate-200">
-                  <a
-                    href="tel:+5521991318034"
-                    className="flex items-center space-x-3 px-4 py-3 text-slate-600 hover:text-blue-600 rounded-lg transition-colors"
-                  >
-                    <Phone className="w-5 h-5" />
-                    <span>(21) 99131-8034</span>
-                  </a>
-                  <a
-                    href="mailto:suporte@helpdeskinova.com.br"
-                    className="flex items-center space-x-3 px-4 py-3 text-slate-600 hover:text-blue-600 rounded-lg transition-colors"
-                  >
-                    <Mail className="w-5 h-5" />
-                    <span>suporte@helpdeskinova.com.br</span>
-                  </a>
+                <div className="pt-4 border-t border-slate-200">
                   <div className="px-4">
                     <SupportButton onClick={handleContactClick}>
                       Solicitar Suporte
@@ -150,21 +120,18 @@ const Header = () => {
             <div className="space-y-8">
               <div className="space-y-6">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-tight">
-                  Suporte Técnico
-                  <span className="block text-gradient mt-2">
-                    <TypewriterText 
-                      words={['Profissional', 'Especializado', 'Confiável', 'Inovador']}
-                      speed={150}
-                      deleteSpeed={100}
-                      delayBetweenWords={2000}
-                    />
+                  Entenda o fluxo do usuário
+                  <span className="block">
+                    e
+                  </span>
+                  <span className="block text-gradient">
+                    Resultados Garantidos
                   </span>
                 </h1>
                 
                 <p className="text-xl text-slate-600 leading-relaxed max-w-xl">
                   Transformamos desafios tecnológicos em soluções eficientes. 
-                  <span className="font-semibold text-slate-800"> Especialistas em TI </span>
-                  prontos para impulsionar seu negócio.
+                  Nossa equipe especializada oferece suporte completo para sua empresa.
                 </p>
               </div>
 
@@ -172,11 +139,11 @@ const Header = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-200 group"
+                  className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg font-medium shadow-lg hover:shadow-xl transition-all duration-200 group"
                   onClick={handleContactClick}
                 >
                   <Headphones className="mr-2 h-5 w-5" />
-                  Solicitar Suporte Agora
+                  Fale Conosco
                 </Button>
                 <Button 
                   size="lg" 
@@ -184,24 +151,8 @@ const Header = () => {
                   className="border-2 border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400 px-8 py-4 text-lg font-medium transition-all duration-200"
                   onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Conhecer Serviços
+                  Explorar Serviços
                 </Button>
-              </div>
-
-              {/* Trust Indicators */}
-              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-slate-200">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-slate-900 mb-1">500+</div>
-                  <div className="text-sm text-slate-600">Problemas Resolvidos</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-slate-900 mb-1">24h</div>
-                  <div className="text-sm text-slate-600">Tempo de Resposta</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-slate-900 mb-1">98%</div>
-                  <div className="text-sm text-slate-600">Satisfação</div>
-                </div>
               </div>
             </div>
 
@@ -219,7 +170,7 @@ const Header = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
