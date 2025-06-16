@@ -1,8 +1,12 @@
 
 'use client';
 
-import { motion } from 'framer-motion';
-import { Card, CardContent } from '@/components/ui/card';
+import AutoScroll from 'embla-carousel-auto-scroll';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from '@/components/ui/carousel';
 
 const partnersData = [
   {
@@ -17,6 +21,19 @@ const partnersData = [
     image: '/lovable-uploads/b9e78abe-4857-4d89-9ea0-f425732f7134.png',
     className: 'h-12 w-auto',
   },
+  // Duplicar as logos para criar um efeito de loop contínuo
+  {
+    id: 'casa-do-biscoito-2',
+    name: 'Casa do Biscoito',
+    image: '/lovable-uploads/dddd64f6-09e8-4b1f-9442-b082cc73bb94.png',
+    className: 'h-16 w-auto',
+  },
+  {
+    id: 'uniao-dos-cegos-2',
+    name: 'União dos Cegos no Brasil',
+    image: '/lovable-uploads/b9e78abe-4857-4d89-9ea0-f425732f7134.png',
+    className: 'h-12 w-auto',
+  },
 ];
 
 export function PartnersLogos() {
@@ -24,49 +41,48 @@ export function PartnersLogos() {
     <section className="py-16 bg-slate-50 dark:bg-slate-900/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-white mb-4"
-          >
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-white mb-4">
             Nossos Parceiros
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto"
-          >
+          </h2>
+          <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             Trabalhamos com empresas que confiam em nossa expertise tecnológica
-          </motion.p>
+          </p>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-          {partnersData.map((partner, index) => (
-            <motion.div
-              key={partner.id}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              whileHover={{ scale: 1.05 }}
-              className="flex-shrink-0"
-            >
-              <Card className="bg-white dark:bg-slate-800 hover:shadow-lg transition-all duration-300 border border-slate-200 dark:border-slate-700">
-                <CardContent className="p-6 flex items-center justify-center">
-                  <img
-                    src={partner.image}
-                    alt={partner.name}
-                    className={partner.className}
-                    loading="lazy"
-                  />
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+        <div className="relative mx-auto flex items-center justify-center max-w-4xl">
+          <Carousel
+            opts={{ loop: true }}
+            plugins={[
+              AutoScroll({ 
+                playOnInit: true, 
+                speed: 1,
+                stopOnInteraction: false,
+                stopOnMouseEnter: true
+              })
+            ]}
+          >
+            <CarouselContent className="ml-0">
+              {partnersData.map((partner) => (
+                <CarouselItem
+                  key={partner.id}
+                  className="flex basis-1/2 justify-center pl-0 sm:basis-1/3 md:basis-1/4"
+                >
+                  <div className="mx-8 flex shrink-0 items-center justify-center">
+                    <img
+                      src={partner.image}
+                      alt={partner.name}
+                      className={`${partner.className} filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100`}
+                      loading="lazy"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+          
+          {/* Gradient fade nas bordas */}
+          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-50 dark:from-slate-900/50 to-transparent pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-50 dark:from-slate-900/50 to-transparent pointer-events-none"></div>
         </div>
       </div>
     </section>
