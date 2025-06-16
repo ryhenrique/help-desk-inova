@@ -41,11 +41,13 @@ const Header = () => {
           <div className="flex h-14 items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
-              <img 
-                src={logoSrc}
-                alt="Help Desk Inova" 
-                className="h-8 w-auto"
-              />
+              <div className={`p-2 rounded ${isDarkMode ? 'bg-white' : ''}`}>
+                <img 
+                  src={logoSrc}
+                  alt="Help Desk Inova" 
+                  className="h-8 w-auto"
+                />
+              </div>
             </div>
 
             {/* Desktop Navigation */}
@@ -168,11 +170,13 @@ const Header = () => {
               <div className="relative">
                 {/* Main Logo */}
                 <div className="relative z-10 bg-white/95 dark:bg-slate-800/95 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-slate-200/50 dark:border-slate-600/50">
-                  <img 
-                    src={logoSrc}
-                    alt="Help Desk Inova" 
-                    className="h-24 md:h-32 w-auto mx-auto"
-                  />
+                  <div className={`p-4 rounded ${isDarkMode ? 'bg-white' : ''}`}>
+                    <img 
+                      src={logoSrc}
+                      alt="Help Desk Inova" 
+                      className="h-24 md:h-32 w-auto mx-auto"
+                    />
+                  </div>
                 </div>
                 
                 {/* Floating Elements */}
