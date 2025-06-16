@@ -4,7 +4,6 @@ import { Menu, X, Headphones, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SupportButton from '@/components/ui/support-button';
 import TypewriterText from '@/components/ui/typewriter-text';
-import Hero from './Hero';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,7 +30,7 @@ const Header = () => {
   };
 
   return (
-    <div className="relative">
+    <>
       {/* Navigation Header */}
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
@@ -220,7 +219,7 @@ const Header = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 
