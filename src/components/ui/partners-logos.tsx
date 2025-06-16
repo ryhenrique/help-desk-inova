@@ -1,3 +1,4 @@
+
 'use client';
 
 import AutoScroll from 'embla-carousel-auto-scroll';
@@ -50,7 +51,7 @@ const partnersData = [
 
 export function PartnersLogos() {
   return (
-    <section className="py-16 bg-slate-50 dark:bg-slate-900/50">
+    <section className="py-16 bg-transparent">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-white mb-4">
@@ -91,7 +92,7 @@ export function PartnersLogos() {
                     <img
                       src={partner.image}
                       alt={partner.name}
-                      className={`${partner.className} filter grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100`}
+                      className={`${partner.className} transition-all duration-300 hover:scale-105`}
                       loading="lazy"
                       draggable={false}
                     />
@@ -100,10 +101,6 @@ export function PartnersLogos() {
               ))}
             </CarouselContent>
           </Carousel>
-          
-          {/* Gradient fade nas bordas */}
-          <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-slate-50 dark:from-slate-900/50 to-transparent pointer-events-none z-10"></div>
-          <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-slate-50 dark:from-slate-900/50 to-transparent pointer-events-none z-10"></div>
         </div>
       </div>
     </section>
