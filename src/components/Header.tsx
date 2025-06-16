@@ -28,7 +28,7 @@ const Header = () => {
       <AnimatedBackground />
       
       {/* Navigation Header */}
-      <header className="sticky top-0 z-50 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-slate-200/50 dark:border-slate-800/50">
+      <header className="sticky top-0 z-50 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-700/60">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-14 items-center justify-between">
             {/* Logo */}
@@ -71,7 +71,7 @@ const Header = () => {
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-80 bg-white dark:bg-slate-900">
+              <SheetContent side="right" className="w-80 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md">
                 <div className="flex flex-col space-y-6 pt-6">
                   <a
                     href="#home"
@@ -116,7 +116,6 @@ const Header = () => {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 pattern-vaporwave opacity-10"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
             
@@ -160,7 +159,7 @@ const Header = () => {
             <div className="flex items-center justify-center lg:justify-end">
               <div className="relative">
                 {/* Main Logo */}
-                <div className="relative z-10 bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200/50 dark:border-slate-700/50">
+                <div className="relative z-10 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-slate-200/50 dark:border-slate-700/50">
                   <img 
                     src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png" 
                     alt="Help Desk Inova" 
