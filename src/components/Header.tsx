@@ -28,7 +28,7 @@ const Header = () => {
       <AnimatedBackground />
       
       {/* Navigation Header */}
-      <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-sm border-b border-border">
+      <header className="sticky top-0 z-50 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-slate-200/50 dark:border-slate-800/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-14 items-center justify-between">
             {/* Logo */}
@@ -42,16 +42,16 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-6">
-              <a href="#home" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">
+              <a href="#home" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
                 Início
               </a>
-              <a href="#services" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">
+              <a href="#services" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
                 Serviços
               </a>
-              <a href="#tutorials" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">
+              <a href="#tutorials" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
                 Artigos
               </a>
-              <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">
+              <a href="#contact" className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm font-medium">
                 Contato
               </a>
             </nav>
@@ -71,32 +71,32 @@ const Header = () => {
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-80 bg-background">
+              <SheetContent side="right" className="w-80 bg-white dark:bg-slate-900">
                 <div className="flex flex-col space-y-6 pt-6">
                   <a
                     href="#home"
-                    className="text-foreground hover:text-primary transition-colors font-medium text-lg"
+                    className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-lg"
                     onClick={() => setIsOpen(false)}
                   >
                     Início
                   </a>
                   <a
                     href="#services"
-                    className="text-foreground hover:text-primary transition-colors font-medium text-lg"
+                    className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-lg"
                     onClick={() => setIsOpen(false)}
                   >
                     Serviços
                   </a>
                   <a
                     href="#tutorials"
-                    className="text-foreground hover:text-primary transition-colors font-medium text-lg"
+                    className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-lg"
                     onClick={() => setIsOpen(false)}
                   >
                     Artigos
                   </a>
                   <a
                     href="#contact"
-                    className="text-foreground hover:text-primary transition-colors font-medium text-lg"
+                    className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium text-lg"
                     onClick={() => setIsOpen(false)}
                   >
                     Contato
@@ -116,6 +116,7 @@ const Header = () => {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 pattern-vaporwave opacity-10"></div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
             
@@ -124,7 +125,7 @@ const Header = () => {
               {/* Main Heading with Typewriter - Fixed Height Container */}
               <div className="space-y-4">
                 <div className="min-h-[200px] md:min-h-[240px] lg:min-h-[280px] flex items-center">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary">
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-blue-600 dark:text-blue-400">
                     <TypewriterText 
                       words={phrases}
                       speed={80}
@@ -134,7 +135,7 @@ const Header = () => {
                   </h1>
                 </div>
                 
-                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
+                <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl">
                   Transformamos desafios tecnológicos em soluções eficientes. 
                   Nossa equipe especializada oferece suporte completo para sua empresa.
                 </p>
@@ -148,7 +149,7 @@ const Header = () => {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-2 border-border text-foreground hover:bg-secondary px-6 py-3 font-medium rounded-lg transition-all duration-200"
+                  className="border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 px-6 py-3 font-medium rounded-lg transition-all duration-200"
                 >
                   Explorar Serviços
                 </Button>
@@ -159,7 +160,7 @@ const Header = () => {
             <div className="flex items-center justify-center lg:justify-end">
               <div className="relative">
                 {/* Main Logo */}
-                <div className="relative z-10 bg-card rounded-2xl p-8 shadow-lg border border-border">
+                <div className="relative z-10 bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border border-slate-200/50 dark:border-slate-700/50">
                   <img 
                     src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png" 
                     alt="Help Desk Inova" 
@@ -168,10 +169,10 @@ const Header = () => {
                 </div>
                 
                 {/* Floating Elements */}
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary/20 rounded-lg animate-float opacity-60"></div>
-                <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-primary/10 rounded-full animate-pulse opacity-40"></div>
-                <div className="absolute top-1/2 -left-8 w-6 h-6 bg-primary/30 rounded-md animate-bounce opacity-50" style={{ animationDelay: '1s' }}></div>
-                <div className="absolute -top-2 left-1/3 w-4 h-4 bg-primary/15 rounded-full animate-ping opacity-30"></div>
+                <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-100 dark:bg-blue-900/50 rounded-lg animate-float opacity-60"></div>
+                <div className="absolute -bottom-6 -left-6 w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-full animate-pulse opacity-40"></div>
+                <div className="absolute top-1/2 -left-8 w-6 h-6 bg-blue-200 dark:bg-blue-800/50 rounded-md animate-bounce opacity-50" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute -top-2 left-1/3 w-4 h-4 bg-indigo-100 dark:bg-indigo-900/50 rounded-full animate-ping opacity-30"></div>
               </div>
             </div>
           </div>
