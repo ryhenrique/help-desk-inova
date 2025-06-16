@@ -47,20 +47,20 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-gradient-to-b from-white to-slate-50/50">
+    <section id="contact" className="py-24 lg:py-32 bg-gradient-to-b from-white to-slate-50/50 dark:from-slate-900 dark:to-slate-800/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
-          <Badge variant="secondary" className="mb-6 bg-blue-50 text-blue-700 border-blue-200 px-4 py-2 font-medium">
+          <Badge variant="secondary" className="mb-6 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700 px-4 py-2 font-medium">
             <Shield className="w-4 h-4 mr-2" />
             Atendimento Especializado
           </Badge>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-8 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-8 tracking-tight">
             Fale com Nossos
-            <span className="block text-blue-600">Especialistas</span>
+            <span className="block text-blue-600 dark:text-blue-400">Especialistas</span>
           </h2>
-          <p className="text-xl md:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light">
             Precisa de suporte técnico especializado? Entre em contato com nossa equipe de
-            <span className="font-medium text-slate-800"> consultores certificados </span>
+            <span className="font-medium text-slate-800 dark:text-slate-200"> consultores certificados </span>
             e receba a solução mais adequada para suas necessidades corporativas.
           </p>
         </div>
@@ -70,43 +70,43 @@ const Contact = () => {
           <div className="lg:col-span-2 space-y-8">
             {/* Contact Cards */}
             <div className="space-y-6">
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-blue-50 to-white">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-blue-50 to-white dark:from-blue-900/30 dark:to-slate-800">
                 <CardHeader className="pb-4">
                   <div className="flex items-center space-x-4">
                     <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-4 rounded-2xl shadow-lg">
                       <Mail className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <CardTitle className="text-lg text-slate-900 font-bold">E-mail Corporativo</CardTitle>
-                      <CardDescription className="text-slate-600 font-medium">suporte@helpdeskinova.com.br</CardDescription>
+                      <CardTitle className="text-lg text-slate-900 dark:text-white font-bold">E-mail Corporativo</CardTitle>
+                      <CardDescription className="text-slate-600 dark:text-slate-300 font-medium">suporte@helpdeskinova.com.br</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
               </Card>
 
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-emerald-50 to-white">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-emerald-50 to-white dark:from-emerald-900/30 dark:to-slate-800">
                 <CardHeader className="pb-4">
                   <div className="flex items-center space-x-4">
                     <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 p-4 rounded-2xl shadow-lg">
                       <MessageSquare className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <CardTitle className="text-lg text-slate-900 font-bold">WhatsApp Business</CardTitle>
-                      <CardDescription className="text-slate-600 font-medium">+55 (21) 99131-8034</CardDescription>
+                      <CardTitle className="text-lg text-slate-900 dark:text-white font-bold">WhatsApp Business</CardTitle>
+                      <CardDescription className="text-slate-600 dark:text-slate-300 font-medium">+55 (21) 99131-8034</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
               </Card>
 
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-violet-50 to-white">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-violet-50 to-white dark:from-violet-900/30 dark:to-slate-800">
                 <CardHeader className="pb-4">
                   <div className="flex items-center space-x-4">
                     <div className="bg-gradient-to-r from-violet-600 to-violet-700 p-4 rounded-2xl shadow-lg">
                       <Instagram className="h-6 w-6 text-white" />
                     </div>
                     <div>
-                      <CardTitle className="text-lg text-slate-900 font-bold">Instagram</CardTitle>
-                      <CardDescription className="text-slate-600 font-medium">@helpdeskinova</CardDescription>
+                      <CardTitle className="text-lg text-slate-900 dark:text-white font-bold">Instagram</CardTitle>
+                      <CardDescription className="text-slate-600 dark:text-slate-300 font-medium">@helpdeskinova</CardDescription>
                     </div>
                   </div>
                 </CardHeader>
@@ -116,10 +116,10 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-3">
-            <Card className="border-0 shadow-2xl bg-white">
+            <Card className="border-0 shadow-2xl bg-white dark:bg-slate-800">
               <CardHeader className="pb-8">
-                <CardTitle className="text-3xl font-bold text-slate-900">Solicitar Consultoria</CardTitle>
-                <CardDescription className="text-lg text-slate-600">
+                <CardTitle className="text-3xl font-bold text-slate-900 dark:text-white">Solicitar Consultoria</CardTitle>
+                <CardDescription className="text-lg text-slate-600 dark:text-slate-300">
                   Preencha o formulário abaixo com detalhes sobre sua necessidade de suporte técnico.
                   Nossa equipe de especialistas responderá com uma proposta personalizada.
                 </CardDescription>

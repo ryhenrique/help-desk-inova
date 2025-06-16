@@ -28,7 +28,7 @@ const Header = () => {
   // Determina se deve usar logo branca baseado no tema
   const isDarkMode = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
   const logoSrc = isDarkMode 
-    ? "/lovable-uploads/e239b180-ebea-489a-b2a9-d0fd86f97834.png" 
+    ? "/lovable-uploads/15d3f837-3640-47ed-9092-6a1682cb0b86.png"
     : "/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png";
 
   return (
