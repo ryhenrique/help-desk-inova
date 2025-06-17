@@ -91,11 +91,13 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
               handleNavClick('#home');
             }}
           >
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">H</span>
-            </div>
+            <img 
+              src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png"
+              alt="Help Desk Inova" 
+              className="h-8 w-auto"
+            />
             <span className="text-lg font-bold tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
-              HelpDesk Pro
+              Help Desk Inova
             </span>
           </a>
 
@@ -145,19 +147,6 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
 
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  href="#tutorials"
-                  className={navigationMenuTriggerStyle()}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick('#tutorials');
-                  }}
-                >
-                  Artigos
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink
                   href="#contact"
                   className={navigationMenuTriggerStyle()}
                   onClick={(e) => {
@@ -174,9 +163,6 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
           {/* Desktop Actions */}
           <div className="hidden items-center gap-4 lg:flex">
             <ThemeToggle />
-            <Button variant="outline" onClick={onSupportClick}>
-              Entrar
-            </Button>
             <Button onClick={onSupportClick}>
               Suporte
             </Button>
@@ -202,11 +188,13 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
                         handleNavClick('#home');
                       }}
                     >
-                      <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
-                        <span className="text-white font-bold text-sm">H</span>
-                      </div>
+                      <img 
+                        src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png"
+                        alt="Help Desk Inova" 
+                        className="h-8 w-auto"
+                      />
                       <span className="text-lg font-bold tracking-tight">
-                        HelpDesk Pro
+                        Help Desk Inova
                       </span>
                     </a>
                   </SheetTitle>
@@ -257,16 +245,6 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
                       Início
                     </a>
                     <a 
-                      href="#tutorials" 
-                      className="font-medium"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleNavClick('#tutorials');
-                      }}
-                    >
-                      Artigos
-                    </a>
-                    <a 
                       href="#contact" 
                       className="font-medium"
                       onClick={(e) => {
@@ -279,9 +257,6 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
                   </div>
                   
                   <div className="mt-6 flex flex-col gap-4">
-                    <Button variant="outline" onClick={onSupportClick}>
-                      Entrar
-                    </Button>
                     <Button onClick={onSupportClick}>
                       Suporte
                     </Button>
