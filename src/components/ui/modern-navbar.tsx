@@ -28,6 +28,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { ThemeToggle } from '@/components/ui/theme-toggle';
+import SupportButton from '@/components/ui/support-button';
 
 interface ModernNavbarProps {
   onSupportClick: () => void;
@@ -96,9 +97,6 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
               alt="Help Desk Inova" 
               className="h-8 w-auto"
             />
-            <span className="text-lg font-bold tracking-tight bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
-              Help Desk Inova
-            </span>
           </a>
 
           {/* Desktop Navigation */}
@@ -163,9 +161,9 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
           {/* Desktop Actions */}
           <div className="hidden items-center gap-4 lg:flex">
             <ThemeToggle />
-            <Button onClick={onSupportClick}>
-              Suporte
-            </Button>
+            <SupportButton onClick={onSupportClick}>
+              Suporte Técnico
+            </SupportButton>
           </div>
 
           {/* Mobile Menu */}
@@ -193,9 +191,6 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
                         alt="Help Desk Inova" 
                         className="h-8 w-auto"
                       />
-                      <span className="text-lg font-bold tracking-tight">
-                        Help Desk Inova
-                      </span>
                     </a>
                   </SheetTitle>
                 </SheetHeader>
@@ -257,9 +252,9 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
                   </div>
                   
                   <div className="mt-6 flex flex-col gap-4">
-                    <Button onClick={onSupportClick}>
-                      Suporte
-                    </Button>
+                    <SupportButton onClick={onSupportClick}>
+                      Suporte Técnico
+                    </SupportButton>
                   </div>
                 </div>
               </SheetContent>
