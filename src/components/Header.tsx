@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { ModernNavbar } from '@/components/ui/modern-navbar';
 import HeroContent from '@/components/ui/hero-content';
 import OptimizedBackground from '@/components/ui/optimized-background';
+import ServicesShowcase from '@/components/ui/services-showcase';
 
 const Header = () => {
   const handleSupportClick = () => {
@@ -23,6 +24,9 @@ const Header = () => {
 
         <HeroContent onSupportClick={handleSupportClick} />
       </section>
+
+      {/* Services Showcase Section */}
+      <ServicesShowcase />
     </>
   );
 };
