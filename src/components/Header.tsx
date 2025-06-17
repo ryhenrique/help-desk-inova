@@ -1,21 +1,13 @@
 
-import { Home, User, Briefcase, FileText } from 'lucide-react';
-import { AnimatedNavBar } from '@/components/ui/animated-navbar';
+import { useState } from 'react';
+import { CustomNavbar } from '@/components/ui/custom-navbar';
 import FixedLogo from '@/components/ui/fixed-logo';
 import HeaderControls from '@/components/ui/header-controls';
 import HeroContent from '@/components/ui/hero-content';
 import OptimizedBackground from '@/components/ui/optimized-background';
-import { useState } from 'react';
 
 const Header = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
-
-  const navItems = [
-    { name: 'Início', url: '#home', icon: Home },
-    { name: 'Serviços', url: '#services', icon: Briefcase },
-    { name: 'Artigos', url: '#tutorials', icon: FileText },
-    { name: 'Contato', url: '#contact', icon: User }
-  ];
 
   const handleSupportClick = () => {
     window.open('https://api.whatsapp.com/send/?phone=5521991318034&text&type=phone_number&app_absent=0', '_blank');
@@ -29,7 +21,7 @@ const Header = () => {
     <>
       <FixedLogo isVisible={isNavbarVisible} />
       <HeaderControls onSupportClick={handleSupportClick} isVisible={isNavbarVisible} />
-      <AnimatedNavBar items={navItems} onVisibilityChange={handleNavbarVisibilityChange} />
+      <CustomNavbar onVisibilityChange={handleNavbarVisibilityChange} />
 
       {/* Hero Section with Animated Background */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 lg:pt-0">
