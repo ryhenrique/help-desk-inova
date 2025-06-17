@@ -5,8 +5,11 @@ import FixedLogo from '@/components/ui/fixed-logo';
 import HeaderControls from '@/components/ui/header-controls';
 import HeroContent from '@/components/ui/hero-content';
 import OptimizedBackground from '@/components/ui/optimized-background';
+import { useState } from 'react';
 
 const Header = () => {
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
+
   const navItems = [
     { name: 'Início', url: '#home', icon: Home },
     { name: 'Serviços', url: '#services', icon: Briefcase },
@@ -18,11 +21,15 @@ const Header = () => {
     window.open('https://api.whatsapp.com/send/?phone=5521991318034&text&type=phone_number&app_absent=0', '_blank');
   };
 
+  const handleNavbarVisibilityChange = (isVisible: boolean) => {
+    setIsNavbarVisible(isVisible);
+  };
+
   return (
     <>
-      <FixedLogo />
-      <HeaderControls onSupportClick={handleSupportClick} />
-      <NavBar items={navItems} />
+      <FixedLogo isVisible={isNavbarVisible} />
+      <HeaderControls onSupportClick={handleSupportClick} isVisible={isNavbarVisible} />
+      <NavBar items={navItems} onVisibilityChange={handleNavbarVisibilityChange} />
 
       {/* Hero Section with Animated Background */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 lg:pt-0">

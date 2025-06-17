@@ -16,9 +16,10 @@ interface NavItem {
 interface NavBarProps {
   items: NavItem[]
   className?: string
+  onVisibilityChange?: (isVisible: boolean) => void
 }
 
-export function NavBar({ items, className }: NavBarProps) {
+export function NavBar({ items, className, onVisibilityChange }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
   const [isMobile, setIsMobile] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
@@ -52,6 +53,13 @@ export function NavBar({ items, className }: NavBarProps) {
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [lastScrollY])
+
+  // Notifica o componente pai sobre mudanças de visibilidade
+  useEffect(() => {
+    if (onVisibilityChange) {
+      onVisibilityChange(isVisible)
+    }
+  }, [isVisible, onVisibilityChange])
 
   const handleClick = (itemName: string, url: string) => {
     setActiveTab(itemName)
