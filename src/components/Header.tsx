@@ -1,6 +1,6 @@
 
 import { Home, User, Briefcase, FileText } from 'lucide-react';
-import { NavBar } from '@/components/ui/tubelight-navbar';
+import { AnimatedNavBar } from '@/components/ui/animated-navbar';
 import FixedLogo from '@/components/ui/fixed-logo';
 import HeaderControls from '@/components/ui/header-controls';
 import HeroContent from '@/components/ui/hero-content';
@@ -29,7 +29,7 @@ const Header = () => {
     <>
       <FixedLogo isVisible={isNavbarVisible} />
       <HeaderControls onSupportClick={handleSupportClick} isVisible={isNavbarVisible} />
-      <NavBar items={navItems} onVisibilityChange={handleNavbarVisibilityChange} />
+      <AnimatedNavBar items={navItems} onVisibilityChange={handleNavbarVisibilityChange} />
 
       {/* Hero Section with Animated Background */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 lg:pt-0">

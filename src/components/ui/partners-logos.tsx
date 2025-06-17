@@ -21,6 +21,12 @@ const partnersData = [
     image: '/lovable-uploads/b9e78abe-4857-4d89-9ea0-f425732f7134.png',
     className: 'h-8 sm:h-10 lg:h-12 w-auto',
   },
+  {
+    id: 'vitral-original',
+    name: 'Vitral Original',
+    image: '/lovable-uploads/2ecb2d16-57e0-41c6-b0f2-deaba1f13fba.png',
+    className: 'h-10 sm:h-12 lg:h-14 w-auto',
+  },
   // Duplicar as logos para criar um efeito de loop contínuo
   {
     id: 'casa-do-biscoito-2',
@@ -34,6 +40,12 @@ const partnersData = [
     image: '/lovable-uploads/b9e78abe-4857-4d89-9ea0-f425732f7134.png',
     className: 'h-8 sm:h-10 lg:h-12 w-auto',
   },
+  {
+    id: 'vitral-original-2',
+    name: 'Vitral Original',
+    image: '/lovable-uploads/2ecb2d16-57e0-41c6-b0f2-deaba1f13fba.png',
+    className: 'h-10 sm:h-12 lg:h-14 w-auto',
+  },
   // Adicionar mais duplicatas para movimento mais suave
   {
     id: 'casa-do-biscoito-3',
@@ -46,6 +58,12 @@ const partnersData = [
     name: 'União dos Cegos no Brasil',
     image: '/lovable-uploads/b9e78abe-4857-4d89-9ea0-f425732f7134.png',
     className: 'h-8 sm:h-10 lg:h-12 w-auto',
+  },
+  {
+    id: 'vitral-original-3',
+    name: 'Vitral Original',
+    image: '/lovable-uploads/2ecb2d16-57e0-41c6-b0f2-deaba1f13fba.png',
+    className: 'h-10 sm:h-12 lg:h-14 w-auto',
   },
 ];
 

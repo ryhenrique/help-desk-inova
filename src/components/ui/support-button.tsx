@@ -13,9 +13,9 @@ const SupportButton: React.FC<SupportButtonProps> = ({ children, onClick, classN
     <>
       <style>{`
         .user-profile {
-          width: 131px;
-          height: 51px;
-          border-radius: 15px;
+          width: clamp(100px, 25vw, 131px);
+          height: clamp(38px, 10vw, 51px);
+          border-radius: clamp(8px, 3vw, 15px);
           cursor: pointer;
           transition: 0.3s ease;
           background: linear-gradient(
@@ -37,25 +37,42 @@ const SupportButton: React.FC<SupportButtonProps> = ({ children, onClick, classN
         }
 
         .user-profile-inner {
-          width: 127px;
-          height: 47px;
-          border-radius: 13px;
+          width: calc(100% - 4px);
+          height: calc(100% - 4px);
+          border-radius: clamp(6px, 2.5vw, 13px);
           background-color: #1a1a1a;
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 10px;
+          gap: clamp(4px, 2vw, 10px);
           color: #fff;
           font-weight: 600;
-          font-size: 14px;
+          font-size: clamp(10px, 3vw, 14px);
         }
 
         .user-profile-inner svg {
-          width: 20px;
-          height: 20px;
+          width: clamp(14px, 4vw, 20px);
+          height: clamp(14px, 4vw, 20px);
           fill: none;
           stroke: #fff;
           stroke-width: 2;
+        }
+
+        @media (max-width: 640px) {
+          .user-profile {
+            width: 90px;
+            height: 35px;
+          }
+          
+          .user-profile-inner {
+            font-size: 10px;
+            gap: 4px;
+          }
+          
+          .user-profile-inner svg {
+            width: 14px;
+            height: 14px;
+          }
         }
       `}</style>
       <button 

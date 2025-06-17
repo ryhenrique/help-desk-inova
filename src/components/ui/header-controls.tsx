@@ -14,7 +14,7 @@ const HeaderControls: React.FC<HeaderControlsProps> = ({ onSupportClick, isVisib
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8 pointer-events-none'
       }`}
     >
-      <SupportButton onClick={onSupportClick} className="text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2">
+      <SupportButton onClick={onSupportClick}>
         Suporte
       </SupportButton>
     </div>

@@ -25,7 +25,7 @@ const FixedLogo: React.FC<FixedLogoProps> = ({ isVisible }) => {
       <img 
         src={logoSrc}
         alt="Help Desk Inova" 
-        className={`h-6 sm:h-8 w-auto ${isDarkMode ? 'brightness-0 invert' : ''}`}
+        className={`h-5 sm:h-6 md:h-7 lg:h-8 w-auto ${isDarkMode ? 'brightness-0 invert' : ''}`}
       />
     </div>
   );
