@@ -64,7 +64,7 @@ export function NavBar({ items, className }: NavBarProps) {
   }
 
   return (
-    <div className="fixed top-6 left-1/2 -translate-x-1/2 z-40 w-fit">
+    <div className="fixed top-2 sm:top-4 lg:top-6 left-1/2 -translate-x-1/2 z-40 w-fit px-2 sm:px-0">
       <motion.div
         className={cn(
           "transition-all duration-300",
@@ -77,7 +77,7 @@ export function NavBar({ items, className }: NavBarProps) {
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <div className="flex items-center gap-3 bg-white/80 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-600/60 py-1 px-1 rounded-full shadow-lg backdrop-blur-sm">
+        <div className="flex items-center gap-1 sm:gap-2 lg:gap-3 bg-white/90 dark:bg-slate-900/90 border border-slate-200/60 dark:border-slate-600/60 py-1 px-1 rounded-full shadow-lg backdrop-blur-sm">
           {items.map((item) => {
             const Icon = item.icon
             const isActive = activeTab === item.name
@@ -87,14 +87,14 @@ export function NavBar({ items, className }: NavBarProps) {
                 key={item.name}
                 onClick={() => handleClick(item.name, item.url)}
                 className={cn(
-                  "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
+                  "relative cursor-pointer text-xs sm:text-sm font-semibold px-2 sm:px-4 lg:px-6 py-1.5 sm:py-2 rounded-full transition-colors",
                   "text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400",
                   isActive && "bg-slate-100 dark:bg-slate-800 text-blue-600 dark:text-blue-400",
                 )}
               >
-                <span className="hidden md:inline">{item.name}</span>
-                <span className="md:hidden">
-                  <Icon size={18} strokeWidth={2.5} />
+                <span className="hidden sm:inline text-xs sm:text-sm">{item.name}</span>
+                <span className="sm:hidden">
+                  <Icon size={16} strokeWidth={2.5} />
                 </span>
                 {isActive && (
                   <motion.div
@@ -113,7 +113,7 @@ export function NavBar({ items, className }: NavBarProps) {
           })}
           
           {/* Theme Toggle */}
-          <div className="ml-2 pl-2 border-l border-slate-200 dark:border-slate-600">
+          <div className="ml-1 sm:ml-2 pl-1 sm:pl-2 border-l border-slate-200 dark:border-slate-600">
             <ThemeToggle />
           </div>
         </div>

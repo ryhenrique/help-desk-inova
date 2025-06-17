@@ -25,7 +25,7 @@ const Header = () => {
       <NavBar items={navItems} />
 
       {/* Hero Section with Animated Background */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 lg:pt-0">
         <OptimizedBackground />
 
         {/* Clean Gradient Overlay - com background animado */}

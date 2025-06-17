@@ -1,3 +1,4 @@
+
 'use client';
 
 import AutoScroll from 'embla-carousel-auto-scroll';
@@ -12,51 +13,51 @@ const partnersData = [
     id: 'casa-do-biscoito',
     name: 'Casa do Biscoito',
     image: '/lovable-uploads/dddd64f6-09e8-4b1f-9442-b082cc73bb94.png',
-    className: 'h-16 w-auto',
+    className: 'h-12 sm:h-14 lg:h-16 w-auto',
   },
   {
     id: 'uniao-dos-cegos',
     name: 'União dos Cegos no Brasil',
     image: '/lovable-uploads/b9e78abe-4857-4d89-9ea0-f425732f7134.png',
-    className: 'h-12 w-auto',
+    className: 'h-8 sm:h-10 lg:h-12 w-auto',
   },
   // Duplicar as logos para criar um efeito de loop contínuo
   {
     id: 'casa-do-biscoito-2',
     name: 'Casa do Biscoito',
     image: '/lovable-uploads/dddd64f6-09e8-4b1f-9442-b082cc73bb94.png',
-    className: 'h-16 w-auto',
+    className: 'h-12 sm:h-14 lg:h-16 w-auto',
   },
   {
     id: 'uniao-dos-cegos-2',
     name: 'União dos Cegos no Brasil',
     image: '/lovable-uploads/b9e78abe-4857-4d89-9ea0-f425732f7134.png',
-    className: 'h-12 w-auto',
+    className: 'h-8 sm:h-10 lg:h-12 w-auto',
   },
   // Adicionar mais duplicatas para movimento mais suave
   {
     id: 'casa-do-biscoito-3',
     name: 'Casa do Biscoito',
     image: '/lovable-uploads/dddd64f6-09e8-4b1f-9442-b082cc73bb94.png',
-    className: 'h-16 w-auto',
+    className: 'h-12 sm:h-14 lg:h-16 w-auto',
   },
   {
     id: 'uniao-dos-cegos-3',
     name: 'União dos Cegos no Brasil',
     image: '/lovable-uploads/b9e78abe-4857-4d89-9ea0-f425732f7134.png',
-    className: 'h-12 w-auto',
+    className: 'h-8 sm:h-10 lg:h-12 w-auto',
   },
 ];
 
 export function PartnersLogos() {
   return (
-    <section className="py-16 bg-white dark:bg-slate-900">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h3 className="text-xl md:text-2xl font-semibold text-slate-800 dark:text-white mb-4">
+    <section className="py-8 sm:py-12 lg:py-16 bg-white dark:bg-slate-900">
+      <div className="container mx-auto px-3 sm:px-4 lg:px-8">
+        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-slate-800 dark:text-white mb-3 sm:mb-4">
             Parceiros em Inovação Tecnológica
           </h3>
-          <p className="text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-3xl mx-auto px-2">
             Confiança construída através de suporte técnico excepcional. Nossos parceiros escolheram nossa expertise 
             em TI para manter seus sistemas funcionando perfeitamente, garantindo operações seguras e eficientes 24/7.
           </p>
@@ -88,7 +89,7 @@ export function PartnersLogos() {
                   key={partner.id}
                   className="flex basis-1/2 justify-center pl-1 sm:basis-1/3 md:basis-1/4"
                 >
-                  <div className="mx-8 flex shrink-0 items-center justify-center">
+                  <div className="mx-4 sm:mx-6 lg:mx-8 flex shrink-0 items-center justify-center">
                     <img
                       src={partner.image}
                       alt={partner.name}

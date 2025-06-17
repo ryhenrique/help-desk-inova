@@ -13,11 +13,11 @@ const FixedLogo = () => {
   const logoSrc = "/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png";
 
   return (
-    <div className="fixed top-4 left-4 z-50">
+    <div className="fixed top-2 sm:top-4 left-2 sm:left-4 z-50">
       <img 
         src={logoSrc}
         alt="Help Desk Inova" 
-        className={`h-8 w-auto ${isDarkMode ? 'brightness-0 invert' : ''}`}
+        className={`h-6 sm:h-8 w-auto ${isDarkMode ? 'brightness-0 invert' : ''}`}
       />
     </div>
   );
