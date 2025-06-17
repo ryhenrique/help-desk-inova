@@ -1,4 +1,3 @@
-
 'use client';
 
 import AutoScroll from 'embla-carousel-auto-scroll';
@@ -70,14 +69,10 @@ const partnersData = [
 export function PartnersLogos() {
   return (
     <section className="py-8 sm:py-12 lg:py-16 bg-white dark:bg-slate-900">
-      <div className="container mx-auto px-3 sm:px-4 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-          <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-slate-800 dark:text-white mb-3 sm:mb-4">
-            Parceiros em Inovação Tecnológica
-          </h3>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-3xl mx-auto px-2">
-            Confiança construída através de suporte técnico excepcional. Nossos parceiros escolheram nossa expertise 
-            em TI para manter seus sistemas funcionando perfeitamente, garantindo operações seguras e eficientes 24/7.
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">
+            Confiado por diversas empresas
           </p>
         </div>
 
