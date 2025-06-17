@@ -101,7 +101,7 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
             <img 
               src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png"
               alt="Help Desk Inova" 
-              className="h-8 sm:h-10 w-auto"
+              className={`h-8 sm:h-10 w-auto ${isDarkMode ? 'brightness-0 invert' : ''}`}
             />
           </a>
 
@@ -201,7 +201,7 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
                       <img 
                         src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png"
                         alt="Help Desk Inova" 
-                        className="h-10 w-auto"
+                        className={`h-10 w-auto ${isDarkMode ? 'brightness-0 invert' : ''}`}
                       />
                     </a>
                   </SheetTitle>

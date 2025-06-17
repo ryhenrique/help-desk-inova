@@ -13,12 +13,13 @@ const Header = () => {
     <>
       <ModernNavbar onSupportClick={handleSupportClick} />
 
-      {/* Hero Section with Animated Background */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-        <OptimizedBackground />
-
-        {/* Clean Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50/80 via-white/70 to-slate-100/80 dark:from-slate-900/90 dark:via-slate-800/70 dark:to-slate-900/90" />
+      {/* Hero Section */}
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-white dark:bg-slate-900">
+        {/* Background apenas no modo claro */}
+        <div className="absolute inset-0 dark:hidden">
+          <OptimizedBackground />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50/80 via-white/70 to-slate-100/80" />
+        </div>
 
         <HeroContent onSupportClick={handleSupportClick} />
       </section>

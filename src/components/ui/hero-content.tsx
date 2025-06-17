@@ -11,18 +11,18 @@ interface HeroContentProps {
 
 const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
   const phrases = [
-    "Simplifique sua TI e atendimento ao cliente",
-    "Soluções Profissionais em Tecnologia", 
-    "Suporte Especializado 24/7",
-    "Infraestrutura de Redes Segura",
-    "Transformação Digital Completa"
+    "Suporte Técnico Especializado",
+    "Infraestrutura de Redes Avançada", 
+    "Segurança das Câmeras Profissional",
+    "Sistema de Failover e Monitoramento de Rede em Tempo Real",
+    "Segurança Avançada de Firewall"
   ];
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
       {/* Hero Principal */}
       <div className="text-center mb-16 sm:mb-20 lg:mb-24 max-w-5xl mx-auto">
-        {/* Título Principal com Typewriter - Estilo Freshworks */}
+        {/* Título Principal com Typewriter */}
         <div className="min-h-[120px] sm:min-h-[140px] md:min-h-[160px] lg:min-h-[180px] flex items-center justify-center mb-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-slate-900 dark:text-white text-center tracking-tight">
             <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 dark:from-blue-400 dark:via-blue-500 dark:to-blue-600 bg-clip-text text-transparent">
@@ -36,7 +36,7 @@ const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
           </h1>
         </div>
 
-        {/* Subtítulo com melhor tipografia */}
+        {/* Subtítulo */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
