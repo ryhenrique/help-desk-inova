@@ -18,30 +18,14 @@ const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
     "Transformação Digital Completa"
   ];
 
-  const logoSrc = "/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png";
-
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
       {/* Hero Principal */}
       <div className="text-center mb-16 sm:mb-20 lg:mb-24 max-w-5xl mx-auto">
-        {/* Logo Centralizada */}
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex justify-center mb-12 sm:mb-16"
-        >
-          <img 
-            src={logoSrc}
-            alt="Help Desk Inova" 
-            className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto"
-          />
-        </motion.div>
-
-        {/* Título Principal com Typewriter */}
-        <div className="min-h-[80px] sm:min-h-[100px] md:min-h-[120px] lg:min-h-[140px] flex items-center justify-center mb-8">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-slate-900 dark:text-white text-center">
-            <span className="text-blue-600 dark:text-blue-400">
+        {/* Título Principal com Typewriter - Estilo Freshworks */}
+        <div className="min-h-[120px] sm:min-h-[140px] md:min-h-[160px] lg:min-h-[180px] flex items-center justify-center mb-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-slate-900 dark:text-white text-center tracking-tight">
+            <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 dark:from-blue-400 dark:via-blue-500 dark:to-blue-600 bg-clip-text text-transparent">
               <TypewriterText 
                 words={phrases}
                 speed={80}
@@ -52,16 +36,19 @@ const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
           </h1>
         </div>
 
-        {/* Subtítulo */}
-        <motion.p 
+        {/* Subtítulo com melhor tipografia */}
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-4xl mx-auto mb-10 sm:mb-12"
+          className="mb-10 sm:mb-12"
         >
-          Oferecemos soluções completas em TI com assistência de primeira classe para empresas que buscam 
-          excelência tecnológica e experiências excepcionais para clientes e colaboradores.
-        </motion.p>
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-4xl mx-auto font-light">
+            Oferecemos soluções completas em TI com assistência de primeira classe para empresas que buscam 
+            <span className="font-semibold text-slate-800 dark:text-slate-200"> excelência tecnológica </span>
+            e experiências excepcionais para clientes e colaboradores.
+          </p>
+        </motion.div>
 
         {/* Botões de Ação Principais */}
         <motion.div 
@@ -73,7 +60,7 @@ const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
           <Button 
             onClick={onSupportClick}
             size="lg" 
-            className="flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-8 py-4 font-semibold rounded-xl transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
+            className="flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 dark:from-blue-500 dark:to-blue-600 dark:hover:from-blue-600 dark:hover:to-blue-700 text-white px-8 py-4 font-semibold rounded-xl transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
           >
             <PhoneCall className="h-5 w-5" />
             Fale Conosco
@@ -89,7 +76,7 @@ const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
               }
             }}
           >
-            Agendar Demo →
+            Ver Nossos Serviços →
           </Button>
         </motion.div>
       </div>
