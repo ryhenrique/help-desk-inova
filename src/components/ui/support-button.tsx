@@ -48,6 +48,7 @@ const SupportButton: React.FC<SupportButtonProps> = ({ children, onClick, classN
           color: #fff;
           font-weight: 600;
           font-size: clamp(10px, 3vw, 14px);
+          white-space: nowrap;
         }
 
         .user-profile-inner svg {
@@ -56,6 +57,7 @@ const SupportButton: React.FC<SupportButtonProps> = ({ children, onClick, classN
           fill: none;
           stroke: #fff;
           stroke-width: 2;
+          flex-shrink: 0;
         }
 
         @media (max-width: 640px) {

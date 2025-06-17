@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { PhoneCall } from 'lucide-react';
 import TypewriterText from '@/components/ui/typewriter-text';
 import SupportButton from '@/components/ui/support-button';
 import { useTheme } from '@/components/ui/theme-provider';
@@ -38,8 +39,8 @@ const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
           <Card className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200/60 dark:border-slate-600/60 shadow-xl">
             <CardContent className="p-4 sm:p-6 lg:p-8">
               <div className="space-y-3 sm:space-y-4">
-                <div className="min-h-[120px] sm:min-h-[160px] md:min-h-[200px] lg:min-h-[240px] xl:min-h-[280px] flex items-center">
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-blue-600 dark:text-blue-400">
+                <div className="min-h-[100px] sm:min-h-[120px] md:min-h-[140px] lg:min-h-[160px] xl:min-h-[180px] flex items-center">
+                  <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-blue-600 dark:text-blue-400">
                     <TypewriterText 
                       words={phrases}
                       speed={80}
@@ -49,20 +50,31 @@ const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
                   </h1>
                 </div>
                 
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
                   Transformamos desafios tecnológicos em soluções eficientes. 
                   Nossa equipe especializada oferece suporte completo para sua empresa.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8">
-                <SupportButton onClick={onSupportClick} className="w-full sm:w-auto">
+                <Button 
+                  onClick={onSupportClick}
+                  size="lg" 
+                  className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 sm:px-6 py-2 sm:py-3 font-medium rounded-lg transition-all duration-200 w-full sm:w-auto"
+                >
+                  <PhoneCall className="h-4 w-4 sm:h-5 sm:w-5" />
                   Fale Conosco
-                </SupportButton>
+                </Button>
                 <Button 
                   size="lg" 
                   variant="outline" 
                   className="w-full sm:w-auto border-2 border-slate-300 dark:border-slate-500 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 px-4 sm:px-6 py-2 sm:py-3 font-medium rounded-lg transition-all duration-200"
+                  onClick={() => {
+                    const element = document.querySelector('#services');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
                   Explorar Serviços
                 </Button>
@@ -84,7 +96,7 @@ const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
               </CardContent>
             </Card>
             
-            {/* Reduced floating elements for better performance */}
+            {/* Floating elements otimizados */}
             <motion.div 
               className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-6 sm:w-8 h-6 sm:h-8 bg-blue-100 dark:bg-blue-900/60 rounded-lg opacity-60"
               animate={{

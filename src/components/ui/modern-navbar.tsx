@@ -1,7 +1,7 @@
 
 "use client";
 
-import { MenuIcon } from "lucide-react";
+import { MenuIcon, Headphones } from "lucide-react";
 import { useState } from "react";
 
 import {
@@ -81,12 +81,12 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
 
   return (
     <section className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-b border-slate-200/20 dark:border-slate-700/20">
-      <div className="container mx-auto px-4">
-        <nav className="flex items-center justify-between h-16">
+      <div className="container mx-auto px-2 sm:px-4">
+        <nav className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
           <a
             href="#home"
-            className="flex items-center gap-3"
+            className="flex items-center gap-2 sm:gap-3 flex-shrink-0"
             onClick={(e) => {
               e.preventDefault();
               handleNavClick('#home');
@@ -95,7 +95,7 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
             <img 
               src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png"
               alt="Help Desk Inova" 
-              className="h-8 w-auto"
+              className="h-6 sm:h-8 w-auto"
             />
           </a>
 
@@ -118,7 +118,7 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Serviços</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid w-[600px] grid-cols-2 p-3">
+                  <div className="grid w-[500px] xl:w-[600px] grid-cols-2 p-3">
                     {services.map((service, index) => (
                       <NavigationMenuLink
                         href={service.href}
@@ -130,10 +130,10 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
                         }}
                       >
                         <div>
-                          <p className="mb-1 font-semibold text-foreground">
+                          <p className="mb-1 font-semibold text-foreground text-sm">
                             {service.title}
                           </p>
-                          <p className="text-sm text-muted-foreground">
+                          <p className="text-xs text-muted-foreground">
                             {service.description}
                           </p>
                         </div>
@@ -159,11 +159,17 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
           </NavigationMenu>
 
           {/* Desktop Actions */}
-          <div className="hidden items-center gap-4 lg:flex">
+          <div className="hidden items-center gap-2 lg:flex flex-shrink-0">
             <ThemeToggle />
-            <SupportButton onClick={onSupportClick}>
-              Suporte Técnico
-            </SupportButton>
+            <Button
+              onClick={onSupportClick}
+              size="sm"
+              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-3 py-2 text-sm font-medium whitespace-nowrap"
+            >
+              <Headphones className="h-4 w-4" />
+              <span className="hidden xl:inline">Suporte Técnico</span>
+              <span className="xl:hidden">Suporte</span>
+            </Button>
           </div>
 
           {/* Mobile Menu */}
@@ -171,7 +177,7 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
             <ThemeToggle />
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
+                <Button variant="outline" size="icon" className="h-9 w-9">
                   <MenuIcon className="h-4 w-4" />
                 </Button>
               </SheetTrigger>
@@ -180,7 +186,7 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
                   <SheetTitle>
                     <a
                       href="#home"
-                      className="flex items-center gap-3"
+                      className="flex items-center gap-3 justify-center"
                       onClick={(e) => {
                         e.preventDefault();
                         handleNavClick('#home');
@@ -252,9 +258,13 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
                   </div>
                   
                   <div className="mt-6 flex flex-col gap-4">
-                    <SupportButton onClick={onSupportClick}>
+                    <Button
+                      onClick={onSupportClick}
+                      className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white"
+                    >
+                      <Headphones className="h-4 w-4" />
                       Suporte Técnico
-                    </SupportButton>
+                    </Button>
                   </div>
                 </div>
               </SheetContent>
