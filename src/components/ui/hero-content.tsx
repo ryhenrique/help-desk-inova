@@ -25,7 +25,7 @@ const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
         {/* Título Principal com Typewriter */}
         <div className="min-h-[120px] sm:min-h-[140px] md:min-h-[160px] lg:min-h-[180px] flex items-center justify-center mb-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-slate-900 dark:text-white text-center tracking-tight">
-            <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 dark:from-blue-400 dark:via-blue-500 dark:to-blue-600 bg-clip-text text-transparent">
+            <span className="text-blue-600 dark:text-blue-400">
               <TypewriterText 
                 words={phrases}
                 speed={80}
