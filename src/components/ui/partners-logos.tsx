@@ -1,4 +1,3 @@
-
 'use client';
 
 import AutoScroll from 'embla-carousel-auto-scroll';
@@ -13,75 +12,75 @@ const partnersData = [
   {
     id: 'casa-do-biscoito',
     name: 'Casa do Biscoito',
-    image: '/lovable-uploads/dddd64f6-09e8-4b1f-9442-b082cc73bb94.png',
+    image: '/helpdesk-uploads/dddd64f6-09e8-4b1f-9442-b082cc73bb94.png',
     className: 'h-12 sm:h-14 lg:h-16 w-auto',
   },
   {
     id: 'uniao-dos-cegos',
     name: 'União dos Cegos no Brasil',
-    image: '/lovable-uploads/b9e78abe-4857-4d89-9ea0-f425732f7134.png',
+    image: '/helpdesk-uploads/b9e78abe-4857-4d89-9ea0-f425732f7134.png',
     className: 'h-8 sm:h-10 lg:h-12 w-auto',
   },
   {
     id: 'vitral-original',
     name: 'Vitral Original',
-    image: '/lovable-uploads/2ecb2d16-57e0-41c6-b0f2-deaba1f13fba.png',
+    image: '/helpdesk-uploads/2ecb2d16-57e0-41c6-b0f2-deaba1f13fba.png',
     className: 'h-10 sm:h-12 lg:h-14 w-auto',
   },
   {
     id: 'nova-empresa',
     name: 'Nova Empresa',
-    image: '/lovable-uploads/0bed8bec-f2e3-4a0b-af57-bb160c31a2a4.png',
+    image: '/helpdesk-uploads/0bed8bec-f2e3-4a0b-af57-bb160c31a2a4.png',
     className: 'h-10 sm:h-12 lg:h-14 w-auto',
   },
   // Duplicar as logos para criar um efeito de loop contínuo
   {
     id: 'casa-do-biscoito-2',
     name: 'Casa do Biscoito',
-    image: '/lovable-uploads/dddd64f6-09e8-4b1f-9442-b082cc73bb94.png',
+    image: '/helpdesk-uploads/dddd64f6-09e8-4b1f-9442-b082cc73bb94.png',
     className: 'h-12 sm:h-14 lg:h-16 w-auto',
   },
   {
     id: 'uniao-dos-cegos-2',
     name: 'União dos Cegos no Brasil',
-    image: '/lovable-uploads/b9e78abe-4857-4d89-9ea0-f425732f7134.png',
+    image: '/helpdesk-uploads/b9e78abe-4857-4d89-9ea0-f425732f7134.png',
     className: 'h-8 sm:h-10 lg:h-12 w-auto',
   },
   {
     id: 'vitral-original-2',
     name: 'Vitral Original',
-    image: '/lovable-uploads/2ecb2d16-57e0-41c6-b0f2-deaba1f13fba.png',
+    image: '/helpdesk-uploads/2ecb2d16-57e0-41c6-b0f2-deaba1f13fba.png',
     className: 'h-10 sm:h-12 lg:h-14 w-auto',
   },
   {
     id: 'nova-empresa-2',
     name: 'Nova Empresa',
-    image: '/lovable-uploads/0bed8bec-f2e3-4a0b-af57-bb160c31a2a4.png',
+    image: '/helpdesk-uploads/0bed8bec-f2e3-4a0b-af57-bb160c31a2a4.png',
     className: 'h-10 sm:h-12 lg:h-14 w-auto',
   },
   // Adicionar mais duplicatas para movimento mais suave
   {
     id: 'casa-do-biscoito-3',
     name: 'Casa do Biscoito',
-    image: '/lovable-uploads/dddd64f6-09e8-4b1f-9442-b082cc73bb94.png',
+    image: '/helpdesk-uploads/dddd64f6-09e8-4b1f-9442-b082cc73bb94.png',
     className: 'h-12 sm:h-14 lg:h-16 w-auto',
   },
   {
     id: 'uniao-dos-cegos-3',
     name: 'União dos Cegos no Brasil',
-    image: '/lovable-uploads/b9e78abe-4857-4d89-9ea0-f425732f7134.png',
+    image: '/helpdesk-uploads/b9e78abe-4857-4d89-9ea0-f425732f7134.png',
     className: 'h-8 sm:h-10 lg:h-12 w-auto',
   },
   {
     id: 'vitral-original-3',
     name: 'Vitral Original',
-    image: '/lovable-uploads/2ecb2d16-57e0-41c6-b0f2-deaba1f13fba.png',
+    image: '/helpdesk-uploads/2ecb2d16-57e0-41c6-b0f2-deaba1f13fba.png',
     className: 'h-10 sm:h-12 lg:h-14 w-auto',
   },
   {
     id: 'nova-empresa-3',
     name: 'Nova Empresa',
-    image: '/lovable-uploads/0bed8bec-f2e3-4a0b-af57-bb160c31a2a4.png',
+    image: '/helpdesk-uploads/0bed8bec-f2e3-4a0b-af57-bb160c31a2a4.png',
     className: 'h-10 sm:h-12 lg:h-14 w-auto',
   },
 ];

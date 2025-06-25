@@ -14,7 +14,7 @@ const FixedLogo: React.FC<FixedLogoProps> = ({ isVisible }) => {
     [theme]
   );
 
-  const logoSrc = "/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png";
+  const logoSrc = "/helpdesk-uploads/4c067a97-598f-4049-8a54-72735b77f986.png";
 
   return (
     <div 

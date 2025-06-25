@@ -8,49 +8,49 @@ const ServicesShowcase = () => {
     {
       title: "Suporte Técnico",
       description: "Atendimento especializado 24/7 para resolver seus problemas de TI com rapidez e eficiência.",
-      image: "/lovable-uploads/2d7964c1-c50b-4014-9a30-86b171081de5.png",
+      image: "/helpdesk-uploads/2d7964c1-c50b-4014-9a30-86b171081de5.png",
       icon: Headphones,
       color: "from-blue-500 to-blue-600"
     },
     {
       title: "Infraestrutura de Redes",
       description: "Instalação e manutenção de redes robustas para garantir conectividade confiável.",
-      image: "/lovable-uploads/8a6d91f3-79d9-46d4-976b-1fe3e1664d16.png",
+      image: "/helpdesk-uploads/8a6d91f3-79d9-46d4-976b-1fe3e1664d16.png",
       icon: Network,
       color: "from-indigo-500 to-indigo-600"
     },
     {
       title: "Data Center",
       description: "Soluções completas de data center com alta disponibilidade e redundância.",
-      image: "/lovable-uploads/69507e4d-7db8-416b-9aba-d98035e7a38d.png",
+      image: "/helpdesk-uploads/69507e4d-7db8-416b-9aba-d98035e7a38d.png",
       icon: Server,
       color: "from-purple-500 to-purple-600"
     },
     {
       title: "Segurança de Câmeras",
       description: "Sistemas de monitoramento profissional com tecnologia de ponta.",
-      image: "/lovable-uploads/65bada43-213b-449f-bb47-e5173634fa0d.png",
+      image: "/helpdesk-uploads/65bada43-213b-449f-bb47-e5173634fa0d.png",
       icon: Camera,
       color: "from-cyan-500 to-cyan-600"
     },
     {
       title: "Instalação de Câmeras",
       description: "Instalação profissional de sistemas de vigilância com cobertura completa.",
-      image: "/lovable-uploads/bf466862-6824-43f2-b0e0-1d2d9ecfacf2.png",
+      image: "/helpdesk-uploads/bf466862-6824-43f2-b0e0-1d2d9ecfacf2.png",
       icon: MonitorSpeaker,
       color: "from-teal-500 to-teal-600"
     },
     {
       title: "Firewall Avançado",
       description: "Proteção multicamada contra ameaças cibernéticas e controle de acesso.",
-      image: "/lovable-uploads/a5b03d32-05a3-44fe-a263-b2b8f9d7cde4.png",
+      image: "/helpdesk-uploads/a5b03d32-05a3-44fe-a263-b2b8f9d7cde4.png",
       icon: Shield,
       color: "from-emerald-500 to-emerald-600"
     },
     {
       title: "Monitoramento de Rede",
       description: "Supervisão em tempo real da performance e saúde da sua infraestrutura.",
-      image: "/lovable-uploads/cb83006e-7e71-4f6e-83d3-856b746bbc3d.png",
+      image: "/helpdesk-uploads/cb83006e-7e71-4f6e-83d3-856b746bbc3d.png",
       icon: MonitorSpeaker,
       color: "from-orange-500 to-orange-600"
     }
