@@ -14,15 +14,18 @@ const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
     "Suporte Técnico Especializado",
     "Infraestrutura de Redes Avançada", 
     "Segurança das Câmeras Profissional",
-    "Sistema de Failover e Monitoramento de Rede em Tempo Real",
+    "Sistema de Failover e Monitoramento",
     "Segurança Avançada de Firewall"
   ];
 
+  const scrollToServices = () => {
+    const element = document.querySelector('#helpdesk-services');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
-      {/* Hero Principal */}
       <div className="text-center mb-16 sm:mb-20 lg:mb-24 max-w-5xl mx-auto">
-        {/* Título Principal com Typewriter */}
         <div className="min-h-[120px] sm:min-h-[140px] md:min-h-[160px] lg:min-h-[180px] flex items-center justify-center mb-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-slate-900 dark:text-white text-center tracking-tight">
             <span className="text-blue-600 dark:text-blue-400">
@@ -36,7 +39,6 @@ const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
           </h1>
         </div>
 
-        {/* Subtítulo */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -50,7 +52,6 @@ const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
           </p>
         </motion.div>
 
-        {/* Botões de Ação Principais */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -69,12 +70,7 @@ const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
             size="lg" 
             variant="outline" 
             className="border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 px-8 py-4 font-semibold rounded-xl transition-all duration-300 text-lg hover:border-blue-400 dark:hover:border-blue-500"
-            onClick={() => {
-              const element = document.querySelector('#services');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
+            onClick={scrollToServices}
           >
             Ver Nossos Serviços →
           </Button>

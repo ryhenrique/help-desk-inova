@@ -40,46 +40,38 @@ export function AnimatedNavBar({ items, className, onVisibilityChange }: Animate
   }, [lastScrollY])
 
   useEffect(() => {
-    if (onVisibilityChange) {
-      onVisibilityChange(isVisible)
-    }
+    onVisibilityChange?.(isVisible)
   }, [isVisible, onVisibilityChange])
 
   const handleClick = (itemName: string, url: string) => {
     setActiveTab(itemName)
     if (url.startsWith('#')) {
       const element = document.querySelector(url)
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
-      }
+      element?.scrollIntoView({ behavior: 'smooth' })
     }
-  }
-
-  const getActiveIndex = () => {
-    return items.findIndex(item => item.name === activeTab)
   }
 
   return (
     <>
       <style>{`
-        .nav-outline {
+        .helpdesk-nav-outline {
           position: absolute;
           inset: 0;
           pointer-events: none;
         }
 
-        .nav-rect {
+        .helpdesk-nav-rect {
           stroke-dashoffset: 5;
           stroke-dasharray: 0 0 10 40 10 40;
           transition: 0.5s;
           stroke: rgba(46, 142, 255, 0.8);
         }
 
-        .dark .nav-rect {
+        .dark .helpdesk-nav-rect {
           stroke: rgba(59, 130, 246, 0.8);
         }
 
-        .nav-container {
+        .helpdesk-nav-container {
           position: absolute;
           inset: 0;
           background: rgba(255, 255, 255, 0.1);
@@ -92,17 +84,17 @@ export function AnimatedNavBar({ items, className, onVisibilityChange }: Animate
           border-radius: 8px;
         }
 
-        .dark .nav-container {
+        .dark .helpdesk-nav-container {
           background: rgba(0, 0, 0, 0.2);
         }
 
-        .nav-container:hover .nav-outline .nav-rect {
+        .helpdesk-nav-container:hover .helpdesk-nav-outline .helpdesk-nav-rect {
           transition: 999999s;
           stroke-dashoffset: 1;
           stroke-dasharray: 0;
         }
 
-        .nav-btn {
+        .helpdesk-nav-btn {
           padding: 0.5em 1.5em;
           color: #1f2937;
           cursor: pointer;
@@ -112,58 +104,58 @@ export function AnimatedNavBar({ items, className, onVisibilityChange }: Animate
           font-weight: 600;
         }
 
-        .dark .nav-btn {
+        .dark .helpdesk-nav-btn {
           color: #f3f4f6;
         }
 
-        .nav-btn:hover {
+        .helpdesk-nav-btn:hover {
           background: rgba(59, 130, 246, 0.1);
         }
 
-        .nav-btn.active {
+        .helpdesk-nav-btn.active {
           background: rgba(59, 130, 246, 0.2);
           color: #2563eb;
         }
 
-        .dark .nav-btn.active {
+        .dark .helpdesk-nav-btn.active {
           color: #60a5fa;
         }
 
-        .nav-btn:nth-child(1):hover ~ svg .nav-rect {
+        .helpdesk-nav-btn:nth-child(1):hover ~ svg .helpdesk-nav-rect {
           stroke-dashoffset: 0;
           stroke-dasharray: 0 2 8 73.3 8 10.7;
         }
 
-        .nav-btn:nth-child(2):hover ~ svg .nav-rect {
+        .helpdesk-nav-btn:nth-child(2):hover ~ svg .helpdesk-nav-rect {
           stroke-dashoffset: 0;
           stroke-dasharray: 0 12.6 9.5 49.3 9.5 31.6;
         }
 
-        .nav-btn:nth-child(3):hover ~ svg .nav-rect {
+        .helpdesk-nav-btn:nth-child(3):hover ~ svg .helpdesk-nav-rect {
           stroke-dashoffset: 0;
           stroke-dasharray: 0 24.5 8.5 27.5 8.5 55.5;
         }
 
-        .nav-btn:nth-child(4):hover ~ svg .nav-rect {
+        .helpdesk-nav-btn:nth-child(4):hover ~ svg .helpdesk-nav-rect {
           stroke-dashoffset: 0;
           stroke-dasharray: 0 34.7 6.9 10.2 6.9 76;
         }
 
-        .nav-btn:hover ~ .nav-outline .nav-rect {
+        .helpdesk-nav-btn:hover ~ .helpdesk-nav-outline .helpdesk-nav-rect {
           stroke-dashoffset: 0;
           stroke-dasharray: 0 0 10 40 10 40;
           transition: 0.5s !important;
         }
 
         @media (max-width: 768px) {
-          .nav-btn {
+          .helpdesk-nav-btn {
             padding: 0.4em 1em;
             font-size: 12px;
           }
         }
 
         @media (max-width: 480px) {
-          .nav-btn {
+          .helpdesk-nav-btn {
             padding: 0.3em 0.8em;
             font-size: 10px;
           }
@@ -176,13 +168,13 @@ export function AnimatedNavBar({ items, className, onVisibilityChange }: Animate
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-16 pointer-events-none'
           }`}
         >
-          <div className="nav relative w-[320px] sm:w-[400px] h-[50px] sm:h-[60px]">
-            <div className="nav-container">
+          <div className="helpdesk-nav relative w-[320px] sm:w-[400px] h-[50px] sm:h-[60px]">
+            <div className="helpdesk-nav-container">
               {items.map((item, index) => (
                 <div
                   key={item.name}
                   onClick={() => handleClick(item.name, item.url)}
-                  className={`nav-btn ${activeTab === item.name ? 'active' : ''}`}
+                  className={`helpdesk-nav-btn ${activeTab === item.name ? 'active' : ''}`}
                 >
                   <span className="hidden sm:inline">{item.name}</span>
                   <span className="sm:hidden">
@@ -191,13 +183,12 @@ export function AnimatedNavBar({ items, className, onVisibilityChange }: Animate
                 </div>
               ))}
               
-              {/* Theme Toggle */}
               <div className="ml-1 sm:ml-2 pl-1 sm:pl-2 border-l border-slate-300 dark:border-slate-600">
                 <ThemeToggle />
               </div>
               
               <svg
-                className="nav-outline"
+                className="helpdesk-nav-outline"
                 overflow="visible"
                 width="100%"
                 height="100%"
@@ -205,7 +196,7 @@ export function AnimatedNavBar({ items, className, onVisibilityChange }: Animate
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <rect
-                  className="nav-rect"
+                  className="helpdesk-nav-rect"
                   pathLength="100"
                   x="0"
                   y="0"

@@ -56,10 +56,14 @@ const ServicesShowcase = () => {
     }
   ];
 
+  const scrollToContact = () => {
+    const element = document.querySelector('#contact');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+    <section id="helpdesk-services" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header da Seção */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +79,6 @@ const ServicesShowcase = () => {
           </p>
         </motion.div>
 
-        {/* Grid de Serviços */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
@@ -88,22 +91,20 @@ const ServicesShowcase = () => {
                 viewport={{ once: true }}
                 className="group relative bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-slate-200/50 dark:border-slate-700/50 hover:border-blue-300 dark:hover:border-blue-600"
               >
-                {/* Imagem */}
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-20 group-hover:opacity-30 transition-opacity duration-300`} />
                   
-                  {/* Ícone Sobreposto */}
                   <div className="absolute top-4 right-4 p-2 bg-white/90 dark:bg-slate-800/90 rounded-lg backdrop-blur-sm">
                     <Icon className="h-5 w-5 text-blue-600 dark:text-blue-400" />
                   </div>
                 </div>
 
-                {/* Conteúdo */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                     {service.title}
@@ -113,14 +114,12 @@ const ServicesShowcase = () => {
                   </p>
                 </div>
 
-                {/* Efeito Hover */}
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </motion.div>
             );
           })}
         </div>
 
-        {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -132,12 +131,7 @@ const ServicesShowcase = () => {
             Precisa de uma solução personalizada? Nossa equipe está pronta para ajudar!
           </p>
           <button
-            onClick={() => {
-              const element = document.querySelector('#contact');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
+            onClick={scrollToContact}
             className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 dark:from-blue-500 dark:to-blue-600 dark:hover:from-blue-600 dark:hover:to-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
           >
             Solicitar Orçamento
