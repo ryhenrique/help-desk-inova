@@ -45,34 +45,34 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
 
   const services = [
     {
-      title: "O Problema",
-      description: "Desafios atuais das empresas",
-      href: "#helpdesk-problems",
+      title: "Suporte Técnico",
+      description: "Assistência especializada em TI",
+      href: "#services",
     },
     {
-      title: "All Tech In",
-      description: "Nossa solução completa",
-      href: "#helpdesk-solution",
+      title: "Consultoria",
+      description: "Análise e otimização de sistemas",
+      href: "#services",
     },
     {
-      title: "O Que Inclui",
-      description: "Tudo que está no pacote",
-      href: "#helpdesk-included",
+      title: "Manutenção",
+      description: "Cuidados preventivos e corretivos",
+      href: "#services",
     },
     {
-      title: "Benefícios",
-      description: "Resultados na prática",
-      href: "#helpdesk-benefits",
+      title: "Treinamento",
+      description: "Capacitação em tecnologia",
+      href: "#services",
     },
     {
-      title: "Comparativo",
-      description: "Tradicional vs All Tech In",
-      href: "#helpdesk-comparison",
+      title: "Segurança Digital",
+      description: "Proteção de dados e sistemas",
+      href: "#services",
     },
     {
-      title: "Exemplo Prático",
-      description: "Caso de sucesso real",
-      href: "#helpdesk-example",
+      title: "Cloud Solutions",
+      description: "Soluções em nuvem personalizadas",
+      href: "#services",
     },
   ];
 
@@ -91,15 +91,15 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
         <nav className="flex items-center justify-between h-16 sm:h-18">
           {/* Logo */}
           <a
-            href="#helpdesk-home"
+            href="#home"
             className="flex items-center gap-3 flex-shrink-0"
             onClick={(e) => {
               e.preventDefault();
-              handleNavClick('#helpdesk-home');
+              handleNavClick('#home');
             }}
           >
             <img 
-              src="/helpdesk-uploads/4c067a97-598f-4049-8a54-72735b77f986.png"
+              src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png"
               alt="Help Desk Inova" 
               className={`h-8 sm:h-10 w-auto ${isDarkMode ? 'brightness-0 invert' : ''}`}
             />
@@ -110,11 +110,11 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  href="#helpdesk-home"
+                  href="#home"
                   className={navigationMenuTriggerStyle()}
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNavClick('#helpdesk-home');
+                    handleNavClick('#home');
                   }}
                 >
                   Início
@@ -122,7 +122,7 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
               </NavigationMenuItem>
               
               <NavigationMenuItem>
-                <NavigationMenuTrigger>All Tech In</NavigationMenuTrigger>
+                <NavigationMenuTrigger>Serviços</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid w-[500px] xl:w-[600px] grid-cols-2 p-4 gap-2">
                     {services.map((service, index) => (
@@ -151,11 +151,11 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
 
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  href="#helpdesk-contact"
+                  href="#contact"
                   className={navigationMenuTriggerStyle()}
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNavClick('#helpdesk-contact');
+                    handleNavClick('#contact');
                   }}
                 >
                   Contato
@@ -173,8 +173,8 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
               className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 py-2 text-sm font-semibold whitespace-nowrap rounded-lg shadow-lg hover:shadow-xl transition-all duration-200"
             >
               <Headphones className="h-4 w-4 flex-shrink-0" />
-              <span className="hidden xl:inline">Agendar Reunião</span>
-              <span className="xl:hidden">Reunião</span>
+              <span className="hidden xl:inline">Suporte Técnico</span>
+              <span className="xl:hidden">Suporte</span>
             </Button>
           </div>
 
@@ -191,15 +191,15 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
                 <SheetHeader>
                   <SheetTitle>
                     <a
-                      href="#helpdesk-home"
+                      href="#home"
                       className="flex items-center gap-3 justify-center"
                       onClick={(e) => {
                         e.preventDefault();
-                        handleNavClick('#helpdesk-home');
+                        handleNavClick('#home');
                       }}
                     >
                       <img 
-                        src="/helpdesk-uploads/4c067a97-598f-4049-8a54-72735b77f986.png"
+                        src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png"
                         alt="Help Desk Inova" 
                         className={`h-10 w-auto ${isDarkMode ? 'brightness-0 invert' : ''}`}
                       />
@@ -211,7 +211,7 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
                   <Accordion type="single" collapsible className="mt-6 mb-4">
                     <AccordionItem value="services" className="border-none">
                       <AccordionTrigger className="text-lg hover:no-underline font-semibold">
-                        All Tech In
+                        Serviços
                       </AccordionTrigger>
                       <AccordionContent>
                         <div className="grid gap-3 mt-2">
@@ -242,21 +242,21 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
                   
                   <div className="flex flex-col gap-6">
                     <a 
-                      href="#helpdesk-home" 
+                      href="#home" 
                       className="font-semibold text-lg"
                       onClick={(e) => {
                         e.preventDefault();
-                        handleNavClick('#helpdesk-home');
+                        handleNavClick('#home');
                       }}
                     >
                       Início
                     </a>
                     <a 
-                      href="#helpdesk-contact" 
+                      href="#contact" 
                       className="font-semibold text-lg"
                       onClick={(e) => {
                         e.preventDefault();
-                        handleNavClick('#helpdesk-contact');
+                        handleNavClick('#contact');
                       }}
                     >
                       Contato
@@ -269,7 +269,7 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
                       className="flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white py-3 font-semibold rounded-lg shadow-lg"
                     >
                       <Headphones className="h-5 w-5" />
-                      Agendar Reunião
+                      Suporte Técnico
                     </Button>
                   </div>
                 </div>

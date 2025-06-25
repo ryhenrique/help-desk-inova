@@ -55,8 +55,9 @@ const Services = () => {
   };
 
   return (
-    <section id="helpdesk-services-detailed" className="py-16 lg:py-24 bg-white dark:bg-slate-900 relative">
+    <section id="services" className="py-16 lg:py-24 bg-white dark:bg-slate-900 relative">
       <div className="container">
+        {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <Badge variant="secondary" className="mb-4 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 border-blue-200 dark:border-blue-700 px-4 py-2 text-sm font-medium">
             Nossos Serviços
@@ -72,6 +73,7 @@ const Services = () => {
           </p>
         </div>
 
+        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
           {services.map((service, index) => (
             <Card 
@@ -116,6 +118,7 @@ const Services = () => {
           ))}
         </div>
 
+        {/* CTA Section */}
         <div className="text-center">
           <div className="bg-gradient-to-br from-slate-50 to-blue-50/50 dark:from-slate-800 dark:to-blue-900/20 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 lg:p-12 max-w-4xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">

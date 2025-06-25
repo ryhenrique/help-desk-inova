@@ -10,7 +10,6 @@ interface HeaderControlsProps {
 const HeaderControls: React.FC<HeaderControlsProps> = ({ onSupportClick, isVisible }) => {
   return (
     <div 
-      id="helpdesk-header-controls"
       className={`fixed top-2 sm:top-4 right-2 sm:right-4 z-50 transition-all duration-300 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8 pointer-events-none'
       }`}

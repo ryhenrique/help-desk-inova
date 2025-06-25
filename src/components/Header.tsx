@@ -1,14 +1,9 @@
 
+import { useState } from 'react';
 import { ModernNavbar } from '@/components/ui/modern-navbar';
 import HeroContent from '@/components/ui/hero-content';
 import OptimizedBackground from '@/components/ui/optimized-background';
-import ProblemsSection from '@/components/ui/problems-section';
-import SolutionSection from '@/components/ui/solution-section';
-import IncludedSection from '@/components/ui/included-section';
-import BenefitsSection from '@/components/ui/benefits-section';
-import ComparisonSection from '@/components/ui/comparison-section';
-import ExampleSection from '@/components/ui/example-section';
-import NextStepsSection from '@/components/ui/next-steps-section';
+import ServicesShowcase from '@/components/ui/services-showcase';
 
 const Header = () => {
   const handleSupportClick = () => {
@@ -19,7 +14,9 @@ const Header = () => {
     <>
       <ModernNavbar onSupportClick={handleSupportClick} />
 
-      <section id="helpdesk-home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-white dark:bg-slate-900">
+      {/* Hero Section */}
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-white dark:bg-slate-900">
+        {/* Background apenas no modo claro */}
         <div className="absolute inset-0 dark:hidden">
           <OptimizedBackground />
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50/80 via-white/70 to-slate-100/80" />
@@ -28,13 +25,8 @@ const Header = () => {
         <HeroContent onSupportClick={handleSupportClick} />
       </section>
 
-      <ProblemsSection />
-      <SolutionSection onSupportClick={handleSupportClick} />
-      <IncludedSection />
-      <BenefitsSection />
-      <ComparisonSection />
-      <ExampleSection />
-      <NextStepsSection onSupportClick={handleSupportClick} />
+      {/* Services Showcase Section */}
+      <ServicesShowcase />
     </>
   );
 };

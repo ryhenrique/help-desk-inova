@@ -79,7 +79,7 @@ export function Footer() {
 					<AnimatedContainer className="space-y-6 xl:col-span-1">
 						<div className="flex items-center mb-6">
 							<img 
-								src="/helpdesk-uploads/4c067a97-598f-4049-8a54-72735b77f986.png" 
+								src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png" 
 								alt="Help Desk Inova" 
 								className="h-12 w-auto brightness-0 invert"
 							/>

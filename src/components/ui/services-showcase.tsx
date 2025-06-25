@@ -1,134 +1,148 @@
 
-import { Monitor, Shield, Cloud, Network, Users, Wrench, HeadphonesIcon } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Server, Shield, Camera, Headphones, Network, MonitorSpeaker } from 'lucide-react';
 
 const ServicesShowcase = () => {
   const services = [
     {
-      id: 'suporte-tecnico',
-      title: 'Suporte Técnico',
-      description: 'Assistência especializada em TI com resposta rápida e soluções eficazes.',
-      image: '/helpdesk-uploads/69507e4d-7db8-416b-9aba-d98035e7a38d.png',
-      icon: HeadphonesIcon,
-      color: 'blue',
+      title: "Suporte Técnico",
+      description: "Atendimento especializado 24/7 para resolver seus problemas de TI com rapidez e eficiência.",
+      image: "/lovable-uploads/2d7964c1-c50b-4014-9a30-86b171081de5.png",
+      icon: Headphones,
+      color: "from-blue-500 to-blue-600"
     },
     {
-      id: 'infraestrutura-redes',
-      title: 'Infraestrutura de Redes',
-      description: 'Implementação e manutenção de redes corporativas seguras e eficientes.',
-      image: '/helpdesk-uploads/8a6d91f3-79d9-46d4-976b-1fe3e1664d16.png',
+      title: "Infraestrutura de Redes",
+      description: "Instalação e manutenção de redes robustas para garantir conectividade confiável.",
+      image: "/lovable-uploads/8a6d91f3-79d9-46d4-976b-1fe3e1664d16.png",
       icon: Network,
-      color: 'emerald',
+      color: "from-indigo-500 to-indigo-600"
     },
     {
-      id: 'consultoria-ti',
-      title: 'Consultoria em TI',
-      description: 'Análise estratégica e otimização de sistemas para máxima eficiência.',
-      image: '/helpdesk-uploads/a5b03d32-05a3-44fe-a263-b2b8f9d7cde4.png',
-      icon: Users,
-      color: 'violet',
+      title: "Data Center",
+      description: "Soluções completas de data center com alta disponibilidade e redundância.",
+      image: "/lovable-uploads/69507e4d-7db8-416b-9aba-d98035e7a38d.png",
+      icon: Server,
+      color: "from-purple-500 to-purple-600"
     },
     {
-      id: 'seguranca-digital',
-      title: 'Segurança Digital',
-      description: 'Proteção avançada contra ameaças cibernéticas e backup de dados.',
-      image: '/helpdesk-uploads/bf466862-6824-43f2-b0e0-1d2d9ecfacf2.png',
+      title: "Segurança de Câmeras",
+      description: "Sistemas de monitoramento profissional com tecnologia de ponta.",
+      image: "/lovable-uploads/65bada43-213b-449f-bb47-e5173634fa0d.png",
+      icon: Camera,
+      color: "from-cyan-500 to-cyan-600"
+    },
+    {
+      title: "Instalação de Câmeras",
+      description: "Instalação profissional de sistemas de vigilância com cobertura completa.",
+      image: "/lovable-uploads/bf466862-6824-43f2-b0e0-1d2d9ecfacf2.png",
+      icon: MonitorSpeaker,
+      color: "from-teal-500 to-teal-600"
+    },
+    {
+      title: "Firewall Avançado",
+      description: "Proteção multicamada contra ameaças cibernéticas e controle de acesso.",
+      image: "/lovable-uploads/a5b03d32-05a3-44fe-a263-b2b8f9d7cde4.png",
       icon: Shield,
-      color: 'red',
+      color: "from-emerald-500 to-emerald-600"
     },
     {
-      id: 'solucoes-nuvem',
-      title: 'Soluções em Nuvem',
-      description: 'Migração e gestão de serviços cloud para escalabilidade empresarial.',
-      image: '/helpdesk-uploads/cb83006e-7e71-4f6e-83d3-856b746bbc3d.png',
-      icon: Cloud,
-      color: 'cyan',
-    },
-    {
-      id: 'manutencao-preventiva',
-      title: 'Manutenção Preventiva',
-      description: 'Cuidados regulares para evitar falhas e garantir performance optimal.',
-      image: '/helpdesk-uploads/e239b180-ebea-489a-b2a9-d0fd86f97834.png',
-      icon: Wrench,
-      color: 'orange',
-    },
-    {
-      id: 'monitoramento-sistemas',
-      title: 'Monitoramento de Sistemas',
-      description: 'Vigilância 24/7 para detecção precoce de problemas e manutenção da estabilidade.',
-      image: '/helpdesk-uploads/65bada43-213b-449f-bb47-e5173634fa0d.png',
-      icon: Monitor,
-      color: 'indigo',
-    },
+      title: "Monitoramento de Rede",
+      description: "Supervisão em tempo real da performance e saúde da sua infraestrutura.",
+      image: "/lovable-uploads/cb83006e-7e71-4f6e-83d3-856b746bbc3d.png",
+      icon: MonitorSpeaker,
+      color: "from-orange-500 to-orange-600"
+    }
   ];
 
-  const getColorClasses = (color: string) => {
-    const colorMap = {
-      blue: 'bg-blue-500/10 text-blue-600 border-blue-200 dark:bg-blue-500/20 dark:text-blue-400 dark:border-blue-500/30',
-      emerald: 'bg-emerald-500/10 text-emerald-600 border-emerald-200 dark:bg-emerald-500/20 dark:text-emerald-400 dark:border-emerald-500/30',
-      violet: 'bg-violet-500/10 text-violet-600 border-violet-200 dark:bg-violet-500/20 dark:text-violet-400 dark:border-violet-500/30',
-      red: 'bg-red-500/10 text-red-600 border-red-200 dark:bg-red-500/20 dark:text-red-400 dark:border-red-500/30',
-      cyan: 'bg-cyan-500/10 text-cyan-600 border-cyan-200 dark:bg-cyan-500/20 dark:text-cyan-400 dark:border-cyan-500/30',
-      orange: 'bg-orange-500/10 text-orange-600 border-orange-200 dark:bg-orange-500/20 dark:text-orange-400 dark:border-orange-500/30',
-      indigo: 'bg-indigo-500/10 text-indigo-600 border-indigo-200 dark:bg-indigo-500/20 dark:text-indigo-400 dark:border-indigo-500/30',
-    };
-    return colorMap[color] || colorMap.blue;
-  };
-
   return (
-    <section id="helpdesk-services" className="py-24 lg:py-32 bg-white dark:bg-slate-900">
+    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <Badge variant="secondary" className="mb-6 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700 px-4 py-2 font-medium">
-            <Shield className="w-4 h-4 mr-2" />
-            Nossos Serviços
-          </Badge>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-8 tracking-tight">
-            Soluções Completas
-            <span className="block text-blue-600 dark:text-blue-400">em Tecnologia</span>
+        {/* Header da Seção */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+            Nossos <span className="text-blue-600 dark:text-blue-400">Serviços</span>
           </h2>
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light">
-            Oferecemos uma gama completa de serviços especializados para atender todas as necessidades de
-            <span className="font-medium text-slate-800 dark:text-slate-200"> infraestrutura tecnológica </span>
-            da sua empresa.
+          <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            Soluções completas em tecnologia da informação para empresas que buscam excelência e inovação
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {services.map((service) => {
+        {/* Grid de Serviços */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+          {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <Card 
-                key={service.id} 
-                className="group border-0 shadow-lg hover:shadow-2xl transition-all duration-300 bg-white dark:bg-slate-800 hover:scale-105"
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative bg-white dark:bg-slate-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-slate-200/50 dark:border-slate-700/50 hover:border-blue-300 dark:hover:border-blue-600"
               >
-                <CardContent className="p-6">
-                  <div className="relative mb-6 overflow-hidden rounded-xl">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    <div className={`absolute top-4 right-4 p-3 rounded-xl border ${getColorClasses(service.color)}`}>
-                      <Icon className="h-6 w-6" />
-                    </div>
-                  </div>
+                {/* Imagem */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-20 group-hover:opacity-30 transition-opacity duration-300`} />
                   
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  {/* Ícone Sobreposto */}
+                  <div className="absolute top-4 right-4 p-2 bg-white/90 dark:bg-slate-800/90 rounded-lg backdrop-blur-sm">
+                    <Icon className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                  </div>
+                </div>
+
+                {/* Conteúdo */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                     {service.title}
                   </h3>
-                  
-                  <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                     {service.description}
                   </p>
-                </CardContent>
-              </Card>
+                </div>
+
+                {/* Efeito Hover */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              </motion.div>
             );
           })}
         </div>
+
+        {/* Call to Action */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">
+            Precisa de uma solução personalizada? Nossa equipe está pronta para ajudar!
+          </p>
+          <button
+            onClick={() => {
+              const element = document.querySelector('#contact');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 dark:from-blue-500 dark:to-blue-600 dark:hover:from-blue-600 dark:hover:to-blue-700 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+          >
+            Solicitar Orçamento
+          </button>
+        </motion.div>
       </div>
     </section>
   );

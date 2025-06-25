@@ -1,7 +1,8 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { PhoneCall, Calendar } from 'lucide-react';
+import { PhoneCall } from 'lucide-react';
+import TypewriterText from '@/components/ui/typewriter-text';
 import { motion } from 'framer-motion';
 
 interface HeroContentProps {
@@ -9,40 +10,47 @@ interface HeroContentProps {
 }
 
 const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
-  const scrollToProblems = () => {
-    const element = document.querySelector('#helpdesk-problems');
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const phrases = [
+    "Suporte Técnico Especializado",
+    "Infraestrutura de Redes Avançada", 
+    "Segurança das Câmeras Profissional",
+    "Sistema de Failover e Monitoramento de Rede em Tempo Real",
+    "Segurança Avançada de Firewall"
+  ];
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
-      <div className="text-center mb-16 sm:mb-20 lg:mb-24 max-w-6xl mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-8"
-        >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-slate-900 dark:text-white text-center tracking-tight mb-6">
-            <span className="text-blue-600 dark:text-blue-400">Tecnologia sem preocupações,</span>
-            <br />
-            <span className="text-slate-800 dark:text-slate-200">atendimento humano</span>
+      {/* Hero Principal */}
+      <div className="text-center mb-16 sm:mb-20 lg:mb-24 max-w-5xl mx-auto">
+        {/* Título Principal com Typewriter */}
+        <div className="min-h-[120px] sm:min-h-[140px] md:min-h-[160px] lg:min-h-[180px] flex items-center justify-center mb-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-slate-900 dark:text-white text-center tracking-tight">
+            <span className="text-blue-600 dark:text-blue-400">
+              <TypewriterText 
+                words={phrases}
+                speed={80}
+                deleteSpeed={40}
+                delayBetweenWords={3000}
+              />
+            </span>
           </h1>
-        </motion.div>
+        </div>
 
+        {/* Subtítulo */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="mb-10 sm:mb-12"
         >
-          <p className="text-xl sm:text-2xl md:text-3xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-5xl mx-auto font-light">
-            Apresente sua empresa ao futuro com 
-            <span className="font-semibold text-slate-800 dark:text-slate-200"> soluções de TI completas, gestão inteligente e suporte técnico especializado </span>
-            — tudo com um custo mensal fixo.
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-4xl mx-auto font-light">
+            Oferecemos soluções completas em TI com assistência de primeira classe para empresas que buscam 
+            <span className="font-semibold text-slate-800 dark:text-slate-200"> excelência tecnológica </span>
+            e experiências excepcionais para clientes e colaboradores.
           </p>
         </motion.div>
 
+        {/* Botões de Ação Principais */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -54,16 +62,21 @@ const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
             size="lg" 
             className="flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 dark:from-blue-500 dark:to-blue-600 dark:hover:from-blue-600 dark:hover:to-blue-700 text-white px-8 py-4 font-semibold rounded-xl transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
           >
-            <Calendar className="h-5 w-5" />
-            Agendar Reunião
+            <PhoneCall className="h-5 w-5" />
+            Fale Conosco
           </Button>
           <Button 
             size="lg" 
             variant="outline" 
             className="border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 px-8 py-4 font-semibold rounded-xl transition-all duration-300 text-lg hover:border-blue-400 dark:hover:border-blue-500"
-            onClick={scrollToProblems}
+            onClick={() => {
+              const element = document.querySelector('#services');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
           >
-            Conhecer a Solução →
+            Ver Nossos Serviços →
           </Button>
         </motion.div>
       </div>
