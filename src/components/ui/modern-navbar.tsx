@@ -45,34 +45,34 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
 
   const services = [
     {
-      title: "Suporte Técnico",
-      description: "Assistência especializada em TI",
-      href: "#helpdesk-services",
+      title: "O Problema",
+      description: "Desafios atuais das empresas",
+      href: "#helpdesk-problems",
     },
     {
-      title: "Consultoria",
-      description: "Análise e otimização de sistemas",
-      href: "#helpdesk-services",
+      title: "All Tech In",
+      description: "Nossa solução completa",
+      href: "#helpdesk-solution",
     },
     {
-      title: "Manutenção",
-      description: "Cuidados preventivos e corretivos",
-      href: "#helpdesk-services",
+      title: "O Que Inclui",
+      description: "Tudo que está no pacote",
+      href: "#helpdesk-included",
     },
     {
-      title: "Treinamento",
-      description: "Capacitação em tecnologia",
-      href: "#helpdesk-services",
+      title: "Benefícios",
+      description: "Resultados na prática",
+      href: "#helpdesk-benefits",
     },
     {
-      title: "Segurança Digital",
-      description: "Proteção de dados e sistemas",
-      href: "#helpdesk-services",
+      title: "Comparativo",
+      description: "Tradicional vs All Tech In",
+      href: "#helpdesk-comparison",
     },
     {
-      title: "Cloud Solutions",
-      description: "Soluções em nuvem personalizadas",
-      href: "#helpdesk-services",
+      title: "Exemplo Prático",
+      description: "Caso de sucesso real",
+      href: "#helpdesk-example",
     },
   ];
 
@@ -122,7 +122,7 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
               </NavigationMenuItem>
               
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Serviços</NavigationMenuTrigger>
+                <NavigationMenuTrigger>All Tech In</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <div className="grid w-[500px] xl:w-[600px] grid-cols-2 p-4 gap-2">
                     {services.map((service, index) => (
@@ -173,8 +173,8 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
               className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 py-2 text-sm font-semibold whitespace-nowrap rounded-lg shadow-lg hover:shadow-xl transition-all duration-200"
             >
               <Headphones className="h-4 w-4 flex-shrink-0" />
-              <span className="hidden xl:inline">Suporte Técnico</span>
-              <span className="xl:hidden">Suporte</span>
+              <span className="hidden xl:inline">Agendar Reunião</span>
+              <span className="xl:hidden">Reunião</span>
             </Button>
           </div>
 
@@ -211,7 +211,7 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
                   <Accordion type="single" collapsible className="mt-6 mb-4">
                     <AccordionItem value="services" className="border-none">
                       <AccordionTrigger className="text-lg hover:no-underline font-semibold">
-                        Serviços
+                        All Tech In
                       </AccordionTrigger>
                       <AccordionContent>
                         <div className="grid gap-3 mt-2">
@@ -269,7 +269,7 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
                       className="flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white py-3 font-semibold rounded-lg shadow-lg"
                     >
                       <Headphones className="h-5 w-5" />
-                      Suporte Técnico
+                      Agendar Reunião
                     </Button>
                   </div>
                 </div>

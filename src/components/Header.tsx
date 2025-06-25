@@ -2,7 +2,13 @@
 import { ModernNavbar } from '@/components/ui/modern-navbar';
 import HeroContent from '@/components/ui/hero-content';
 import OptimizedBackground from '@/components/ui/optimized-background';
-import ServicesShowcase from '@/components/ui/services-showcase';
+import ProblemsSection from '@/components/ui/problems-section';
+import SolutionSection from '@/components/ui/solution-section';
+import IncludedSection from '@/components/ui/included-section';
+import BenefitsSection from '@/components/ui/benefits-section';
+import ComparisonSection from '@/components/ui/comparison-section';
+import ExampleSection from '@/components/ui/example-section';
+import NextStepsSection from '@/components/ui/next-steps-section';
 
 const Header = () => {
   const handleSupportClick = () => {
@@ -22,7 +28,13 @@ const Header = () => {
         <HeroContent onSupportClick={handleSupportClick} />
       </section>
 
-      <ServicesShowcase />
+      <ProblemsSection />
+      <SolutionSection onSupportClick={handleSupportClick} />
+      <IncludedSection />
+      <BenefitsSection />
+      <ComparisonSection />
+      <ExampleSection />
+      <NextStepsSection onSupportClick={handleSupportClick} />
     </>
   );
 };
