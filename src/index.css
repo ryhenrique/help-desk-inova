@@ -3,40 +3,28 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
-
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
-
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
-
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
-
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
-
     --radius: 0.5rem;
-
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -100,7 +88,6 @@
     background: #0f172a;
   }
 
-  /* Background pattern - apenas no modo claro */
   body::before {
     content: "";
     position: fixed;
@@ -120,7 +107,6 @@
     opacity: 0.02;
   }
 
-  /* Background overlay - limpo no modo claro */
   body::after {
     content: "";
     position: fixed;
@@ -132,7 +118,6 @@
     background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
   }
 
-  /* Remove background patterns in dark mode */
   .dark body::before,
   .dark body::after {
     display: none;
@@ -158,7 +143,6 @@
   }
 }
 
-/* Custom animations for tech support theme */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
@@ -206,7 +190,6 @@
   animation: bounce-slow 2s ease-in-out infinite;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -236,17 +219,14 @@
   background: #64748b;
 }
 
-/* Section spacing */
 section {
   @apply scroll-mt-16;
 }
 
-/* Container improvements */
 .container {
   @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-/* Button improvements */
 .btn-primary {
   @apply bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 shadow-sm;
 }
@@ -255,12 +235,10 @@ section {
   @apply bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-medium px-6 py-3 rounded-lg border border-slate-300 dark:border-slate-600 transition-all duration-200;
 }
 
-/* Card improvements */
 .card-hover {
   @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
 }
 
-/* Text improvements */
 .text-gradient {
   @apply bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent;
 }

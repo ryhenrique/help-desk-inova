@@ -47,32 +47,32 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
     {
       title: "Suporte Técnico",
       description: "Assistência especializada em TI",
-      href: "#services",
+      href: "#helpdesk-services",
     },
     {
       title: "Consultoria",
       description: "Análise e otimização de sistemas",
-      href: "#services",
+      href: "#helpdesk-services",
     },
     {
       title: "Manutenção",
       description: "Cuidados preventivos e corretivos",
-      href: "#services",
+      href: "#helpdesk-services",
     },
     {
       title: "Treinamento",
       description: "Capacitação em tecnologia",
-      href: "#services",
+      href: "#helpdesk-services",
     },
     {
       title: "Segurança Digital",
       description: "Proteção de dados e sistemas",
-      href: "#services",
+      href: "#helpdesk-services",
     },
     {
       title: "Cloud Solutions",
       description: "Soluções em nuvem personalizadas",
-      href: "#services",
+      href: "#helpdesk-services",
     },
   ];
 
@@ -91,15 +91,15 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
         <nav className="flex items-center justify-between h-16 sm:h-18">
           {/* Logo */}
           <a
-            href="#home"
+            href="#helpdesk-home"
             className="flex items-center gap-3 flex-shrink-0"
             onClick={(e) => {
               e.preventDefault();
-              handleNavClick('#home');
+              handleNavClick('#helpdesk-home');
             }}
           >
             <img 
-              src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png"
+              src="/helpdesk-uploads/4c067a97-598f-4049-8a54-72735b77f986.png"
               alt="Help Desk Inova" 
               className={`h-8 sm:h-10 w-auto ${isDarkMode ? 'brightness-0 invert' : ''}`}
             />
@@ -110,11 +110,11 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  href="#home"
+                  href="#helpdesk-home"
                   className={navigationMenuTriggerStyle()}
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNavClick('#home');
+                    handleNavClick('#helpdesk-home');
                   }}
                 >
                   Início
@@ -151,11 +151,11 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
 
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  href="#contact"
+                  href="#helpdesk-contact"
                   className={navigationMenuTriggerStyle()}
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNavClick('#contact');
+                    handleNavClick('#helpdesk-contact');
                   }}
                 >
                   Contato
@@ -191,15 +191,15 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
                 <SheetHeader>
                   <SheetTitle>
                     <a
-                      href="#home"
+                      href="#helpdesk-home"
                       className="flex items-center gap-3 justify-center"
                       onClick={(e) => {
                         e.preventDefault();
-                        handleNavClick('#home');
+                        handleNavClick('#helpdesk-home');
                       }}
                     >
                       <img 
-                        src="/lovable-uploads/4c067a97-598f-4049-8a54-72735b77f986.png"
+                        src="/helpdesk-uploads/4c067a97-598f-4049-8a54-72735b77f986.png"
                         alt="Help Desk Inova" 
                         className={`h-10 w-auto ${isDarkMode ? 'brightness-0 invert' : ''}`}
                       />
@@ -242,21 +242,21 @@ export const ModernNavbar = ({ onSupportClick }: ModernNavbarProps) => {
                   
                   <div className="flex flex-col gap-6">
                     <a 
-                      href="#home" 
+                      href="#helpdesk-home" 
                       className="font-semibold text-lg"
                       onClick={(e) => {
                         e.preventDefault();
-                        handleNavClick('#home');
+                        handleNavClick('#helpdesk-home');
                       }}
                     >
                       Início
                     </a>
                     <a 
-                      href="#contact" 
+                      href="#helpdesk-contact" 
                       className="font-semibold text-lg"
                       onClick={(e) => {
                         e.preventDefault();
-                        handleNavClick('#contact');
+                        handleNavClick('#helpdesk-contact');
                       }}
                     >
                       Contato

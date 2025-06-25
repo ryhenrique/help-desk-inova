@@ -57,7 +57,7 @@ const ServicesShowcase = () => {
   ];
 
   const scrollToContact = () => {
-    const element = document.querySelector('#contact');
+    const element = document.querySelector('#helpdesk-contact');
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
