@@ -1,21 +1,21 @@
 
 import { useState, useEffect } from 'react';
 
-interface UseTypewriterOptions {
+interface UseTypewriterProps {
   words: string[];
   speed?: number;
   deleteSpeed?: number;
   delayBetweenWords?: number;
 }
 
-export function useTypewriter({ 
-  words, 
-  speed = 100, 
-  deleteSpeed = 50, 
-  delayBetweenWords = 2000 
-}: UseTypewriterOptions) {
-  const [displayText, setDisplayText] = useState('');
+export const useTypewriter = ({
+  words,
+  speed = 100,
+  deleteSpeed = 50,
+  delayBetweenWords = 2000
+}: UseTypewriterProps) => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
@@ -23,19 +23,15 @@ export function useTypewriter({
     
     const timeout = setTimeout(() => {
       if (!isDeleting) {
-        // Typing
-        if (displayText.length < currentWord.length) {
-          setDisplayText(currentWord.slice(0, displayText.length + 1));
+        if (currentText.length < currentWord.length) {
+          setCurrentText(currentWord.slice(0, currentText.length + 1));
         } else {
-          // Word complete, start deleting after delay
           setTimeout(() => setIsDeleting(true), delayBetweenWords);
         }
       } else {
-        // Deleting
-        if (displayText.length > 0) {
-          setDisplayText(displayText.slice(0, -1));
+        if (currentText.length > 0) {
+          setCurrentText(currentText.slice(0, -1));
         } else {
-          // Deletion complete, move to next word
           setIsDeleting(false);
           setCurrentWordIndex((prev) => (prev + 1) % words.length);
         }
@@ -43,7 +39,7 @@ export function useTypewriter({
     }, isDeleting ? deleteSpeed : speed);
 
     return () => clearTimeout(timeout);
-  }, [displayText, currentWordIndex, isDeleting, words, speed, deleteSpeed, delayBetweenWords]);
+  }, [currentText, isDeleting, currentWordIndex, words, speed, deleteSpeed, delayBetweenWords]);
 
-  return displayText;
-}
+  return currentText;
+};
