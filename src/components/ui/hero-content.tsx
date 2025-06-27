@@ -2,7 +2,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { PhoneCall } from 'lucide-react';
-import TypewriterText from '@/components/ui/typewriter-text';
 import { motion } from 'framer-motion';
 
 interface HeroContentProps {
@@ -10,52 +9,31 @@ interface HeroContentProps {
 }
 
 const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
-  const phrases = [
-    "Suporte Técnico Especializado",
-    "Infraestrutura de Redes Avançada", 
-    "Segurança das Câmeras Profissional",
-    "Sistema de Failover e Monitoramento de Rede em Tempo Real",
-    "Segurança Avançada de Firewall"
-  ];
-
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
-      {/* Hero Principal */}
       <div className="text-center mb-16 sm:mb-20 lg:mb-24 max-w-5xl mx-auto">
-        {/* Título Principal com Typewriter */}
-        <div className="min-h-[120px] sm:min-h-[140px] md:min-h-[160px] lg:min-h-[180px] flex items-center justify-center mb-8">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-slate-900 dark:text-white text-center tracking-tight">
-            <span className="text-blue-600 dark:text-blue-400">
-              <TypewriterText 
-                words={phrases}
-                speed={80}
-                deleteSpeed={40}
-                delayBetweenWords={3000}
-              />
-            </span>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-8"
+        >
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-slate-900 dark:text-white text-center tracking-tight mb-6">
+            Soluções Completas em 
+            <span className="text-blue-600 dark:text-blue-400"> Tecnologia da Informação</span>
           </h1>
-        </div>
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-4xl mx-auto font-light">
+            17 anos transformando empresas com infraestrutura de TI robusta, 
+            <span className="font-semibold text-slate-800 dark:text-slate-200"> suporte especializado </span>
+            e soluções personalizadas para o seu negócio crescer com segurança.
+          </p>
+        </motion.div>
 
-        {/* Subtítulo */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="mb-10 sm:mb-12"
-        >
-          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-4xl mx-auto font-light">
-            Oferecemos soluções completas em TI com assistência de primeira classe para empresas que buscam 
-            <span className="font-semibold text-slate-800 dark:text-slate-200"> excelência tecnológica </span>
-            e experiências excepcionais para clientes e colaboradores.
-          </p>
-        </motion.div>
-
-        {/* Botões de Ação Principais */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-16"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
         >
           <Button 
             onClick={onSupportClick}
@@ -63,7 +41,7 @@ const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
             className="flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 dark:from-blue-500 dark:to-blue-600 dark:hover:from-blue-600 dark:hover:to-blue-700 text-white px-8 py-4 font-semibold rounded-xl transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
           >
             <PhoneCall className="h-5 w-5" />
-            Fale Conosco
+            Fale Conosco Agora
           </Button>
           <Button 
             size="lg" 
