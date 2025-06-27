@@ -1,7 +1,7 @@
 
 import { SymplaStyleNavbar } from '@/components/ui/sympla-style-navbar';
 import HeroContent from '@/components/ui/hero-content';
-import OptimizedBackground from '@/components/ui/optimized-background';
+import YouTubeBackground from '@/components/ui/youtube-background';
 
 const Header = () => {
   const handleSupportClick = () => {
@@ -13,14 +13,17 @@ const Header = () => {
       <SymplaStyleNavbar onSupportClick={handleSupportClick} />
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-slate-900">
-        {/* Background apenas no modo claro */}
-        <div className="absolute inset-0 dark:hidden">
-          <OptimizedBackground />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50/80 via-white/70 to-slate-100/80" />
-        </div>
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* YouTube Video Background */}
+        <YouTubeBackground 
+          videoId="9HaU8NjH7bI" 
+          className="z-0"
+        />
 
-        <HeroContent onSupportClick={handleSupportClick} />
+        {/* Hero Content */}
+        <div className="relative z-10">
+          <HeroContent onSupportClick={handleSupportClick} />
+        </div>
       </section>
     </>
   );
