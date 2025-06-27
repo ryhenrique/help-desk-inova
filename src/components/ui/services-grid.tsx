@@ -95,108 +95,105 @@ const ServicesGrid = () => {
   };
 
   return (
-    <>
-      <style>
-        {`
-          .neumorphic-card {
-            box-shadow: 
-              15px 15px 30px rgba(59, 130, 246, 0.15),
-              -15px -15px 30px rgba(255, 255, 255, 0.8);
-          }
-          
-          .dark .neumorphic-card {
-            box-shadow: 
-              15px 15px 30px rgba(15, 23, 42, 0.8),
-              -15px -15px 30px rgba(59, 130, 246, 0.1);
-          }
-          
-          .neumorphic-card:hover {
-            box-shadow: 
-              20px 20px 40px rgba(59, 130, 246, 0.25),
-              -20px -20px 40px rgba(255, 255, 255, 0.9);
-          }
-          
-          .dark .neumorphic-card:hover {
-            box-shadow: 
-              20px 20px 40px rgba(15, 23, 42, 0.9),
-              -20px -20px 40px rgba(59, 130, 246, 0.2);
-          }
-        `}
-      </style>
-      <section id="services" className="py-20 lg:py-28 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
-          >
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-8 tracking-tight">
-              Nossos <span className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">Serviços Especializados</span>
-            </h2>
-            <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light">
-              Soluções completas em TI com <span className="font-semibold text-slate-800 dark:text-slate-200">17 anos de experiência</span> no mercado
-            </p>
-          </motion.div>
+    <section id="services" className="py-20 lg:py-28 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
+        >
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-8 tracking-tight">
+            Nossos <span className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">Serviços Especializados</span>
+          </h2>
+          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light">
+            Soluções completas em TI com <span className="font-semibold text-slate-800 dark:text-slate-200">17 anos de experiência</span> no mercado
+          </p>
+        </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group relative"
-                >
-                  {/* Neumorphic Card */}
-                  <div className="w-full h-auto rounded-3xl bg-slate-100 dark:bg-slate-800 p-8 transition-all duration-500 hover:scale-[1.02] neumorphic-card">
-                    {/* Icon */}
-                    <div className="flex justify-center mb-6">
-                      <div className={`p-4 rounded-2xl bg-gradient-to-r ${service.gradient} text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                        <Icon className="h-8 w-8" />
-                      </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative"
+              >
+                {/* Neumorphic Card */}
+                <div className="w-full h-auto rounded-3xl bg-slate-100 dark:bg-slate-800 p-8 transition-all duration-500 hover:scale-[1.02] neumorphic-card">
+                  {/* Icon */}
+                  <div className="flex justify-center mb-6">
+                    <div className={`p-4 rounded-2xl bg-gradient-to-r ${service.gradient} text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className="h-8 w-8" />
                     </div>
-
-                    {/* Title */}
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white text-center mb-4 leading-tight group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300">
-                      {service.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-slate-700 dark:text-slate-200 text-center leading-relaxed mb-5 font-medium text-sm">
-                      {service.description}
-                    </p>
-
-                    {/* Services Details */}
-                    <div className="mb-8">
-                      <p className="text-xs font-bold text-slate-800 dark:text-slate-100 mb-3 text-center flex items-center justify-center">
-                        <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                        Serviços inclusos:
-                      </p>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed text-center bg-white/60 dark:bg-slate-700/50 p-3 rounded-xl">
-                        {service.details}
-                      </p>
-                    </div>
-
-                    {/* CTA Button */}
-                    <Button 
-                      onClick={handleContactClick}
-                      className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 dark:from-blue-500 dark:to-indigo-500 dark:hover:from-blue-600 dark:hover:to-indigo-600 text-white font-semibold py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-sm"
-                    >
-                      Agendar Reunião
-                    </Button>
                   </div>
-                </motion.div>
-              );
-            })}
-          </div>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white text-center mb-4 leading-tight group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300">
+                    {service.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-slate-700 dark:text-slate-200 text-center leading-relaxed mb-5 font-medium text-sm">
+                    {service.description}
+                  </p>
+
+                  {/* Services Details */}
+                  <div className="mb-8">
+                    <p className="text-xs font-bold text-slate-800 dark:text-slate-100 mb-3 text-center flex items-center justify-center">
+                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                      Serviços inclusos:
+                    </p>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed text-center bg-white/60 dark:bg-slate-700/50 p-3 rounded-xl">
+                      {service.details}
+                    </p>
+                  </div>
+
+                  {/* CTA Button */}
+                  <Button 
+                    onClick={handleContactClick}
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 dark:from-blue-500 dark:to-indigo-500 dark:hover:from-blue-600 dark:hover:to-indigo-600 text-white font-semibold py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-sm"
+                  >
+                    Agendar Reunião
+                  </Button>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
-      </section>
-    </>
+      </div>
+
+      <style jsx>{`
+        .neumorphic-card {
+          box-shadow: 
+            15px 15px 30px rgba(148, 163, 184, 0.2),
+            -15px -15px 30px rgba(255, 255, 255, 0.8);
+        }
+        
+        .dark .neumorphic-card {
+          box-shadow: 
+            15px 15px 30px rgba(15, 23, 42, 0.8),
+            -15px -15px 30px rgba(71, 85, 105, 0.3);
+        }
+        
+        .neumorphic-card:hover {
+          box-shadow: 
+            20px 20px 40px rgba(59, 130, 246, 0.15),
+            -20px -20px 40px rgba(255, 255, 255, 0.9);
+        }
+        
+        .dark .neumorphic-card:hover {
+          box-shadow: 
+            20px 20px 40px rgba(15, 23, 42, 0.9),
+            -20px -20px 40px rgba(59, 130, 246, 0.1);
+        }
+      `}</style>
+    </section>
   );
 };
 
