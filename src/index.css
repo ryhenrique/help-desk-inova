@@ -1,8 +1,9 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Design system com paleta HelpDesk Inova */
+/* Design system inspirado no Sympla com paleta HelpDesk Inova */
 
 @layer base {
   :root {
@@ -36,12 +37,12 @@
 
     --radius: 0.5rem;
 
-    /* HelpDesk Inova Color Palette */
+    /* HelpDesk Inova Color Palette - Sympla Style */
     --inova-deep-blue: #0A1A65;
-    --inova-bright-blue: #00CFFF;
+    --inova-bright-blue: #2563eb;
     --inova-white: #FFFFFF;
-    --inova-dark-blue-gray: #2E3B6E;
-    --inova-light-blue-gray: #F2F6FC;
+    --inova-dark-blue-gray: #374151;
+    --inova-light-blue-gray: #f8fafc;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -84,7 +85,7 @@
 
     /* HelpDesk Inova Color Palette - Dark Mode */
     --inova-deep-blue: #e2e8f0;
-    --inova-bright-blue: #00CFFF;
+    --inova-bright-blue: #60a5fa;
     --inova-white: #1e293b;
     --inova-dark-blue-gray: #cbd5e1;
     --inova-light-blue-gray: #334155;
@@ -98,7 +99,7 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 4rem;
+    scroll-padding-top: 5rem;
   }
 
   body {
@@ -106,7 +107,7 @@
     line-height: 1.6;
     min-height: 100vh;
     position: relative;
-    background: var(--inova-white);
+    background: #ffffff;
     font-family: 'Inter', 'Poppins', 'Open Sans', system-ui, -apple-system, sans-serif;
   }
 
@@ -114,7 +115,7 @@
     background: #0f172a;
   }
 
-  /* Background pattern - apenas no modo claro com cores Inova */
+  /* Background pattern - estilo Sympla limpo */
   body::before {
     content: "";
     position: fixed;
@@ -123,33 +124,14 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    --c: var(--inova-bright-blue);
-    background-color: var(--inova-white);
-    background-image: 
-      radial-gradient(2px 50px at 0px 235px, var(--c), #0000),
-      radial-gradient(2px 50px at 300px 235px, var(--c), #0000),
-      radial-gradient(0.8px 0.8px at 150px 117.5px, var(--c) 100%, #0000 150%);
-    background-size: 300px 235px, 300px 235px, 300px 235px;
-    animation: hi 120s linear infinite;
-    opacity: 0.03;
-  }
-
-  /* Background overlay - cores Inova */
-  body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: linear-gradient(135deg, var(--inova-light-blue-gray) 0%, var(--inova-white) 50%, var(--inova-light-blue-gray) 100%);
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+    opacity: 0.6;
   }
 
   /* Remove background patterns in dark mode */
-  .dark body::before,
-  .dark body::after {
-    display: none;
+  .dark body::before {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    opacity: 0.3;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -159,7 +141,7 @@
   }
 
   .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
-    color: #e2e8f0;
+    color: #f1f5f9;
   }
 
   p {
@@ -172,16 +154,7 @@
   }
 }
 
-@keyframes hi {
-  0% {
-    background-position: 0px 220px, 3px 220px, 151.5px 337.5px;
-  }
-  to {
-    background-position: 0px 6800px, 3px 6800px, 151.5px 6917.5px;
-  }
-}
-
-/* Custom animations for tech support theme */
+/* Custom animations for modern design */
 @keyframes float {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
@@ -197,23 +170,14 @@
   }
 }
 
-@keyframes pulse-soft {
-  0%, 100% {
-    opacity: 0.4;
-    transform: scale(1);
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  50% {
-    opacity: 0.8;
-    transform: scale(1.05);
-  }
-}
-
-@keyframes bounce-slow {
-  0%, 100% {
+  to {
+    opacity: 1;
     transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
   }
 }
 
@@ -221,30 +185,26 @@
   animation: float 6s ease-in-out infinite;
 }
 
-.animate-pulse-soft {
-  animation: pulse-soft 3s ease-in-out infinite;
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
 }
 
-.animate-bounce-slow {
-  animation: bounce-slow 2s ease-in-out infinite;
-}
-
-/* Custom scrollbar com cores Inova */
+/* Custom scrollbar estilo Sympla */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--inova-light-blue-gray);
+  background: #f1f5f9;
 }
 
 .dark ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #1e293b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--inova-bright-blue);
-  border-radius: 4px;
+  background: #cbd5e1;
+  border-radius: 3px;
 }
 
 .dark ::-webkit-scrollbar-thumb {
@@ -252,7 +212,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--inova-deep-blue);
+  background: #94a3b8;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
@@ -261,7 +221,7 @@
 
 /* Section spacing */
 section {
-  @apply scroll-mt-16;
+  @apply scroll-mt-20;
 }
 
 /* Container improvements */
@@ -269,115 +229,80 @@ section {
   @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-/* Button improvements com cores Inova */
+/* Button improvements estilo Sympla */
 .btn-primary {
-  background-color: var(--inova-deep-blue);
-  color: var(--inova-white);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
-  border-radius: 0.75rem;
+  border-radius: 0.5rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 14px 0 rgba(10, 26, 101, 0.2);
+  box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.25);
 }
 
 .btn-primary:hover {
-  background-color: var(--inova-bright-blue);
-  color: var(--inova-deep-blue);
-  box-shadow: 0 8px 25px 0 rgba(0, 207, 255, 0.3);
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  box-shadow: 0 8px 25px 0 rgba(37, 99, 235, 0.35);
   transform: translateY(-2px);
 }
 
 .dark .btn-primary {
-  background-color: var(--inova-bright-blue);
-  color: #0A1A65;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
 }
 
 .dark .btn-primary:hover {
-  background-color: #ffffff;
-  color: #0A1A65;
-  box-shadow: 0 8px 25px 0 rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+  box-shadow: 0 8px 25px 0 rgba(96, 165, 250, 0.35);
 }
 
-.btn-secondary {
-  background-color: var(--inova-white);
-  color: var(--inova-dark-blue-gray);
-  font-weight: 500;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.75rem;
-  border: 2px solid var(--inova-light-blue-gray);
-  transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-  border-color: var(--inova-bright-blue);
-  color: var(--inova-deep-blue);
-  box-shadow: 0 4px 14px 0 rgba(0, 207, 255, 0.15);
-}
-
-.dark .btn-secondary {
-  background-color: var(--inova-light-blue-gray);
-  color: var(--inova-dark-blue-gray);
-  border-color: #475569;
-}
-
-.dark .btn-secondary:hover {
-  background-color: #475569;
-  border-color: var(--inova-bright-blue);
-  color: #ffffff;
-}
-
-/* Card improvements com estilo Inova */
+/* Card improvements estilo Sympla */
 .card-hover {
   transition: all 0.3s ease;
   border-radius: 1rem;
-  box-shadow: 0 4px 6px -1px rgba(10, 26, 101, 0.1);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
 }
 
 .card-hover:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 207, 255, 0.15);
-  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  border-color: #d1d5db;
+}
+
+.dark .card-hover {
+  border-color: #374151;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
 }
 
 .dark .card-hover:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 207, 255, 0.3);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.5);
+  border-color: #4b5563;
 }
 
-/* Text improvements com cores Inova */
+/* Text improvements */
 .text-gradient {
-  background: linear-gradient(135deg, var(--inova-deep-blue) 0%, var(--inova-bright-blue) 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .dark .text-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #00CFFF 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Inova specific utility classes */
-.inova-primary {
-  color: var(--inova-deep-blue);
+/* Sympla specific utility classes */
+.sympla-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-.inova-accent {
-  color: var(--inova-bright-blue);
+.sympla-shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
-.inova-bg-light {
-  background-color: var(--inova-light-blue-gray);
-}
-
-.inova-shadow {
-  box-shadow: 0 8px 32px rgba(10, 26, 101, 0.12);
-}
-
-.inova-shadow-accent {
-  box-shadow: 0 8px 32px rgba(0, 207, 255, 0.15);
-}
-
-.dark .inova-shadow-accent {
-  box-shadow: 0 8px 32px rgba(0, 207, 255, 0.3);
+.dark .sympla-shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
 }

@@ -1,5 +1,5 @@
 
-import { ModernNavbar } from '@/components/ui/modern-navbar';
+import { SymplaNavbar } from '@/components/ui/sympla-navbar';
 import HeroContent from '@/components/ui/hero-content';
 import OptimizedBackground from '@/components/ui/optimized-background';
 
@@ -10,10 +10,10 @@ const Header = () => {
 
   return (
     <>
-      <ModernNavbar onSupportClick={handleSupportClick} />
+      <SymplaNavbar onSupportClick={handleSupportClick} />
 
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 bg-white dark:bg-slate-900">
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-slate-900">
         {/* Background apenas no modo claro */}
         <div className="absolute inset-0 dark:hidden">
           <OptimizedBackground />
