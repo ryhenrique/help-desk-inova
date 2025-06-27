@@ -21,72 +21,63 @@ const ServicesGrid = () => {
       icon: Network,
       title: "Gerenciamento de Redes e Wi-Fi",
       description: "Infraestrutura de rede otimizada com alta disponibilidade, desempenho e segurança. Conectividade sob controle com nossa equipe especializada.",
-      details: "switches, roteadores, access points, VLANs, QoS, Wi-Fi empresarial, failover, balanceamento de links e suporte.",
-      gradient: "from-[#0A1A65] to-[#00CFFF]"
+      details: "switches, roteadores, access points, VLANs, QoS, Wi-Fi empresarial, failover, balanceamento de links e suporte."
     },
     {
       id: 2,
       icon: Wifi,
       title: "Internet Corporativa Sob Medida",
       description: "Conectividade sob medida, com links rápidos, estáveis e com backup inteligente. Não deixe sua operação parar.",
-      details: "links dedicados, temporários (4G/5G/satélite), Wi-Fi para eventos, redundância e internet de emergência.",
-      gradient: "from-[#2E3B6E] to-[#0A1A65]"
+      details: "links dedicados, temporários (4G/5G/satélite), Wi-Fi para eventos, redundância e internet de emergência."
     },
     {
       id: 3,
       icon: UserCheck,
       title: "Field Support (Suporte Presencial Gerenciado)",
       description: "Técnicos no local sob sua coordenação. Mais agilidade, menos preocupações.",
-      details: "técnico ou equipe sob sua gestão, integração com sistema de chamados, suporte em múltiplas filiais, equipe fixa ou rotativa.",
-      gradient: "from-[#00CFFF] to-[#0A1A65]"
+      details: "técnico ou equipe sob sua gestão, integração com sistema de chamados, suporte em múltiplas filiais, equipe fixa ou rotativa."
     },
     {
       id: 4,
       icon: Cable,
       title: "Redes Estruturadas",
       description: "Infraestrutura física de ponta, da fibra ao rack. Entregamos redes organizadas, seguras e prontas para crescer.",
-      details: "cabeamento metálico (Cat5e, Cat6), fibra óptica, organização de racks, configuração de switches, roteadores e access points.",
-      gradient: "from-[#0A1A65] to-[#2E3B6E]"
+      details: "cabeamento metálico (Cat5e, Cat6), fibra óptica, organização de racks, configuração de switches, roteadores e access points."
     },
     {
       id: 5,
       icon: Phone,
       title: "Telefonia VoIP Corporativa",
       description: "Comunicação moderna com economia. Nossa telefonia IP une tecnologia e praticidade para sua empresa.",
-      details: "PABX IP, URA personalizada, ramais, filas de atendimento, integração entre unidades, redução de custos.",
-      gradient: "from-[#2E3B6E] to-[#00CFFF]"
+      details: "PABX IP, URA personalizada, ramais, filas de atendimento, integração entre unidades, redução de custos."
     },
     {
       id: 6,
       icon: Monitor,
       title: "All Tech In – Tecnologia Completa por Assinatura",
       description: "Tecnologia completa com custo fixo. Equipamentos, suporte e gestão em um só pacote.",
-      details: "fornecimento de switches, roteadores, Wi-Fi, PCs, notebooks, monitoramento, suporte técnico e substituição rápida.",
-      gradient: "from-[#00CFFF] to-[#2E3B6E]"
+      details: "fornecimento de switches, roteadores, Wi-Fi, PCs, notebooks, monitoramento, suporte técnico e substituição rápida."
     },
     {
       id: 7,
       icon: Camera,
       title: "Câmeras de Segurança (CFTV IP e Analógico)",
       description: "Mais segurança com monitoramento inteligente. CFTV sob medida com suporte especializado.",
-      details: "projeto, instalação, gravação local/nuvem, acesso remoto, manutenção, expansão e integração com alarmes.",
-      gradient: "from-[#0A1A65] to-[#00CFFF]"
+      details: "projeto, instalação, gravação local/nuvem, acesso remoto, manutenção, expansão e integração com alarmes."
     },
     {
       id: 8,
       icon: Code,
       title: "Desenvolvimento de Software Personalizado",
       description: "Software sob medida para transformar seu negócio. Integrações, automações e inovação na palma da mão.",
-      details: "sistemas web, aplicativos mobile, dashboards, automações, integrações com ERP/CRM, APIs e suporte contínuo.",
-      gradient: "from-[#2E3B6E] to-[#0A1A65]"
+      details: "sistemas web, aplicativos mobile, dashboards, automações, integrações com ERP/CRM, APIs e suporte contínuo."
     },
     {
       id: 9,
       icon: Shield,
       title: "Firewall Profissional e LGPD",
       description: "Proteção avançada para sua rede e seus dados. Adeque-se à LGPD com tecnologia de ponta.",
-      details: "firewall local, em nuvem ou híbrido, controle de tráfego, VPN, relatórios, proteção contra ataques, conformidade com a LGPD.",
-      gradient: "from-[#00CFFF] to-[#0A1A65]"
+      details: "firewall local, em nuvem ou híbrido, controle de tráfego, VPN, relatórios, proteção contra ataques, conformidade com a LGPD."
     }
   ];
 
@@ -104,11 +95,11 @@ const ServicesGrid = () => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 tracking-tight" style={{ color: 'var(--inova-deep-blue)' }}>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 tracking-tight text-[#0A1A65] dark:text-white">
             Nossos <span className="text-gradient">Serviços Especializados</span>
           </h2>
-          <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-light" style={{ color: 'var(--inova-dark-blue-gray)' }}>
-            Soluções completas em TI com <span className="font-semibold" style={{ color: 'var(--inova-deep-blue)' }}>17 anos de experiência</span> no mercado
+          <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-light text-[#2E3B6E] dark:text-slate-300">
+            Soluções completas em TI com <span className="font-semibold text-[#0A1A65] dark:text-white">17 anos de experiência</span> no mercado
           </p>
         </motion.div>
 
@@ -122,54 +113,43 @@ const ServicesGrid = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative"
+                className="group"
               >
-                {/* Neumorphic Card com cores Inova */}
-                <div className="w-full h-auto rounded-2xl p-8 transition-all duration-500 hover:scale-[1.02] inova-shadow card-hover" 
-                     style={{ backgroundColor: 'var(--inova-white)' }}>
+                {/* Service Card - Formato similar à imagem */}
+                <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-gray-100 dark:border-slate-700 h-full flex flex-col">
                   
-                  {/* Icon */}
-                  <div className="flex justify-center mb-6">
-                    <div className={`p-4 rounded-2xl bg-gradient-to-r ${service.gradient} text-white shadow-lg group-hover:scale-110 transition-transform duration-300 inova-shadow-accent`}>
-                      <Icon className="h-8 w-8" />
+                  {/* Icon Container */}
+                  <div className="flex items-start gap-6 mb-6">
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 bg-gradient-to-r from-[#0A1A65] to-[#00CFFF] rounded-2xl flex items-center justify-center shadow-lg">
+                        <Icon className="h-8 w-8 text-white" />
+                      </div>
+                    </div>
+                    
+                    {/* Title and Description */}
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-xl font-bold mb-3 text-[#0A1A65] dark:text-white leading-tight">
+                        {service.title}
+                      </h3>
+                      <p className="text-sm text-[#2E3B6E] dark:text-slate-300 leading-relaxed mb-4">
+                        {service.description}
+                      </p>
                     </div>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-center mb-4 leading-tight group-hover:text-[var(--inova-bright-blue)] transition-colors duration-300"
-                      style={{ color: 'var(--inova-deep-blue)' }}>
-                    {service.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-center leading-relaxed mb-5 font-medium text-sm"
-                     style={{ color: 'var(--inova-dark-blue-gray)' }}>
-                    {service.description}
-                  </p>
-
                   {/* Services Details */}
-                  <div className="mb-8">
-                    <p className="text-xs font-bold mb-3 text-center flex items-center justify-center"
-                       style={{ color: 'var(--inova-deep-blue)' }}>
-                      <span className="w-2 h-2 rounded-full mr-2" 
-                            style={{ backgroundColor: 'var(--inova-bright-blue)' }}></span>
-                      Serviços inclusos:
-                    </p>
-                    <p className="text-xs leading-relaxed text-center p-3 rounded-xl"
-                       style={{ 
-                         color: 'var(--inova-dark-blue-gray)', 
-                         backgroundColor: 'var(--inova-light-blue-gray)' 
-                       }}>
-                      {service.details}
+                  <div className="mb-6 flex-1">
+                    <p className="text-xs text-[#2E3B6E] dark:text-slate-400 leading-relaxed">
+                      <span className="font-semibold text-[#0A1A65] dark:text-slate-200">Serviços inclusos:</span> {service.details}
                     </p>
                   </div>
 
                   {/* CTA Button */}
                   <Button 
                     onClick={handleContactClick}
-                    className="w-full btn-primary font-semibold py-3 rounded-xl transition-all duration-300 text-sm"
+                    className="w-full bg-[#0A1A65] hover:bg-[#00CFFF] hover:text-[#0A1A65] text-white font-semibold py-3 rounded-xl transition-all duration-300 text-sm dark:bg-[#00CFFF] dark:text-[#0A1A65] dark:hover:bg-white"
                   >
-                    Agendar Reunião
+                    Agende uma reunião
                   </Button>
                 </div>
               </motion.div>
