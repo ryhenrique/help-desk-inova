@@ -115,14 +115,21 @@ const ServicesGrid = () => {
                 viewport={{ once: true }}
                 className="group"
               >
-                {/* Service Card - Formato similar à imagem */}
+                {/* Service Card - Formato da imagem apresentada */}
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border border-gray-100 dark:border-slate-700 h-full flex flex-col">
                   
-                  {/* Icon Container */}
+                  {/* Icon Container - Circular com gradiente conforme design */}
                   <div className="flex items-start gap-6 mb-6">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-gradient-to-r from-[#0A1A65] to-[#00CFFF] rounded-2xl flex items-center justify-center shadow-lg">
-                        <Icon className="h-8 w-8 text-white" />
+                      <div className="relative w-20 h-20">
+                        {/* Círculo externo com gradiente */}
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#0A1A65] via-[#1E40AF] to-[#00CFFF] p-1">
+                          <div className="w-full h-full rounded-full bg-white dark:bg-slate-800 flex items-center justify-center">
+                            <Icon className="h-8 w-8 text-[#0A1A65] dark:text-[#00CFFF]" />
+                          </div>
+                        </div>
+                        {/* Efeito de brilho */}
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#00CFFF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </div>
                     </div>
                     
