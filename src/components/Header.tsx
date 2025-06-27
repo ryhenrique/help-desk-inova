@@ -1,5 +1,5 @@
 
-import { SymplaNavbar } from '@/components/ui/sympla-navbar';
+import { SymplaStyleNavbar } from '@/components/ui/sympla-style-navbar';
 import HeroContent from '@/components/ui/hero-content';
 import OptimizedBackground from '@/components/ui/optimized-background';
 
@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <>
-      <SymplaNavbar onSupportClick={handleSupportClick} />
+      <SymplaStyleNavbar onSupportClick={handleSupportClick} />
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-slate-900">
