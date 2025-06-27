@@ -1,7 +1,7 @@
 
 import { SymplaStyleNavbar } from '@/components/ui/sympla-style-navbar';
 import HeroContent from '@/components/ui/hero-content';
-import YouTubeBackground from '@/components/ui/youtube-background';
+import LocalVideoBackground from '@/components/ui/local-video-background';
 
 const Header = () => {
   const handleSupportClick = () => {
@@ -14,9 +14,9 @@ const Header = () => {
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* YouTube Video Background */}
-        <YouTubeBackground 
-          videoId="9HaU8NjH7bI" 
+        {/* Local Video Background */}
+        <LocalVideoBackground 
+          videoSrc="/lovable-uploads/hero-video.mp4" 
           className="z-0"
         />
 
