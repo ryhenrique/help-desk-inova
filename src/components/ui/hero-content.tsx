@@ -26,20 +26,23 @@ const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
           transition={{ duration: 0.8 }}
           className="mb-8"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-slate-900 dark:text-white text-center tracking-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-center tracking-tight mb-6"
+              style={{ color: 'var(--inova-deep-blue)' }}>
             Soluções Completas em{' '}
-            <span className="text-blue-600 dark:text-blue-400 block sm:inline whitespace-nowrap">
+            <span className="block sm:inline whitespace-nowrap">
               <TypewriterText 
                 words={typewriterWords}
                 speed={100}
                 deleteSpeed={50}
                 delayBetweenWords={2000}
+                className="text-gradient"
               />
             </span>
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-4xl mx-auto font-light">
+          <p className="text-lg sm:text-xl md:text-2xl leading-relaxed max-w-4xl mx-auto font-light"
+             style={{ color: 'var(--inova-dark-blue-gray)' }}>
             17 anos transformando empresas com infraestrutura de TI robusta, 
-            <span className="font-semibold text-slate-800 dark:text-slate-200"> suporte especializado </span>
+            <span className="font-semibold" style={{ color: 'var(--inova-deep-blue)' }}> suporte especializado </span>
             e soluções personalizadas para o seu negócio crescer com segurança.
           </p>
         </motion.div>
@@ -53,15 +56,14 @@ const HeroContent: React.FC<HeroContentProps> = ({ onSupportClick }) => {
           <Button 
             onClick={onSupportClick}
             size="lg" 
-            className="flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 dark:from-blue-500 dark:to-blue-600 dark:hover:from-blue-600 dark:hover:to-blue-700 text-white px-8 py-4 font-semibold rounded-xl transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
+            className="flex items-center justify-center gap-3 btn-primary px-8 py-4 font-semibold rounded-xl transition-all duration-300 text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
           >
             <PhoneCall className="h-5 w-5" />
             Fale Conosco Agora
           </Button>
           <Button 
             size="lg" 
-            variant="outline" 
-            className="border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 px-8 py-4 font-semibold rounded-xl transition-all duration-300 text-lg hover:border-blue-400 dark:hover:border-blue-500"
+            className="btn-secondary px-8 py-4 font-semibold rounded-xl transition-all duration-300 text-lg"
             onClick={() => {
               const element = document.querySelector('#services');
               if (element) {

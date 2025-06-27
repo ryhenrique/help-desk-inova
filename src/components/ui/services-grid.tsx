@@ -22,7 +22,7 @@ const ServicesGrid = () => {
       title: "Gerenciamento de Redes e Wi-Fi",
       description: "Infraestrutura de rede otimizada com alta disponibilidade, desempenho e segurança. Conectividade sob controle com nossa equipe especializada.",
       details: "switches, roteadores, access points, VLANs, QoS, Wi-Fi empresarial, failover, balanceamento de links e suporte.",
-      gradient: "from-blue-600 to-indigo-600"
+      gradient: "from-[#0A1A65] to-[#00CFFF]"
     },
     {
       id: 2,
@@ -30,7 +30,7 @@ const ServicesGrid = () => {
       title: "Internet Corporativa Sob Medida",
       description: "Conectividade sob medida, com links rápidos, estáveis e com backup inteligente. Não deixe sua operação parar.",
       details: "links dedicados, temporários (4G/5G/satélite), Wi-Fi para eventos, redundância e internet de emergência.",
-      gradient: "from-slate-600 to-gray-600"
+      gradient: "from-[#2E3B6E] to-[#0A1A65]"
     },
     {
       id: 3,
@@ -38,7 +38,7 @@ const ServicesGrid = () => {
       title: "Field Support (Suporte Presencial Gerenciado)",
       description: "Técnicos no local sob sua coordenação. Mais agilidade, menos preocupações.",
       details: "técnico ou equipe sob sua gestão, integração com sistema de chamados, suporte em múltiplas filiais, equipe fixa ou rotativa.",
-      gradient: "from-emerald-500 to-teal-500"
+      gradient: "from-[#00CFFF] to-[#0A1A65]"
     },
     {
       id: 4,
@@ -46,7 +46,7 @@ const ServicesGrid = () => {
       title: "Redes Estruturadas",
       description: "Infraestrutura física de ponta, da fibra ao rack. Entregamos redes organizadas, seguras e prontas para crescer.",
       details: "cabeamento metálico (Cat5e, Cat6), fibra óptica, organização de racks, configuração de switches, roteadores e access points.",
-      gradient: "from-orange-500 to-amber-500"
+      gradient: "from-[#0A1A65] to-[#2E3B6E]"
     },
     {
       id: 5,
@@ -54,7 +54,7 @@ const ServicesGrid = () => {
       title: "Telefonia VoIP Corporativa",
       description: "Comunicação moderna com economia. Nossa telefonia IP une tecnologia e praticidade para sua empresa.",
       details: "PABX IP, URA personalizada, ramais, filas de atendimento, integração entre unidades, redução de custos.",
-      gradient: "from-purple-500 to-violet-500"
+      gradient: "from-[#2E3B6E] to-[#00CFFF]"
     },
     {
       id: 6,
@@ -62,7 +62,7 @@ const ServicesGrid = () => {
       title: "All Tech In – Tecnologia Completa por Assinatura",
       description: "Tecnologia completa com custo fixo. Equipamentos, suporte e gestão em um só pacote.",
       details: "fornecimento de switches, roteadores, Wi-Fi, PCs, notebooks, monitoramento, suporte técnico e substituição rápida.",
-      gradient: "from-blue-600 to-cyan-600"
+      gradient: "from-[#00CFFF] to-[#2E3B6E]"
     },
     {
       id: 7,
@@ -70,7 +70,7 @@ const ServicesGrid = () => {
       title: "Câmeras de Segurança (CFTV IP e Analógico)",
       description: "Mais segurança com monitoramento inteligente. CFTV sob medida com suporte especializado.",
       details: "projeto, instalação, gravação local/nuvem, acesso remoto, manutenção, expansão e integração com alarmes.",
-      gradient: "from-red-500 to-rose-500"
+      gradient: "from-[#0A1A65] to-[#00CFFF]"
     },
     {
       id: 8,
@@ -78,7 +78,7 @@ const ServicesGrid = () => {
       title: "Desenvolvimento de Software Personalizado",
       description: "Software sob medida para transformar seu negócio. Integrações, automações e inovação na palma da mão.",
       details: "sistemas web, aplicativos mobile, dashboards, automações, integrações com ERP/CRM, APIs e suporte contínuo.",
-      gradient: "from-indigo-500 to-purple-500"
+      gradient: "from-[#2E3B6E] to-[#0A1A65]"
     },
     {
       id: 9,
@@ -86,7 +86,7 @@ const ServicesGrid = () => {
       title: "Firewall Profissional e LGPD",
       description: "Proteção avançada para sua rede e seus dados. Adeque-se à LGPD com tecnologia de ponta.",
       details: "firewall local, em nuvem ou híbrido, controle de tráfego, VPN, relatórios, proteção contra ataques, conformidade com a LGPD.",
-      gradient: "from-green-500 to-emerald-500"
+      gradient: "from-[#00CFFF] to-[#0A1A65]"
     }
   ];
 
@@ -95,7 +95,7 @@ const ServicesGrid = () => {
   };
 
   return (
-    <section id="services" className="py-20 lg:py-28 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+    <section id="services" className="py-20 lg:py-28 bg-gradient-to-br from-[#F2F6FC] via-white to-[#F2F6FC] dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -104,11 +104,11 @@ const ServicesGrid = () => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-8 tracking-tight">
-            Nossos <span className="bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">Serviços Especializados</span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8 tracking-tight" style={{ color: 'var(--inova-deep-blue)' }}>
+            Nossos <span className="text-gradient">Serviços Especializados</span>
           </h2>
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed font-light">
-            Soluções completas em TI com <span className="font-semibold text-slate-800 dark:text-slate-200">17 anos de experiência</span> no mercado
+          <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-light" style={{ color: 'var(--inova-dark-blue-gray)' }}>
+            Soluções completas em TI com <span className="font-semibold" style={{ color: 'var(--inova-deep-blue)' }}>17 anos de experiência</span> no mercado
           </p>
         </motion.div>
 
@@ -124,32 +124,42 @@ const ServicesGrid = () => {
                 viewport={{ once: true }}
                 className="group relative"
               >
-                {/* Neumorphic Card */}
-                <div className="w-full h-auto rounded-3xl bg-slate-100 dark:bg-slate-800 p-8 transition-all duration-500 hover:scale-[1.02] neumorphic-card">
+                {/* Neumorphic Card com cores Inova */}
+                <div className="w-full h-auto rounded-2xl p-8 transition-all duration-500 hover:scale-[1.02] inova-shadow card-hover" 
+                     style={{ backgroundColor: 'var(--inova-white)' }}>
+                  
                   {/* Icon */}
                   <div className="flex justify-center mb-6">
-                    <div className={`p-4 rounded-2xl bg-gradient-to-r ${service.gradient} text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                    <div className={`p-4 rounded-2xl bg-gradient-to-r ${service.gradient} text-white shadow-lg group-hover:scale-110 transition-transform duration-300 inova-shadow-accent`}>
                       <Icon className="h-8 w-8" />
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white text-center mb-4 leading-tight group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-center mb-4 leading-tight group-hover:text-[var(--inova-bright-blue)] transition-colors duration-300"
+                      style={{ color: 'var(--inova-deep-blue)' }}>
                     {service.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-slate-700 dark:text-slate-200 text-center leading-relaxed mb-5 font-medium text-sm">
+                  <p className="text-center leading-relaxed mb-5 font-medium text-sm"
+                     style={{ color: 'var(--inova-dark-blue-gray)' }}>
                     {service.description}
                   </p>
 
                   {/* Services Details */}
                   <div className="mb-8">
-                    <p className="text-xs font-bold text-slate-800 dark:text-slate-100 mb-3 text-center flex items-center justify-center">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                    <p className="text-xs font-bold mb-3 text-center flex items-center justify-center"
+                       style={{ color: 'var(--inova-deep-blue)' }}>
+                      <span className="w-2 h-2 rounded-full mr-2" 
+                            style={{ backgroundColor: 'var(--inova-bright-blue)' }}></span>
                       Serviços inclusos:
                     </p>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed text-center bg-white/60 dark:bg-slate-700/50 p-3 rounded-xl">
+                    <p className="text-xs leading-relaxed text-center p-3 rounded-xl"
+                       style={{ 
+                         color: 'var(--inova-dark-blue-gray)', 
+                         backgroundColor: 'var(--inova-light-blue-gray)' 
+                       }}>
                       {service.details}
                     </p>
                   </div>
@@ -157,7 +167,7 @@ const ServicesGrid = () => {
                   {/* CTA Button */}
                   <Button 
                     onClick={handleContactClick}
-                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 dark:from-blue-500 dark:to-indigo-500 dark:hover:from-blue-600 dark:hover:to-indigo-600 text-white font-semibold py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-sm"
+                    className="w-full btn-primary font-semibold py-3 rounded-xl transition-all duration-300 text-sm"
                   >
                     Agendar Reunião
                   </Button>
@@ -167,32 +177,6 @@ const ServicesGrid = () => {
           })}
         </div>
       </div>
-
-      <style jsx>{`
-        .neumorphic-card {
-          box-shadow: 
-            15px 15px 30px rgba(148, 163, 184, 0.2),
-            -15px -15px 30px rgba(255, 255, 255, 0.8);
-        }
-        
-        .dark .neumorphic-card {
-          box-shadow: 
-            15px 15px 30px rgba(15, 23, 42, 0.8),
-            -15px -15px 30px rgba(71, 85, 105, 0.3);
-        }
-        
-        .neumorphic-card:hover {
-          box-shadow: 
-            20px 20px 40px rgba(59, 130, 246, 0.15),
-            -20px -20px 40px rgba(255, 255, 255, 0.9);
-        }
-        
-        .dark .neumorphic-card:hover {
-          box-shadow: 
-            20px 20px 40px rgba(15, 23, 42, 0.9),
-            -20px -20px 40px rgba(59, 130, 246, 0.1);
-        }
-      `}</style>
     </section>
   );
 };

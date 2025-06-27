@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+/* Design system com paleta HelpDesk Inova */
 
 @layer base {
   :root {
@@ -36,6 +36,13 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    /* HelpDesk Inova Color Palette */
+    --inova-deep-blue: #0A1A65;
+    --inova-bright-blue: #00CFFF;
+    --inova-white: #FFFFFF;
+    --inova-dark-blue-gray: #2E3B6E;
+    --inova-light-blue-gray: #F2F6FC;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -93,14 +100,15 @@
     line-height: 1.6;
     min-height: 100vh;
     position: relative;
-    background: #ffffff;
+    background: var(--inova-white);
+    font-family: 'Inter', 'Poppins', 'Open Sans', system-ui, -apple-system, sans-serif;
   }
 
   .dark body {
     background: #0f172a;
   }
 
-  /* Background pattern - apenas no modo claro */
+  /* Background pattern - apenas no modo claro com cores Inova */
   body::before {
     content: "";
     position: fixed;
@@ -109,18 +117,18 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    --c: #09f;
-    background-color: #fff;
+    --c: var(--inova-bright-blue);
+    background-color: var(--inova-white);
     background-image: 
       radial-gradient(2px 50px at 0px 235px, var(--c), #0000),
       radial-gradient(2px 50px at 300px 235px, var(--c), #0000),
       radial-gradient(0.8px 0.8px at 150px 117.5px, var(--c) 100%, #0000 150%);
     background-size: 300px 235px, 300px 235px, 300px 235px;
     animation: hi 120s linear infinite;
-    opacity: 0.02;
+    opacity: 0.03;
   }
 
-  /* Background overlay - limpo no modo claro */
+  /* Background overlay - cores Inova */
   body::after {
     content: "";
     position: fixed;
@@ -129,7 +137,7 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+    background: linear-gradient(135deg, var(--inova-light-blue-gray) 0%, var(--inova-white) 50%, var(--inova-light-blue-gray) 100%);
   }
 
   /* Remove background patterns in dark mode */
@@ -141,11 +149,20 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
     line-height: 1.2;
+    color: var(--inova-deep-blue);
+  }
+
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: #e2e8f0;
   }
 
   p {
-    @apply text-slate-600 dark:text-slate-300;
+    color: var(--inova-dark-blue-gray);
     line-height: 1.7;
+  }
+
+  .dark p {
+    @apply text-slate-300;
   }
 }
 
@@ -206,13 +223,13 @@
   animation: bounce-slow 2s ease-in-out infinite;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar com cores Inova */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f8fafc;
+  background: var(--inova-light-blue-gray);
 }
 
 .dark ::-webkit-scrollbar-track {
@@ -220,7 +237,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: var(--inova-bright-blue);
   border-radius: 4px;
 }
 
@@ -229,7 +246,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: var(--inova-deep-blue);
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
@@ -246,21 +263,91 @@ section {
   @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-/* Button improvements */
+/* Button improvements com cores Inova */
 .btn-primary {
-  @apply bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 shadow-sm;
+  background-color: var(--inova-deep-blue);
+  color: var(--inova-white);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px 0 rgba(10, 26, 101, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--inova-bright-blue);
+  box-shadow: 0 8px 25px 0 rgba(0, 207, 255, 0.3);
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
-  @apply bg-white hover:bg-slate-50 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-medium px-6 py-3 rounded-lg border border-slate-300 dark:border-slate-600 transition-all duration-200;
+  background-color: var(--inova-white);
+  color: var(--inova-dark-blue-gray);
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  border: 2px solid var(--inova-light-blue-gray);
+  transition: all 0.3s ease;
 }
 
-/* Card improvements */
+.btn-secondary:hover {
+  border-color: var(--inova-bright-blue);
+  color: var(--inova-deep-blue);
+  box-shadow: 0 4px 14px 0 rgba(0, 207, 255, 0.15);
+}
+
+.dark .btn-secondary {
+  @apply bg-slate-800 text-slate-300 border-slate-600;
+}
+
+.dark .btn-secondary:hover {
+  @apply bg-slate-700 border-slate-500;
+}
+
+/* Card improvements com estilo Inova */
 .card-hover {
-  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  transition: all 0.3s ease;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(10, 26, 101, 0.1);
 }
 
-/* Text improvements */
+.card-hover:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 207, 255, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Text improvements com cores Inova */
 .text-gradient {
-  @apply bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent;
+  background: linear-gradient(135deg, var(--inova-deep-blue) 0%, var(--inova-bright-blue) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .text-gradient {
+  background: linear-gradient(135deg, #60a5fa 0%, #00CFFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Inova specific utility classes */
+.inova-primary {
+  color: var(--inova-deep-blue);
+}
+
+.inova-accent {
+  color: var(--inova-bright-blue);
+}
+
+.inova-bg-light {
+  background-color: var(--inova-light-blue-gray);
+}
+
+.inova-shadow {
+  box-shadow: 0 8px 32px rgba(10, 26, 101, 0.12);
+}
+
+.inova-shadow-accent {
+  box-shadow: 0 8px 32px rgba(0, 207, 255, 0.15);
 }
