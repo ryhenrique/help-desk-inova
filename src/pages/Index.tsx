@@ -1,6 +1,5 @@
 
 import Header from '@/components/Header';
-import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import { PartnersLogos } from '@/components/ui/partners-logos';
 import ServicesGrid from '@/components/ui/services-grid';
@@ -13,7 +12,6 @@ const Index = () => {
       <PartnersLogos />
       <ServicesGrid />
       <CompanyDifferentials />
-      <Contact />
       <Footer />
     </div>
   );
